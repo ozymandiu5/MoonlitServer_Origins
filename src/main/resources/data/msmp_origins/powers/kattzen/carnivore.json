@@ -1,0 +1,17 @@
+{
+    "name": "Carnivore",
+    "description": "Your predatory instincts only allow you to eat meat.\nYou can still eat non-meats, but they will not satiate you.",
+    "type": "origins:modify_food",
+    "item_condition": {
+        "inverted": true,
+        "type": "origins:meat"
+    },
+    "food_modifier": {
+        "operation": "set_total",
+        "value": 0
+    },
+    "saturation_modifier": {
+        "operation": "set_total",
+        "value": 0
+    }
+}

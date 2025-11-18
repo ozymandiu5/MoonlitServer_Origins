@@ -1,0 +1,10 @@
+{
+    "origins": [
+        "msmp_origins:human",
+        "msmp_origins:kattzen"
+    ],
+    "enabled": true,
+    "replace": true,
+    "allow_random": true,
+    "default_origin": "msmp_origins:human"
+}

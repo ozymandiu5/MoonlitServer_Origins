@@ -1,0 +1,13 @@
+{
+    "name": "Kattzen",
+    "description": "A playful and mischievous race of feline humanoids. Known for their quirkful personalities, they get along with most races. Kattzens seek the thrill of exploration, hailing from their ancestral jungle homes. As Kattzens are easy-going and have simpler needs, they are not bothered by matters of Ideology and Faith, only a good meal, a good walk, a good stretch, and a good nap. As felines they do not suffer from fall damage, but they have a larger appetite as a result of their active and diverse lifestyle.",
+    "powers": [
+        "msmp_origins:kattzen/pounce",
+        "msmp_origins:kattzen/vision",
+        "msmp_origins:kattzen/lightfooted",
+        "msmp_origins:kattzen/carnivore",
+        "msmp_origins:kattzen/feeble"
+    ],
+    "order": 1,
+    "impact": 1
+}
