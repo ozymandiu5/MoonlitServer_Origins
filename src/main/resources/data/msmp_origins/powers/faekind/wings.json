@@ -31,6 +31,9 @@
                             "gamemode": "spectator"
                         }
                     ]
+                },
+                {
+                    "type": "origins:sneaking"
                 }
             ]
         },
@@ -87,8 +90,8 @@
     "resource": {
         "type": "origins:resource",
         "min": 0,
-        "max": 100,
-        "start_value": 100,
+        "max": 250,
+        "start_value": 125,
         "hud_render": {
             "should_render": true,
             "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
@@ -146,7 +149,7 @@
                 {
                     "type": "origins:change_resource",
                     "resource": "msmp_origins:faekind/wings_resource",
-                    "change": 2,
+                    "change": 5,
                     "operation": "add"
                 }
             ]
