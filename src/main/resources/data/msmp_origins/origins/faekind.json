@@ -1,0 +1,12 @@
+{
+    "name": "Faekind",
+    "description": "An ancient order of magical creatures. The Faekind hail from mythical ages, they remember the days of yore and how it has fallen from grace. Now they live in small communities hidden deep in ancient forests and coves. They are weakened by the passage of time, but they still retain innate magical abilities. They’ve seen gods rise and fall and are not impressed with the new order. They gain bonuses staying Neutral in this battle of the beliefs.",
+    "powers": [
+        "msmp_origins:faekind/wings",
+        "msmp_origins:faekind/regeneration",
+        "msmp_origins:faekind/fairfoot",
+        "msmp_origins:faekind/feeble",
+        "msmp_origins:faekind/pacifism"
+    ],
+    "impact": 2
+}
