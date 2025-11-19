@@ -1,0 +1,14 @@
+{
+  "origins": [
+    "msmp_religions:neutral",
+    "msmp_religions:moon",
+    "msmp_religions:ars_magus",
+    "msmp_religions:occult",
+    "msmp_religions:wheelist",
+    "msmp_religions:redstone",
+    "msmp_religions:pillagers_bane"
+  ],
+  "enabled": true,
+  "allow_random": true,
+  "default_origin": "msmp_religions:neutral"
+}
