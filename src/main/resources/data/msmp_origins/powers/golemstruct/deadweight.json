@@ -1,0 +1,38 @@
+{
+    "name": "Deadweight",
+    "description": "You are unable to swim and will sink much faster in water.",
+    "type": "origins:multiple",
+    "noswim": {
+        "condition": {
+            "type": "origins:in_block",
+            "block_condition": {
+                "type": "origins:fluid",
+                "fluid_condition": {
+                    "type": "origins:fluid",
+                    "fluid": "minecraft:water"
+                }
+            }
+        },
+        "type": "origins:prevent_sprinting"
+    },
+    "sink": {
+        "condition": {
+            "type": "origins:in_block",
+            "block_condition": {
+                "type": "origins:fluid",
+                "fluid_condition": {
+                    "type": "origins:fluid",
+                    "fluid": "minecraft:water"
+                }
+            }
+        },
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "forge:entity_gravity",
+            "operation": "addition",
+            "value": 0.42
+        },
+        "tick_rate": 20,
+        "update_health": true
+    }
+}

@@ -1,0 +1,32 @@
+{
+    "name": "Golem",
+    "description": "You are 2.4 meters tall.",
+    "type": "origins:action_on_callback",
+    "execute_chosen_when_orb": true,
+    "entity_action_lost": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:execute_command",
+                "command": "scale set pehkui:height 1"
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "scale set pehkui:width 1"
+            }
+        ]
+    },
+    "entity_action_added": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:execute_command",
+                "command": "scale set pehkui:height 1.2"
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "scale set pehkui:width 1.2"
+            }
+        ]
+    }
+}

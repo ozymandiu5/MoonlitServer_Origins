@@ -1,7 +1,9 @@
 {
     "origins": [
         "msmp_origins:human",
-        "msmp_origins:kattzen"
+        "msmp_origins:kattzen",
+        "msmp_origins:faekind",
+        "msmp_origins:golemstruct"
     ],
     "enabled": true,
     "replace": true,

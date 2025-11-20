@@ -1,0 +1,23 @@
+{
+    "name": "Thick Skin",
+    "description": "You gain an additional 4 armor and 1 armor toughness, but are 20% slower.",
+    "type": "origins:attribute",
+    "modifiers": [
+        {
+            "attribute": "minecraft:generic.armor",
+            "operation": "addition",
+            "value": 4
+        },
+        {
+            "attribute": "minecraft:generic.armor_toughness",
+            "operation": "addition",
+            "value": 1
+        },
+        {
+            "attribute": "minecraft:generic.movement_speed",
+            "operation": "multiply_total",
+            "value": -0.2
+        }
+    ],
+    "update_health": true
+}

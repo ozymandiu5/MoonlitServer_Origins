@@ -1,7 +1,6 @@
 {
     "name": "Neutral",
     "description": "Doesn’t put much faith in divinity and divine intervention.",
-    "powers": [
-    ],
+    "powers": [],
     "impact": 0
 }

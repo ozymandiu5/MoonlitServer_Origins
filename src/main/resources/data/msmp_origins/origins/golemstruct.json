@@ -1,0 +1,13 @@
+{
+    "name": "Golemstruct",
+    "description": "Constructs of a long-ago mechanical war. They were built as warmachines and as such, have skins of tough magical iron. These Golemstructs are usually known as protectors and guardians of cities. However some constructs have been specially designed to think deeper and have personality matrixes of their own. Golemstructs gain more bonuses from following the Dead Redstone God.",
+    "powers": [
+        "msmp_origins:golemstruct/strongarms",
+        "msmp_origins:golemstruct/repair",
+        "msmp_origins:golemstruct/thick",
+        "msmp_origins:golemstruct/belief",
+        "msmp_origins:golemstruct/golem",
+        "msmp_origins:golemstruct/deadweight"
+    ],
+    "impact": 2
+}

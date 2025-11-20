@@ -1,0 +1,46 @@
+{
+    "name": "Beliefs",
+    "description": "When following a Neutral stance on Religion, you gain an additional heart, and increased flight regeneration.",
+    "type": "origins:multiple",
+    "heart": {
+        "condition": {
+            "type": "origins:origin",
+            "origin": "msmp_religions:neutral",
+            "layer": "msmp_religions:religion"
+        },
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.max_health",
+            "operation": "addition",
+            "value": 2
+        },
+        "tick_rate": 20,
+        "update_health": true
+    },
+    "noburnout": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:origin",
+                    "origin": "msmp_religions:neutral",
+                    "layer": "msmp_religions:religion"
+                },
+                {
+                    "type": "origins:command",
+                    "command": "execute if entity @s[tag=msmp_origins.regenning_flight]",
+                    "comparison": ">=",
+                    "compare_to": 1
+                }
+            ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 5,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "msmp_origins:faekind/wings_resource",
+            "change": 3,
+            "operation": "add"
+        }
+    }
+}

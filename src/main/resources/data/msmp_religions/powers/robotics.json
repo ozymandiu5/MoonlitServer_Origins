@@ -1,0 +1,121 @@
+{
+    "name": "Robotic Appetite",
+    "description": "Sneak & Left Click when holding redstone to gain 1 Hunger and Saturation, but Nausea for 5 seconds. You will also always be slightly red.",
+    "type": "origins:multiple",
+    "useiron": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:sneaking"
+                },
+                {
+                    "type": "origins:inventory",
+                    "process_mode": "items",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:redstone"
+                        }
+                    },
+                    "slots": [],
+                    "slot": "weapon.mainhand",
+                    "comparison": "!=",
+                    "compare_to": 0
+                }
+            ]
+        },
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:feed",
+                    "food": 1,
+                    "saturation": 1
+                },
+                {
+                    "type": "origins:play_sound",
+                    "sound": "minecraft:block.fence_gate.open",
+                    "volume": 1,
+                    "pitch": 0.6
+                },
+                {
+                    "type": "origins:play_sound",
+                    "sound": "minecraft:entity.player.burp",
+                    "volume": 1,
+                    "pitch": 0.75
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "item modify entity @s weapon.mainhand msmp_origins:remove1"
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:origin",
+                        "origin": "msmp_origins:golemstruct",
+                        "layer": "origins:origin"
+                    },
+                    "if_action": {
+                        "type": "origins:if_else",
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "msmp_religions:robotics_speedcooldown",
+                            "comparison": "==",
+                            "compare_to": 0
+                        },
+                        "if_action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:apply_effect",
+                                    "effect": {
+                                        "effect": "minecraft:speed",
+                                        "duration": 600,
+                                        "amplifier": 0,
+                                        "show_particles": false,
+                                        "show_icon": false
+                                    }
+                                },
+                                {
+                                    "type": "origins:trigger_cooldown",
+                                    "power": "msmp_religions:robotics_speedcooldown"
+                                }
+                            ]
+                        }
+                    },
+                    "else_action": {
+                        "type": "origins:apply_effect",
+                        "effect": {
+                            "effect": "minecraft:nausea",
+                            "duration": 100,
+                            "amplifier": 0,
+                            "show_particles": false,
+                            "show_icon": false
+                        }
+                    }
+                }
+            ]
+        },
+        "cooldown": 10,
+        "key": {
+            "key": "key.attack"
+        }
+    },
+    "red": {
+        "type": "origins:model_color",
+        "red": 1,
+        "green": 0.9,
+        "blue": 0.9
+    },
+    "speedcooldown": {
+        "type": "origins:cooldown",
+        "cooldown": 600,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+            "bar_index": 14
+        }
+    }
+}

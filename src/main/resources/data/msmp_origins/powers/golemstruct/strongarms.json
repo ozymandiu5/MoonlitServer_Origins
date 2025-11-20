@@ -1,0 +1,66 @@
+{
+    "name": "Strong Arms",
+    "description": "Using your incredibly strong arms, knock back anyone within a 6 block radius of you.",
+    "type": "origins:active_self",
+    "entity_action": {
+        "type": "origins:area_of_effect",
+        "radius": 8,
+        "bientity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:add_velocity",
+                    "x": 0,
+                    "y": 0.5,
+                    "z": 1.5,
+                    "client": true,
+                    "server": true
+                },
+                {
+                    "type": "origins:target_action",
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:damage",
+                                "amount": 7,
+                                "damage_type": "minecraft:generic"
+                            },
+                            {
+                                "type": "origins:play_sound",
+                                "sound": "minecraft:entity.iron_golem.attack",
+                                "volume": 1,
+                                "pitch": 0.5
+                            },
+                            {
+                                "type": "origins:play_sound",
+                                "sound": "minecraft:entity.zombie.attack_iron_door",
+                                "volume": 1,
+                                "pitch": 0.6
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "particle minecraft:sweep_attack ^ ^2 ^2.5 0 0 0 0 1"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "particle minecraft:sweep_attack ^1 ^2 ^2.5 0 0 0 0 1"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "particle minecraft:sweep_attack ^-1 ^2 ^2.5 0 0 0 0 1"
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    },
+    "cooldown": 1500,
+    "hud_render": {
+        "should_render": true,
+        "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+        "bar_index": 0
+    },
+    "key": "primary"
+}

@@ -2,7 +2,7 @@
     "name": "The Moon Deity",
     "description": "A major deity of change, renewal, and creation. Worshipped since time immemorial.",
     "powers": [
-      "msmp_religions:bonus_health"
+        "msmp_religions:bonus_health"
     ],
     "impact": 1
 }

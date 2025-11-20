@@ -1,0 +1,17 @@
+{
+    "name": "Beliefs",
+    "description": "When Following the Dead Redstone God, you gain 1 additional armor, and consuming Redstone grants Speed I for 30 seconds instead of Nausea.",
+    "condition": {
+        "type": "origins:origin",
+        "origin": "msmp_religions:redstone",
+        "layer": "msmp_religions:religion"
+    },
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+        "attribute": "minecraft:generic.armor",
+        "operation": "addition",
+        "value": 1
+    },
+    "tick_rate": 20,
+    "update_health": true
+}

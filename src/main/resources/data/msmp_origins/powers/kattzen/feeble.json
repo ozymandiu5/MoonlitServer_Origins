@@ -1,6 +1,6 @@
 {
     "name": "Feeble",
-    "description": "You have one less heart and are 1.8 meters tall.",
+    "description": "You have one fewer heart and are 1.8 meters tall.",
     "type": "origins:multiple",
     "heart": {
         "type": "origins:attribute",

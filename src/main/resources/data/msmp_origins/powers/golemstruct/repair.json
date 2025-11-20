@@ -1,0 +1,70 @@
+{
+    "name": "Quick Repairs",
+    "description": "Sneak & Right click when holding iron to heal 2 hearts.",
+    "type": "origins:multiple",
+    "preventuse": {
+        "condition": {
+            "type": "origins:sneaking"
+        },
+        "type": "origins:prevent_item_use",
+        "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+                "item": "minecraft:iron_ingot"
+            }
+        }
+    },
+    "useiron": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:sneaking"
+                },
+                {
+                    "type": "origins:inventory",
+                    "process_mode": "items",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:iron_ingot"
+                        }
+                    },
+                    "slots": [],
+                    "slot": "weapon.mainhand",
+                    "comparison": "!=",
+                    "compare_to": 0
+                }
+            ]
+        },
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:heal",
+                    "amount": 4
+                },
+                {
+                    "type": "origins:play_sound",
+                    "sound": "minecraft:entity.iron_golem.repair",
+                    "volume": 1,
+                    "pitch": 0.6
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "item modify entity @s weapon.mainhand msmp_origins:remove1"
+                }
+            ]
+        },
+        "cooldown": 100,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+            "bar_index": 9
+        },
+        "key": {
+            "key": "key.use"
+        }
+    }
+}
