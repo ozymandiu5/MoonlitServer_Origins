@@ -1,0 +1,48 @@
+{
+    "name": "Beliefs",
+    "description": "When following the Pillager's Bane, you gain an additional toughness, and an additional 10% attack damage when holding a weapon.",
+    "type": "origins:multiple",
+    "toughness": {
+        "condition": {
+            "type": "origins:origin",
+            "origin": "msmp_religions:pillagers_bane",
+            "layer": "msmp_religions:religion"
+        },
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.armor_toughness",
+            "operation": "addition",
+            "value": 1
+        },
+        "tick_rate": 20,
+        "update_health": true
+    },
+    "attackdamage": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:origin",
+                    "origin": "msmp_religions:neutral",
+                    "layer": "msmp_religions:religion"
+                },
+                {
+                    "type": "origins:inventory",
+                    "process_mode": "items",
+                    "slots": [],
+                    "slot": "weapon.mainhand",
+                    "comparison": "!=",
+                    "compare_to": 0
+                }
+            ]
+        },
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.attack_damage",
+            "operation": "multiply_total",
+            "value": 0.1
+        },
+        "tick_rate": 20,
+        "update_health": true
+    }
+}

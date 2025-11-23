@@ -1,0 +1,7 @@
+{
+    "message_id": "siphon",
+    "exhaustion": 0.1,
+    "scaling": "never",
+    "effects": "thorns",
+    "death_message_type": "default"
+}

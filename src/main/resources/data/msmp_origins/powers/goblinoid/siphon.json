@@ -1,0 +1,78 @@
+{
+    "name": "Siphon",
+    "description": "Siphon out two hearts of the entity you're looking at. (Maximum of 20 blocks away)",
+    "type": "origins:active_self",
+    "entity_action": {
+        "type": "origins:raycast",
+        "distance": 20,
+        "block": false,
+        "entity": true,
+        "shape_type": "outline",
+        "fluid_handling": "any",
+        "bientity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:actor_action",
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:play_sound",
+                                "sound": "minecraft:entity.illusioner.ambient",
+                                "volume": 1,
+                                "pitch": 1.2
+                            },
+                            {
+                                "type": "origins:heal",
+                                "amount": 4
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "origins:target_action",
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:damage",
+                                "amount": 4,
+                                "damage_type": "msmp_origins:siphon"
+                            },
+                            {
+                                "type": "origins:play_sound",
+                                "sound": "minecraft:entity.player.attack.crit",
+                                "volume": 1,
+                                "pitch": 0.75
+                            },
+                            {
+                                "type": "origins:play_sound",
+                                "sound": "minecraft:block.honey_block.break",
+                                "volume": 1,
+                                "pitch": 0.5
+                            },
+                            {
+                                "type": "origins:spawn_particles",
+                                "particle": {
+                                    "type": "minecraft:block",
+                                    "params": "nether_wart_block"
+                                },
+                                "count": 20,
+                                "speed": 1,
+                                "offset_y": 0.5
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    },
+    "cooldown": 1200,
+    "hud_render": {
+        "should_render": true,
+        "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
+        "bar_index": 5
+    },
+    "key": "secondary"
+}

@@ -1,0 +1,13 @@
+{
+    "name": "Goblinoid",
+    "description": "Scampy fighters and short skirmishers. A proud warrior race that hails from the lowlands between the mountains, often in conflict against the dwarves. They are known for their martial discipline, dealing extra damage from sword wielding and marksmanship. As fighters, they respect other fighters, and as such, some sing tales of the Pillager’s Bane in their hearthfires, offering a portion of their loot for the success of their next battles.",
+    "powers": [
+        "msmp_origins:goblinoid/belief",
+        "msmp_origins:goblinoid/charge",
+        "msmp_origins:goblinoid/siphon",
+        "msmp_origins:goblinoid/vicious",
+        "msmp_origins:goblinoid/gremlin",
+        "msmp_origins:goblinoid/feeble"
+    ],
+    "impact": 1
+}

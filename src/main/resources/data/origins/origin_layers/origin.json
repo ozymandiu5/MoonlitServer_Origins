@@ -3,7 +3,8 @@
         "msmp_origins:human",
         "msmp_origins:kattzen",
         "msmp_origins:faekind",
-        "msmp_origins:golemstruct"
+        "msmp_origins:golemstruct",
+        "msmp_origins:goblinoid"
     ],
     "enabled": true,
     "replace": true,

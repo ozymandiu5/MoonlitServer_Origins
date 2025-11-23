@@ -1,0 +1,20 @@
+{
+    "name": "Vicious",
+    "description": "Deal 20% more damage when using any weapon.",
+    "condition": {
+        "type": "origins:inventory",
+        "process_mode": "items",
+        "slots": [],
+        "slot": "weapon.mainhand",
+        "comparison": "!=",
+        "compare_to": 0
+    },
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+        "attribute": "minecraft:generic.attack_damage",
+        "operation": "multiply_total",
+        "value": 0.2
+    },
+    "tick_rate": 20,
+    "update_health": true
+}

@@ -9,6 +9,7 @@
         "msmp_religions:pillagers_bane"
     ],
     "enabled": true,
+    "name": "Religion",
     "gui_title": {
         "choose_origin": "Where shall you put your faith?",
         "view_origin": "This is what you believe in."
