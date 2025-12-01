@@ -1,0 +1,13 @@
+{
+    "name": "Darkin",
+    "description": "Not really a single race, but a collective of dark-following creatures and monsters of the night. They are a fractured community of covens, cultists, evil, and corrupted individuals. They are morally depraved, and deal with the negative aspects of life and magic.",
+    "powers": [
+        "msmp_origins:darkin/belief",
+        "msmp_origins:darkin/shadow",
+        "msmp_origins:darkin/blinding",
+        "msmp_origins:darkin/esoteric",
+        "msmp_origins:darkin/undead",
+        "msmp_origins:darkin/darkness"
+    ],
+    "impact": 3
+}

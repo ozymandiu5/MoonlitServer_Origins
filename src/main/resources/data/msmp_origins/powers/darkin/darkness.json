@@ -1,0 +1,30 @@
+{
+    "name": "Darkness, Imprisioning Me",
+    "description": "You get Slowness II and Weakness I when exposed to the sun.",
+    "condition": {
+        "type": "origins:exposed_to_sun"
+    },
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+        "type": "origins:apply_effect",
+        "effects": [
+            {
+                "effect": "minecraft:slowness",
+                "duration": 30,
+                "amplifier": 1,
+                "is_ambient": true,
+                "show_particles": false,
+                "show_icon": true
+            },
+            {
+                "effect": "minecraft:weakness",
+                "duration": 30,
+                "amplifier": 0,
+                "is_ambient": true,
+                "show_particles": false,
+                "show_icon": true
+            }
+        ]
+    }
+}

@@ -1,0 +1,33 @@
+{
+    "name": "Beliefs",
+    "description": "When Following Occultism, you gain 1 heart, consuming Rotten Flesh and/or Raw Butchery Flesh Heals +1 heart, and chance for dealing 4 additional magic damage when doing a critical hit is increased to 50%. ",
+    "type": "origins:multiple",
+    "extraheart": {
+        "condition": {
+            "type": "origins:origin",
+            "origin": "msmp_religions:occult",
+            "layer": "msmp_religions:religion"
+        },
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.max_health",
+            "operation": "addition",
+            "value": 2
+        },
+        "tick_rate": 20,
+        "update_health": true
+    },
+    "food": {
+        "type": "origins:modify_food",
+        "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+                "tag": "msmp_origins:darkin_consumable"
+            }
+        },
+        "entity_action": {
+            "type": "origins:heal",
+            "amount": 2
+        }
+    }
+}
