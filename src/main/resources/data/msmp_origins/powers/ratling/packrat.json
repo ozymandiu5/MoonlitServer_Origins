@@ -1,0 +1,9 @@
+{
+    "name": "Packrat",
+    "description": "You have an additional 9 inventory slots for all your mechanisms and gizmos. They stay after death!",
+    "type": "origins:inventory",
+    "title": "Packrat",
+    "container_type": "dispenser",
+    "key": "secondary",
+    "recoverable": true
+}

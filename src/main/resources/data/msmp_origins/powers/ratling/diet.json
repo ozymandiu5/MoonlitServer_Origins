@@ -1,0 +1,23 @@
+{
+    "name": "Diet",
+    "description": "Hunger and Saturation drop 20% faster, but you don't recieve any negative effects from the things you eat.",
+    "type": "origins:multiple",
+    "effects": {
+        "type": "origins:modify_food",
+        "item_condition": {
+            "inverted": true,
+            "type": "origins:ingredient",
+            "ingredient": {
+                "tag": "msmp_origins:ratling_diet_effect_whitelist"
+            }
+        },
+        "prevent_effects": true
+    },
+    "exhaustion": {
+        "type": "origins:modify_exhaustion",
+        "modifier": {
+            "operation": "multiply_total",
+            "value": 0.2
+        }
+    }
+}

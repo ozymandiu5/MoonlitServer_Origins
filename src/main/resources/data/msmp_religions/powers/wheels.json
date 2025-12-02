@@ -1,0 +1,11 @@
+{
+    "name": "Wheels for Legs",
+    "description": "You have an additional 20% base speed.",
+    "type": "origins:attribute",
+    "modifier": {
+        "attribute": "minecraft:generic.movement_speed",
+        "operation": "multiply_total",
+        "value": 0.2
+    },
+    "update_health": true
+}

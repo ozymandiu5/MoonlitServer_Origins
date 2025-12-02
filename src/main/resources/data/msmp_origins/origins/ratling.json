@@ -1,0 +1,13 @@
+{
+    "name": "Ratling",
+    "description": "Ratlings originate from low burrows below hills and plains in packs of tenlings up to hunderlings at most. These surface-diggers dig just deep enough to shelter from the elements but not as far as other deep dwellers. Ratlings are natural sprinters, but suffer from a large appetite. Ratlings are creative thinkers, and are known to be slightly insane. They are the largest adopters of the Wheelist religion and craft intricate mechanics to traverse their hollow quarters.",
+    "powers": [
+        "msmp_origins:ratling/belief",
+        "msmp_origins:ratling/burrow",
+        "msmp_origins:ratling/packrat",
+        "msmp_origins:ratling/scurry",
+        "msmp_origins:ratling/diet",
+        "msmp_origins:ratling/feeble"
+    ],
+    "impact": 1
+}

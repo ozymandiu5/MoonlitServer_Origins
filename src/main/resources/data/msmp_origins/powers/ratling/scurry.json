@@ -1,0 +1,11 @@
+{
+    "name": "Scurry",
+    "description": "You are 20% faster.",
+    "type": "origins:attribute",
+    "modifier": {
+        "attribute": "minecraft:generic.movement_speed",
+        "operation": "multiply_total",
+        "value": 0.2
+    },
+    "update_health": true
+}
