@@ -1,0 +1,9 @@
+{
+    "name": "Conjuring",
+    "description": "You gain an additional 20% XP.",
+    "type": "origins:modify_xp_gain",
+    "modifier": {
+        "operation": "multiply_total",
+        "value": 0.2
+    }
+}

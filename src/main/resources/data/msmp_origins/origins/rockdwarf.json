@@ -1,0 +1,14 @@
+{
+    "name": "Rockdwarf",
+    "description": "Deep dwellers, these stout halflings are great drinkers of ale and diggers of the rock and stone. Rockdwarfs make the mountains their home and are not keen on sharing their hoard with outsiders. They are expert miners and make short work of excavation tasks. Some dwarves even turn to pursuits of knowledge, using their materialistic thinking to excel in arcane practices.",
+    "powers": [
+        "msmp_origins:rockdwarf/belief",
+        "msmp_origins:rockdwarf/rock_n_stone",
+        "msmp_origins:rockdwarf/cheers",
+        "msmp_origins:rockdwarf/diggy",
+        "msmp_origins:rockdwarf/materialistic",
+        "msmp_origins:rockdwarf/dwarfism",
+        "msmp_origins:rockdwarf/unfavorable"
+    ],
+    "impact": 2
+}

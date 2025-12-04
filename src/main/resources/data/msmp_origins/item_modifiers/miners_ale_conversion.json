@@ -1,0 +1,4 @@
+{
+    "function": "minecraft:set_nbt",
+    "tag": "{display:{Name:'{\"text\":\"Miner\\'s Ale\"}',Lore:['{\"text\":\"A fine drink enjoyed by all.\",\"color\":\"white\"}','{\"text\":\"Potentially alcoholic.\",\"color\":\"white\"}']},CustomPotionEffects:[{Id:1,Amplifier:1b,Duration:600},{Id:3,Amplifier:4b,Duration:600},{Id:9,Amplifier:0b,Duration:600}],CustomPotionColor:15777335}"
+}

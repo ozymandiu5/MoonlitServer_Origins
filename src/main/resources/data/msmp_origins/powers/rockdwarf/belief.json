@@ -1,0 +1,14 @@
+{
+    "name": "Beliefs",
+    "description": "When following the Codex Ars Magus, you gain an additional 10% XP.",
+    "condition": {
+        "type": "origins:origin",
+        "origin": "msmp_religions:ars_magus",
+        "layer": "msmp_religions:religion"
+    },
+    "type": "origins:modify_xp_gain",
+    "modifier": {
+        "operation": "multiply_total",
+        "value": 0.1
+    }
+}

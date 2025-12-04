@@ -1,0 +1,16 @@
+{
+    "name": "Rock and Stone!",
+    "description": "Destroy a 3x3 area around you.",
+    "type": "origins:active_self",
+    "entity_action": {
+        "type": "origins:execute_command",
+        "command": "fill ~1 ~2 ~1 ~-1 ~ ~-1 air destroy"
+    },
+    "cooldown": 1800,
+    "hud_render": {
+        "should_render": true,
+        "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+        "bar_index": 3
+    },
+    "key": "primary"
+}
