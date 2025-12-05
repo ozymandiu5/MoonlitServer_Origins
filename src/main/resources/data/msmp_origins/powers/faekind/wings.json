@@ -142,7 +142,7 @@
             "compare_to": 1
         },
         "type": "origins:action_over_time",
-        "interval": 5,
+        "interval": 10,
         "entity_action": {
             "type": "origins:and",
             "actions": [

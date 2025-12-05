@@ -1,30 +1,36 @@
 {
     "name": "Nocturnal",
-    "description": "You much prefer the night time, so you get Slowness and Weakness I during the day.",
-    "condition": {
-        "type": "origins:daytime"
-    },
-    "type": "origins:action_over_time",
-    "interval": 20,
-    "entity_action": {
-        "type": "origins:apply_effect",
-        "effects": [
-            {
+    "description": "You much prefer the night time, so you get Slowness I and do 15% less damage during the day.",
+    "type": "origins:multiple",
+    "slowness": {
+        "condition": {
+            "type": "origins:daytime"
+        },
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:apply_effect",
+            "effect": {
                 "effect": "minecraft:slowness",
-                "duration": 30,
-                "amplifier": 0,
-                "is_ambient": true,
-                "show_particles": false,
-                "show_icon": true
-            },
-            {
-                "effect": "minecraft:weakness",
-                "duration": 30,
+                "duration": 100,
                 "amplifier": 0,
                 "is_ambient": true,
                 "show_particles": false,
                 "show_icon": true
             }
-        ]
+        }
+    },
+    "damage": {
+        "condition": {
+            "type": "origins:daytime"
+        },
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.attack_damage",
+            "operation": "multiply_total",
+            "value": -0.15
+        },
+        "tick_rate": 20,
+        "update_health": true
     }
 }
