@@ -1,56 +1,56 @@
 {
 	"parent": "minecraft:item/generated",
 	"textures": {
-		"layer0": "origins:item/orb_of_origin.png"
+		"layer0": "origins:item/orb_of_origin"
 	},
 	"overrides": [
 		{
 			"predicate": {
-				"msmp_origins:type": 1
+				"custom_model_data": 51
 			},
-			"model": "msmp_origins:item/icons/origin/darkin.json"
+			"model": "msmp_origins:item/darkin"
 		},
 		{
 			"predicate": {
-				"msmp_origins:type": 2
+				"custom_model_data": 52
 			},
-			"model": "msmp_origins:item/icons/origin/faekind.json"
+			"model": "msmp_origins:item/faekind"
 		},
 		{
 			"predicate": {
-				"msmp_origins:type": 3
+				"custom_model_data": 53
 			},
-			"model": "msmp_origins:item/icons/origin/goblinoid.json"
+			"model": "msmp_origins:item/goblinoid"
 		},
 		{
 			"predicate": {
-				"msmp_origins:type": 4
+				"custom_model_data": 54
 			},
-			"model": "msmp_origins:item/icons/origin/golemstruct.json"
+			"model": "msmp_origins:item/golemstruct"
 		},
 		{
 			"predicate": {
-				"msmp_origins:type": 5
+				"custom_model_data": 55
 			},
-			"model": "msmp_origins:item/icons/origin/kattzen.json"
+			"model": "msmp_origins:item/kattzen"
 		},
 		{
 			"predicate": {
-				"msmp_origins:type": 6
+				"custom_model_data": 56
 			},
-			"model": "msmp_origins:item/icons/origin/moonelf.json"
+			"model": "msmp_origins:item/moonelf"
 		},
 		{
 			"predicate": {
-				"msmp_origins:type": 7
+				"custom_model_data": 57
 			},
-			"model": "msmp_origins:item/icons/origin/ratling.json"
+			"model": "msmp_origins:item/ratling"
 		},
 		{
 			"predicate": {
-				"msmp_origins:type": 8
+				"custom_model_data": 58
 			},
-			"model": "msmp_origins:item/icons/origin/rockdwarf.json"
+			"model": "msmp_origins:item/rockdwarf"
 		}
 	]
 }

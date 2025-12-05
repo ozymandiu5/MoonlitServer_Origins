@@ -13,7 +13,7 @@
     ],
     "icon": {
         "item": "msmp_origins:icon",
-        "tag": "{type:2}"
+        "tag": "{CustomModelData:52}"
     },
     "impact": 2
 }

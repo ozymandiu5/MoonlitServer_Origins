@@ -23,7 +23,6 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import org.ozymandiu5.msmp_origins.items.IconItem;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -49,7 +48,7 @@ public class Msmp_origins {
 
     // Creates a new food item with the id "msmp_origins:example_id", nutrition 1 and saturation 2
     public static final RegistryObject<Item> MOONSILVER = ITEMS.register("moonsilver", () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> ICON = ITEMS.register("icon", () -> new IconItem(new Item.Properties()));
+    public static final RegistryObject<Item> ICON = ITEMS.register("icon", () -> new Item(new Item.Properties()));
 
     // Creates a creative tab with the id "msmp_origins:example_tab" for the example item, that is placed after the combat tab
 //    public static final RegistryObject<CreativeModeTab> EXAMPLE_TAB = CREATIVE_MODE_TABS.register("example_tab", () -> CreativeModeTab.builder().withTabsBefore(CreativeModeTabs.COMBAT).icon(() -> EXAMPLE_ITEM.get().getDefaultInstance()).displayItems((parameters, output) -> {

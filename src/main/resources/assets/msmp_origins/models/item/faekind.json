@@ -1,6 +1,6 @@
 {
     "parent": "minecraft:item/generated",
     "textures": {
-        "layer0": "msmp_origins:item/icons/origin/faekind"
+        "layer0": "msmp_origins:item/faekind"
     }
 }

@@ -1,0 +1,19 @@
+{
+	"sources": [
+		{
+			"type":"directory",
+			"source": "msmp_origins:item",
+			"prefix": "msmp_origins:item/"
+		},
+		{
+			"type":"directory",
+			"source": "msmp_origins:icons",
+			"prefix": "msmp_origins:icons/"
+		},
+		{
+			"type":"directory",
+			"source": "msmp_origins:origin",
+			"prefix": "msmp_origins:origin/"
+		}
+	]
+}
