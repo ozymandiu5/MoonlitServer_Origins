@@ -6,6 +6,25 @@
         "minecraft:zombie",
         "minecraft:zombie_villager",
         "minecraft:zombified_piglin",
-        "minecraft:zoglin"
+        "minecraft:zoglin",
+        "minecraft:phantom",
+        "minecraft:wither_skeleton",
+        "quark:wraith",
+        "quark:forgotten",
+        "scguns:dissident",
+        "scguns:hive",
+        "scguns:zombified_hornlin",
+        "irons_spellbooks:necromancer",
+        "irons_spellbooks:summoned_zombie",
+        "irons_spellbooks:summoned_skeleton",
+        "butcher:zombie_cow",
+        "butcher:zombiechicken",
+        "butcher:zombiepig",
+        "butcher:zombiewolf",
+        "butcher:zombiefox",
+        "butcher:zombiepanda",
+        "butcher:zombiecat",
+        "butcher:zombiegoat",
+        "butcher:zombiellama"
     ]
 }

@@ -1,6 +1,9 @@
 {
     "name": "Human",
     "description": "A large majority of the civilized people of this realm are Human. These peoples are adaptable and communal, creating rugged societies of townships and city-states all over the world. But this new region has been as of yet unexplored, there may be a new variety of species that awaits the settlers of this land.",
+    "powers": [
+        "msmp_origins:motd"
+    ],
     "icon": {
         "item": "minecraft:player_head"
     },

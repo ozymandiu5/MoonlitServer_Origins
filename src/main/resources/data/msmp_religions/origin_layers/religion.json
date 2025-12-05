@@ -1,4 +1,5 @@
 {
+    "order": 2,
     "origins": [
         "msmp_religions:neutral",
         "msmp_religions:moon",
@@ -14,6 +15,5 @@
         "choose_origin": "Where shall you put your faith?",
         "view_origin": "This is what you believe in."
     },
-    "allow_random": true,
-    "default_origin": "msmp_religions:neutral"
+    "allow_random": true
 }

@@ -7,7 +7,13 @@
         "msmp_origins:moonelf/crafty",
         "msmp_origins:moonelf/attuned",
         "msmp_origins:moonelf/favorable",
-        "msmp_origins:moonelf/nocturnal"
+        "msmp_origins:moonelf/nocturnal",
+        "msmp_origins:moonelf/soundbyte",
+        "msmp_origins:motd"
     ],
+    "icon": {
+        "item": "msmp_origins:icon",
+        "tag": "{type:6}"
+    },
     "impact": 1
 }

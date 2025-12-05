@@ -7,7 +7,13 @@
         "msmp_origins:goblinoid/siphon",
         "msmp_origins:goblinoid/vicious",
         "msmp_origins:goblinoid/gremlin",
-        "msmp_origins:goblinoid/feeble"
+        "msmp_origins:goblinoid/feeble",
+        "msmp_origins:goblinoid/soundbyte",
+        "msmp_origins:motd"
     ],
+    "icon": {
+        "item": "msmp_origins:icon",
+        "tag": "{type:3}"
+    },
     "impact": 1
 }

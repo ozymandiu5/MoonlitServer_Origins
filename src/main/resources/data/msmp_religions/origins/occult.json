@@ -1,6 +1,8 @@
 {
     "name": "Occultism",
     "description": "Dark ritualists, magicians, and creatures follow these disjointed teachings of darkness and chaos.",
-    "powers": [],
-    "impact": 3
+    "powers": [
+        "msmp_religions:darkarts"
+    ],
+    "impact": 1
 }

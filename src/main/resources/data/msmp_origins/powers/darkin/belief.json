@@ -20,10 +20,27 @@
     "food": {
         "type": "origins:modify_food",
         "item_condition": {
-            "type": "origins:ingredient",
-            "ingredient": {
-                "tag": "msmp_origins:darkin_consumable"
-            }
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:ingredient",
+                    "ingredient": {
+                        "tag": "msmp_origins:darkin_consumable"
+                    }
+                },
+                {
+                    "type": "origins:ingredient",
+                    "ingredient": {
+                        "tag": "c:raw_meat"
+                    }
+                },
+                {
+                    "type": "origins:ingredient",
+                    "ingredient": {
+                        "tag": "c:organs"
+                    }
+                }
+            ]
         },
         "entity_action": {
             "type": "origins:heal",

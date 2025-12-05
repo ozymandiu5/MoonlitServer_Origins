@@ -1,6 +1,8 @@
 {
     "name": "Wheelist",
     "description": "An unusual populist religion based around wheels, spokes, and cogs, once thought to be a joke.",
-    "powers": [],
+    "powers": [
+        "msmp_religions:wheels"
+    ],
     "impact": 1
 }

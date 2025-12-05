@@ -1,13 +1,17 @@
 {
+    "order": 1,
     "origins": [
         "msmp_origins:human",
         "msmp_origins:kattzen",
         "msmp_origins:faekind",
         "msmp_origins:golemstruct",
-        "msmp_origins:goblinoid"
+        "msmp_origins:goblinoid",
+        "msmp_origins:darkin",
+        "msmp_origins:ratling",
+        "msmp_origins:rockdwarf",
+        "msmp_origins:moonelf"
     ],
     "enabled": true,
     "replace": true,
-    "allow_random": true,
-    "default_origin": "msmp_origins:human"
+    "allow_random": true
 }

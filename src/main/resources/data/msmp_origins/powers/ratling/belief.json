@@ -1,55 +1,17 @@
 {
     "name": "Beliefs",
     "description": "When following the Wheelist belief, you gain +1 block jump height, and an additional +10% base speed.",
-    "type": "origins:multiple",
-    "jump": {
-        "condition": {
-            "type": "origins:origin",
-            "origin": "msmp_religions:wheelist",
-            "layer": "msmp_religions:religion"
-        },
-        "type": "origins:action_on_callback",
-        "execute_chosen_when_orb": true,
-        "entity_action_lost": {
-            "type": "origins:and",
-            "actions": [
-                {
-                    "type": "origins:execute_command",
-                    "command": "scale set pehkui:jump_height 1"
-                },
-                {
-                    "type": "origins:execute_command",
-                    "command": "scale set pehkui:jump_height 1"
-                }
-            ]
-        },
-        "entity_action_added": {
-            "type": "origins:and",
-            "actions": [
-                {
-                    "type": "origins:execute_command",
-                    "command": "scale set pehkui:jump_height 1.45"
-                },
-                {
-                    "type": "origins:execute_command",
-                    "command": "scale set pehkui:jump_height 1.45"
-                }
-            ]
-        }
+    "condition": {
+        "type": "origins:origin",
+        "origin": "msmp_religions:wheelist",
+        "layer": "msmp_religions:religion"
     },
-    "speed": {
-        "condition": {
-            "type": "origins:origin",
-            "origin": "msmp_religions:wheelist",
-            "layer": "msmp_religions:religion"
-        },
-        "type": "origins:conditioned_attribute",
-        "modifier": {
-            "attribute": "minecraft:generic.movement_speed",
-            "operation": "multiply_total",
-            "value": 0.1
-        },
-        "tick_rate": 20,
-        "update_health": true
-    }
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+        "attribute": "minecraft:generic.movement_speed",
+        "operation": "multiply_total",
+        "value": 0.1
+    },
+    "tick_rate": 20,
+    "update_health": true
 }

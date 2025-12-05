@@ -1,0 +1,56 @@
+{
+	"parent": "minecraft:item/generated",
+	"textures": {
+		"layer0": "origins:item/orb_of_origin.png"
+	},
+	"overrides": [
+		{
+			"predicate": {
+				"msmp_origins:type": 1
+			},
+			"model": "msmp_origins:item/icons/origin/darkin.json"
+		},
+		{
+			"predicate": {
+				"msmp_origins:type": 2
+			},
+			"model": "msmp_origins:item/icons/origin/faekind.json"
+		},
+		{
+			"predicate": {
+				"msmp_origins:type": 3
+			},
+			"model": "msmp_origins:item/icons/origin/goblinoid.json"
+		},
+		{
+			"predicate": {
+				"msmp_origins:type": 4
+			},
+			"model": "msmp_origins:item/icons/origin/golemstruct.json"
+		},
+		{
+			"predicate": {
+				"msmp_origins:type": 5
+			},
+			"model": "msmp_origins:item/icons/origin/kattzen.json"
+		},
+		{
+			"predicate": {
+				"msmp_origins:type": 6
+			},
+			"model": "msmp_origins:item/icons/origin/moonelf.json"
+		},
+		{
+			"predicate": {
+				"msmp_origins:type": 7
+			},
+			"model": "msmp_origins:item/icons/origin/ratling.json"
+		},
+		{
+			"predicate": {
+				"msmp_origins:type": 8
+			},
+			"model": "msmp_origins:item/icons/origin/rockdwarf.json"
+		}
+	]
+}

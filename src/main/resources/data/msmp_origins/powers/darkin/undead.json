@@ -1,6 +1,6 @@
 {
     "name": "Undead",
-    "description": "Hostile mobs will not attack you, but you cannot trade with villagers.",
+    "description": "Undead mobs will not attack you, but you cannot trade with villagers.",
     "type": "origins:multiple",
     "nohostile": {
         "type": "origins:action_over_time",

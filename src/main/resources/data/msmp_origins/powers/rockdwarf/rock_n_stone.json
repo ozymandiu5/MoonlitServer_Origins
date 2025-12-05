@@ -6,7 +6,7 @@
         "type": "origins:execute_command",
         "command": "fill ~1 ~2 ~1 ~-1 ~ ~-1 air destroy"
     },
-    "cooldown": 1800,
+    "cooldown": 500,
     "hud_render": {
         "should_render": true,
         "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",

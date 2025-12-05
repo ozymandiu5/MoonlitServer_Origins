@@ -7,7 +7,13 @@
         "msmp_origins:golemstruct/repair",
         "msmp_origins:golemstruct/thick",
         "msmp_origins:golemstruct/golem",
-        "msmp_origins:golemstruct/deadweight"
+        "msmp_origins:golemstruct/deadweight",
+        "msmp_origins:golemstruct/soundbyte",
+        "msmp_origins:motd"
     ],
-    "impact": 2
+    "icon": {
+        "item": "msmp_origins:icon",
+        "tag": "{type:4}"
+    },
+    "impact": 3
 }

@@ -1,5 +1,5 @@
 {
-    "name": "Expert Archer",
+    "name": "Masterful Archer",
     "description": "While charging a bow, you can lock onto the entity you're looking at. (no further than 75 blocks)",
     "type": "origins:multiple",
     "lockon": {
@@ -51,7 +51,7 @@
                         },
                         {
                             "type": "origins:execute_command",
-                            "command": "execute store result score @s msmp_origins.lockon_id run data get entity @p UUID[0]"
+                            "command": "execute store result score @s msmp_origins.lockon_id run data get entity @p[distance=0.1..] UUID[0]"
                         }
                     ]
                 }
@@ -119,6 +119,10 @@
                 {
                     "type": "origins:execute_command",
                     "command": "tag @s remove msmp_origins.lockedin"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute as @e[tag=msmp_origins.lockon,type=minecraft:player] if score @s msmp_origins.lockon_id = @p msmp_origins.lockon_id store result score @s msmp_origins.lockon_id run data get entity @s UUID[0]"
                 },
                 {
                     "type": "origins:execute_command",

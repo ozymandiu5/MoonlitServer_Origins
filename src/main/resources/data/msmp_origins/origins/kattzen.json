@@ -6,7 +6,13 @@
         "msmp_origins:kattzen/vision",
         "msmp_origins:kattzen/lightfooted",
         "msmp_origins:kattzen/carnivore",
-        "msmp_origins:kattzen/feeble"
+        "msmp_origins:kattzen/feeble",
+        "msmp_origins:kattzen/soundbyte",
+        "msmp_origins:motd"
     ],
+    "icon": {
+        "item": "msmp_origins:icon",
+        "tag": "{type:5}"
+    },
     "impact": 1
 }

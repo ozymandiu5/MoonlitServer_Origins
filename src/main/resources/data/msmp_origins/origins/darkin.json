@@ -7,7 +7,13 @@
         "msmp_origins:darkin/blinding",
         "msmp_origins:darkin/esoteric",
         "msmp_origins:darkin/undead",
-        "msmp_origins:darkin/darkness"
+        "msmp_origins:darkin/darkness",
+        "msmp_origins:darkin/soundbyte",
+        "msmp_origins:motd"
     ],
+    "icon": {
+        "item": "msmp_origins:icon",
+        "tag": "{type:1}"
+    },
     "impact": 3
 }

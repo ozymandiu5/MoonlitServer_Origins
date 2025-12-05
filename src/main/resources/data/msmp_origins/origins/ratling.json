@@ -7,7 +7,13 @@
         "msmp_origins:ratling/packrat",
         "msmp_origins:ratling/scurry",
         "msmp_origins:ratling/diet",
-        "msmp_origins:ratling/feeble"
+        "msmp_origins:ratling/feeble",
+        "msmp_origins:ratling/soundbyte",
+        "msmp_origins:motd"
     ],
+    "icon": {
+        "item": "msmp_origins:icon",
+        "tag": "{type:7}"
+    },
     "impact": 1
 }

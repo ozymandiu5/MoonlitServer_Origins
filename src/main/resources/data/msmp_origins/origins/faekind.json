@@ -7,7 +7,13 @@
         "msmp_origins:faekind/regeneration",
         "msmp_origins:faekind/fairfoot",
         "msmp_origins:faekind/feeble",
-        "msmp_origins:faekind/pacifism"
+        "msmp_origins:faekind/pacifism",
+        "msmp_origins:faekind/soundbyte",
+        "msmp_origins:motd"
     ],
+    "icon": {
+        "item": "msmp_origins:icon",
+        "tag": "{type:2}"
+    },
     "impact": 2
 }
