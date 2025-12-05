@@ -1,0 +1,52 @@
+{
+    "hidden": true,
+    "type": "origins:action_on_callback",
+    "execute_chosen_when_orb": true,
+    "entity_action_gained": {
+        "type": "origins:execute_command",
+        "command": "scoreboard objectives add msmp_origins.motd_check minecraft.custom:minecraft.leave_game"
+    },
+    "entity_action_added": {
+        "type": "origins:if_else",
+        "condition": {
+            "type": "origins:scoreboard",
+            "objective": "msmp_origins.motd_check",
+            "comparison": ">=",
+            "compare_to": 1
+        },
+        "if_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "scoreboard players set @s msmp_origins.motd_check 0"
+                },
+                {
+                    "type": "origins:delay",
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:execute_command",
+                                "command": "tellraw @s [\"\",{\"text\":\"~= Welcome to MoonlitServer Modded Season 2 - Sovereign! ~=\",\"bold\":true,\"color\":\"yellow\"},\"\\n\",{\"selector\":\"@s\"},\",\\nBeing a member of the MoonlitServer Discord is an \",{\"text\":\"absolute requirement.\",\"bold\":true,\"color\":\"yellow\"},\"\\n\\nPlease review the Server Guidelines in \",{\"text\":\"#server-rules\",\"color\":\"yellow\"},{\"text\":\".\",\"color\":\"gray\"},\"\\n\\nDon't forget to do your Daily Tasks and submit them to the \",{\"text\":\"#notice-board\",\"color\":\"yellow\"},\".\\n\\n\",{\"text\":\"Apply for a Job\",\"color\":\"yellow\"},\" to receive Daily Tasks and Rewards.\\n\\nGet notified of Server and Modpack Updates and Extras by asking to receive the \",{\"text\":\"@Sovereign\",\"bold\":true,\"color\":\"yellow\"},\" Role.\\n\\nDonate to the MoonlitServer Team if you want to show your love for our work! \",{\"text\":\"❤\",\"color\":\"red\"},\"\\n\",{\"text\":\"~= Have Fun! =~\",\"bold\":true,\"color\":\"yellow\"}]"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "title @s subtitle {\"text\":\"Welcome to Season 2 - Sovereign!\",\"bold\":false,\"color\":\"white\"}"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "title @s title {\"text\":\"MoonlitServer Modded\",\"bold\":true,\"color\":\"yellow\"}"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "playsound minecraft:entity.player.levelup player @s ~ ~ ~ 10 0.5"
+                            }
+                        ]
+                    },
+                    "ticks": 20
+                }
+            ]
+        }
+    }
+}
