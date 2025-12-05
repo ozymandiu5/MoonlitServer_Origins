@@ -6,6 +6,12 @@
 	"overrides": [
 		{
 			"predicate": {
+				"custom_model_data": 50
+			},
+			"model": "msmp_origins:item/human"
+		},
+		{
+			"predicate": {
 				"custom_model_data": 51
 			},
 			"model": "msmp_origins:item/darkin"
@@ -51,6 +57,49 @@
 				"custom_model_data": 58
 			},
 			"model": "msmp_origins:item/rockdwarf"
+		},
+		{
+			"predicate": {
+				"custom_model_data": 90
+			},
+			"model": "msmp_origins:item/neutral"
+		},
+		{
+			"predicate": {
+				"custom_model_data": 91
+			},
+			"model": "msmp_origins:item/codex"
+		},
+		{
+			"predicate": {
+				"custom_model_data": 92
+			},
+			"model": "msmp_origins:item/deadredstonegod"
+		},
+		{
+			"predicate": {
+				"custom_model_data": 93
+			},
+			"model": "msmp_origins:item/moondeity"
+		},
+		{
+			"predicate": {
+				"custom_model_data": 94
+			},
+			"model": "msmp_origins:item/occultism"
+		},
+		{
+			"predicate": {
+				"custom_model_data": 95
+			},
+			"model": "msmp_origins:item/pillagersbane"
+		},
+		{
+			"predicate": {
+				"custom_model_data": 96
+			},
+			"model": "msmp_origins:item/wheelist"
 		}
+
 	]
 }

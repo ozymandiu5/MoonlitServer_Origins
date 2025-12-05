@@ -4,5 +4,9 @@
     "powers": [
         "msmp_religions:conjuring"
     ],
+    "icon": {
+        "item": "msmp_origins:icon",
+        "tag": "{CustomModelData:91}"
+    },
     "impact": 1
 }

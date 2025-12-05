@@ -4,5 +4,9 @@
     "powers": [
         "msmp_religions:robotics"
     ],
+    "icon": {
+        "item": "msmp_origins:icon",
+        "tag": "{CustomModelData:92}"
+    },
     "impact": 1
 }

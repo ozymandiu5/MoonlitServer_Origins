@@ -4,5 +4,9 @@
     "powers": [
         "msmp_religions:darkarts"
     ],
+    "icon": {
+        "item": "msmp_origins:icon",
+        "tag": "{CustomModelData:94}"
+    },
     "impact": 1
 }

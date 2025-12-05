@@ -2,5 +2,9 @@
     "name": "Neutral",
     "description": "Doesn’t put much faith in divinity and divine intervention.",
     "powers": [],
+    "icon": {
+        "item": "msmp_origins:icon",
+        "tag": "{CustomModelData:90}"
+    },
     "impact": 0
 }

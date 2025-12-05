@@ -1,0 +1,9 @@
+{
+  "name": "Shadow's Embrace",
+  "description": "You are slightly transparent and slightly darker.",
+  "type": "origins:model_color",
+  "red": 0.6,
+  "green": 0.6,
+  "blue": 0.6,
+  "alpha": 0.8
+}

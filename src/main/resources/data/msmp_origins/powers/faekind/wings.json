@@ -1,6 +1,6 @@
 {
     "name": "Fairy Wings",
-    "description": "You're able to fly by crouching and holding space!\nIn addition, you will always have slow falling.",
+    "description": "You're able to fly by crouching and holding space!\nIn addition, you will never take fall damage.",
     "type": "origins:multiple",
     "flight": {
         "condition": {
@@ -155,35 +155,14 @@
             ]
         }
     },
-    "slowfall": {
-        "type": "origins:action_over_time",
-        "interval": 1,
-        "entity_action": {
-            "type": "origins:and",
-            "actions": [
-                {
-                    "type": "origins:apply_effect",
-                    "effect": {
-                        "effect": "minecraft:slow_falling",
-                        "duration": 5,
-                        "amplifier": 0,
-                        "show_particles": false,
-                        "show_icon": false
-                    }
-                },
-                {
-                    "type": "origins:if_else",
-                    "condition": {
-                        "inverted": true,
-                        "type": "origins:power_active",
-                        "power": "msmp_origins:faekind/wings_flight"
-                    },
-                    "if_action": {
-                        "type": "origins:execute_command",
-                        "command": "tag @s add msmp_origins.regenning_flight"
-                    }
-                }
-            ]
+    "nofall": {
+        "type": "origins:modify_damage_taken",
+        "damage_condition": {
+            "type": "origins:from_falling"
+        },
+        "modifier": {
+            "operation": "set_total",
+            "value": 0
         }
     }
 }

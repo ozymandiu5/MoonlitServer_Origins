@@ -4,5 +4,9 @@
     "powers": [
         "msmp_religions:wheels"
     ],
+    "icon": {
+        "item": "msmp_origins:icon",
+        "tag": "{CustomModelData:96}"
+    },
     "impact": 1
 }

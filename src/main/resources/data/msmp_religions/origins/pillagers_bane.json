@@ -4,5 +4,9 @@
     "powers": [
         "msmp_religions:battleworn"
     ],
+    "icon": {
+        "item": "msmp_origins:icon",
+        "tag": "{CustomModelData:95}"
+    },
     "impact": 1
 }

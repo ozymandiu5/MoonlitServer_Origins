@@ -4,5 +4,9 @@
     "powers": [
         "msmp_religions:bonus_health"
     ],
+    "icon": {
+        "item": "msmp_origins:icon",
+        "tag": "{CustomModelData:93}"
+    },
     "impact": 1
 }

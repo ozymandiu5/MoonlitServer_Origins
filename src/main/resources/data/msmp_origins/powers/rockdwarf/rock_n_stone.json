@@ -1,10 +1,10 @@
 {
     "name": "Rock and Stone!",
-    "description": "Destroy a 3x3 area around you.",
+    "description": "Destroy a 5x5 area around you.",
     "type": "origins:active_self",
     "entity_action": {
         "type": "origins:execute_command",
-        "command": "fill ~1 ~2 ~1 ~-1 ~ ~-1 air destroy"
+        "command": "fill ~2 ~4 ~2 ~-2 ~ ~-2 air destroy"
     },
     "cooldown": 500,
     "hud_render": {

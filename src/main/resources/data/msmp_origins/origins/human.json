@@ -5,7 +5,8 @@
         "msmp_origins:motd"
     ],
     "icon": {
-        "item": "minecraft:player_head"
+        "item": "msmp_origins:icon",
+        "tag": "{CustomModelData:50}"
     },
     "impact": 0
 }
