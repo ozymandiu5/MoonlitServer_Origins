@@ -1,0 +1,17 @@
+{
+    "name": "Beliefs",
+    "description": "When Following The Moon Deity, you gain 1 heart.",
+    "condition": {
+        "type": "origins:origin",
+        "origin": "msmp_religions:moon",
+        "layer": "msmp_religions:religion"
+    },
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+        "attribute": "minecraft:generic.max_health",
+        "operation": "addition",
+        "value": 2
+    },
+    "tick_rate": 20,
+    "update_health": true
+}

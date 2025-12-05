@@ -1,0 +1,190 @@
+{
+    "name": "Expert Archer",
+    "description": "While charging a bow, you can lock onto the entity you're looking at. (no further than 75 blocks)",
+    "type": "origins:multiple",
+    "lockon": {
+        "condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:using_item",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:bow"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:using_item",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:crossbow"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:command",
+                    "command": "execute if data entity @s SelectedItem{id:\"minecraft:crossbow\"}.tag.ChargedProjectiles[].id",
+                    "comparison": ">=",
+                    "compare_to": 1
+                }
+            ]
+        },
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:raycast",
+            "distance": 75,
+            "block": false,
+            "entity": true,
+            "shape_type": "outline",
+            "fluid_handling": "any",
+            "bientity_action": {
+                "type": "origins:target_action",
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:execute_command",
+                            "command": "tag @s add msmp_origins.lockon"
+                        },
+                        {
+                            "type": "origins:execute_command",
+                            "command": "execute store result score @s msmp_origins.lockon_id run data get entity @p UUID[0]"
+                        }
+                    ]
+                }
+            },
+            "hit_action": {
+                "type": "origins:execute_command",
+                "command": "tag @s add msmp_origins.lockedin"
+            }
+        },
+        "cooldown": 100,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
+            "bar_index": 2
+        },
+        "key": "primary"
+    },
+    "lockedout": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:command",
+                    "command": "execute if entity @s[tag=msmp_origins.lockedin]",
+                    "comparison": ">=",
+                    "compare_to": 1
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:using_item",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": {
+                                    "item": "minecraft:bow"
+                                }
+                            }
+                        },
+                        {
+                            "type": "origins:using_item",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": {
+                                    "item": "minecraft:crossbow"
+                                }
+                            }
+                        },
+                        {
+                            "type": "origins:command",
+                            "command": "execute if data entity @s SelectedItem{id:\"minecraft:crossbow\"}.tag.ChargedProjectiles[].id",
+                            "comparison": ">=",
+                            "compare_to": 1
+                        }
+                    ]
+                }
+            ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "tag @s remove msmp_origins.lockedin"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute as @e[tag=msmp_origins.lockon] if score @s msmp_origins.lockon_id = @p msmp_origins.lockon_id run tag @s remove msmp_origins.lockon"
+                }
+            ]
+        }
+    },
+    "lockingin": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:command",
+                    "command": "execute if entity @s[tag=msmp_origins.lockedin]",
+                    "comparison": ">=",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:using_item",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": {
+                                    "item": "minecraft:bow"
+                                }
+                            }
+                        },
+                        {
+                            "type": "origins:using_item",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": {
+                                    "item": "minecraft:crossbow"
+                                }
+                            }
+                        },
+                        {
+                            "type": "origins:command",
+                            "command": "execute if data entity @s SelectedItem{id:\"minecraft:crossbow\"}.tag.ChargedProjectiles[].id",
+                            "comparison": ">=",
+                            "compare_to": 1
+                        }
+                    ]
+                }
+            ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:execute_command",
+            "command": "execute as @e[tag=msmp_origins.lockon] if score @s msmp_origins.lockon_id = @p msmp_origins.lockon_id run tp @p ~ ~ ~ facing entity @s"
+        }
+    },
+    "def": {
+        "type": "origins:action_on_callback",
+        "entity_action_chosen": {
+            "type": "origins:execute_command",
+            "command": "scoreboard objectives add msmp_origins.lockon_id dummy"
+        },
+        "execute_chosen_when_orb": true,
+        "entity_action_added": {
+            "type": "origins:execute_command",
+            "command": "execute store result score @s msmp_origins.lockon_id run data get entity @s UUID[0]"
+        }
+    }
+}

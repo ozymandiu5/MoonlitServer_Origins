@@ -1,0 +1,9 @@
+{
+    "name": "Crafty",
+    "description": "You have an additional 5 inventory slots for all your papers and records. They stay after death!",
+    "type": "origins:inventory",
+    "title": "Pockets",
+    "container_type": "hopper",
+    "key": "secondary",
+    "recoverable": true
+}

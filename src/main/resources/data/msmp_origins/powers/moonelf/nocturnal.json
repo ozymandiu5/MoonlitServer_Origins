@@ -1,0 +1,30 @@
+{
+    "name": "Nocturnal",
+    "description": "You much prefer the night time, so you get Slowness and Weakness I during the day.",
+    "condition": {
+        "type": "origins:daytime"
+    },
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+        "type": "origins:apply_effect",
+        "effects": [
+            {
+                "effect": "minecraft:slowness",
+                "duration": 30,
+                "amplifier": 0,
+                "is_ambient": true,
+                "show_particles": false,
+                "show_icon": true
+            },
+            {
+                "effect": "minecraft:weakness",
+                "duration": 30,
+                "amplifier": 0,
+                "is_ambient": true,
+                "show_particles": false,
+                "show_icon": true
+            }
+        ]
+    }
+}

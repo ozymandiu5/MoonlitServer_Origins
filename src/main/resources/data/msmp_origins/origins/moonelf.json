@@ -1,0 +1,13 @@
+{
+    "name": "Moon Elf",
+    "description": "Native to the deep woods. Moon Elves are artisans, recordskeepers, and strong statesmen. Dictating ancient laws passed down from a long lineage of civilization, Moon Elves primarily practice worship of their Moon Deity, and as such will gain more bonuses following its teachings. They gain more vitality based on the lunar cycle. They also have a slight reputation for their thriftyness, earning discounts from trades.",
+    "powers": [
+        "msmp_origins:moonelf/belief",
+        "msmp_origins:moonelf/archer",
+        "msmp_origins:moonelf/crafty",
+        "msmp_origins:moonelf/attuned",
+        "msmp_origins:moonelf/favorable",
+        "msmp_origins:moonelf/nocturnal"
+    ],
+    "impact": 1
+}
