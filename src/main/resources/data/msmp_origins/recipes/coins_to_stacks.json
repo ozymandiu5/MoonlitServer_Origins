@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "wooden_button",
+  "ingredients": [
+    {
+      "item": "msmp_origins:moonsilver"
+    },
+    {
+      "item": "msmp_origins:moonsilver"
+    },
+    {
+      "item": "msmp_origins:moonsilver"
+    },
+    {
+      "item": "msmp_origins:moonsilver"
+    },
+    {
+      "item": "msmp_origins:moonsilver"
+    },
+    {
+      "item": "msmp_origins:moonsilver"
+    },
+    {
+      "item": "msmp_origins:moonsilver"
+    },
+    {
+      "item": "msmp_origins:moonsilver"
+    }
+  ],
+  "result": {
+    "item": "msmp_origins:moonsilver_stack",
+    "count": 1
+  }
+}

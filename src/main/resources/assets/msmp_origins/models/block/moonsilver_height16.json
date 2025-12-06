@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "msmp_origins:block/moonsilver",
+    "side": "msmp_origins:block/moonsilver_side"
+  }
+}
