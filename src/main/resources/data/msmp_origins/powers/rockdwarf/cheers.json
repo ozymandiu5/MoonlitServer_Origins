@@ -2,10 +2,27 @@
     "name": "Cheers!",
     "description": "When holding a water bottle, change it to \"Miner's Ale,\" or a potion with Haste 5, Speed 2, and Nausea for 30 seconds.",
     "condition": {
-        "type": "origins:command",
-        "command": "execute if data entity @s {SelectedItem:{id:\"minecraft:potion\",tag:{Potion:\"minecraft:water\"}}}",
-        "comparison": ">=",
-        "compare_to": 0
+        "type": "origins:inventory",
+        "process_mode": "items",
+        "item_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:ingredient",
+                    "ingredient": {
+                        "item": "minecraft:potion"
+                    }
+                },
+                {
+                    "type": "origins:nbt",
+                    "nbt": "{Potion:\"minecraft:water\"}"
+                }
+            ]
+        },
+        "slots": [],
+        "slot": "weapon.mainhand",
+        "comparison": "==",
+        "compare_to": 1
     },
     "type": "origins:active_self",
     "entity_action": {

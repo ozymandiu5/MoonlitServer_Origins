@@ -1,17 +1,35 @@
 {
     "name": "Beliefs",
     "description": "When following the Wheelist belief, you gain +1 block jump height, and an additional +10% base speed.",
-    "condition": {
-        "type": "origins:origin",
-        "origin": "msmp_religions:wheelist",
-        "layer": "msmp_religions:religion"
+    "type": "origins:multiple",
+    "speed": {
+        "condition": {
+            "type": "origins:origin",
+            "origin": "msmp_religions:wheelist",
+            "layer": "msmp_religions:religion"
+        },
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.movement_speed",
+            "operation": "multiply_total",
+            "value": 0.1
+        },
+        "tick_rate": 20,
+        "update_health": true
     },
-    "type": "origins:conditioned_attribute",
-    "modifier": {
-        "attribute": "minecraft:generic.movement_speed",
-        "operation": "multiply_total",
-        "value": 0.1
-    },
-    "tick_rate": 20,
-    "update_health": true
+    "reducefalldmg": {
+        "condition": {
+            "type": "origins:origin",
+            "origin": "msmp_religions:wheelist",
+            "layer": "msmp_religions:religion"
+        },
+        "type": "origins:modify_damage_taken",
+        "damage_condition": {
+            "type": "origins:from_falling"
+        },
+        "modifier": {
+            "operation": "multiply_total",
+            "value": -0.25
+        }
+    }
 }

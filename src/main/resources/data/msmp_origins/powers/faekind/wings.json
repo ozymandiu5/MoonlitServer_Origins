@@ -164,5 +164,21 @@
             "operation": "set_total",
             "value": 0
         }
+    },
+    "regen_flight": {
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "inverted": true,
+                "type": "origins:power_active",
+                "power": "msmp_origins:faekind/wings_flight"
+            },
+            "if_action": {
+                "type": "origins:execute_command",
+                "command": "tag @s add msmp_origins.regenning_flight"
+            }
+        }
     }
 }

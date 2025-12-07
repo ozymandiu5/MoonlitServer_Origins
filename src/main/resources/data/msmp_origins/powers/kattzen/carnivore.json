@@ -3,20 +3,17 @@
     "description": "Your predatory instincts only allow you to eat meat.",
     "type": "origins:prevent_item_use",
     "item_condition": {
-        "inverted": true,
         "type": "origins:and",
         "conditions": [
             {
+                "inverted": true,
                 "type": "origins:ingredient",
                 "ingredient": {
-                    "tag": "forge:meats"
+                    "tag": "msmp_origins:kattzen_consumable"
                 }
             },
             {
-                "type": "origins:ingredient",
-                "ingredient": {
-                    "tag": "butcher:crusher"
-                }
+                "type": "origins:food"
             }
         ]
     }
