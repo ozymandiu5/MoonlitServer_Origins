@@ -2,6 +2,8 @@
     "values": [
         "#origins:meat",
         "#butcher:crusher",
-        "#forge:meats"
+        "#forge:meats",
+        "butcher:scraps",
+        "butcher:suspiciousmeat"
     ]
 }

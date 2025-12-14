@@ -1,64 +1,41 @@
 {
-    "name": "Undead",
-    "description": "Undead mobs will not attack you, but you cannot trade with villagers.",
+    "name": "Insufferable",
+    "description": "Villagers markup their prices when trading with you, and Iron Golems attack on sight.",
     "type": "origins:multiple",
-    "nohostile": {
-        "type": "origins:action_over_time",
-        "interval": 1,
-        "entity_action": {
-            "type": "origins:area_of_effect",
-            "radius": 32767,
-            "bientity_condition": {
-                "type": "origins:target_condition",
-                "condition": {
-                    "type": "origins:and",
-                    "conditions": [
-                        {
-                            "type": "origins:in_tag",
-                            "tag": "msmp_origins:undead"
-                        },
-                        {
-                            "type": "origins:command",
-                            "command": "execute unless entity @s[team=msmp_origins.undead]",
-                            "comparison": ">=",
-                            "compare_to": 1
-                        }
-                    ]
-                }
-            },
-            "bientity_action": {
-                "type": "origins:target_action",
-                "action": {
-                    "type": "origins:execute_command",
-                    "command": "team join msmp_origins.undead @s"
-                }
+    "markup": {
+        "type": "origins:action_on_entity_use",
+        "bientity_action": {
+            "type": "origins:target_action",
+            "action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:execute_command",
+                        "command": "data modify entity @s Gossips prepend value {Type:\"major_negative\",Value:25,Target:[I;-1166469461,-1413460234,-1975305955,-1073877043]}"
+                    },
+                    {
+                        "type": "origins:execute_command",
+                        "command": "data modify entity @s Gossips[0].Target set from entity @p UUID"
+                    }
+                ]
             }
-        }
-    },
-    "notrade": {
-        "type": "origins:prevent_entity_use",
+        },
         "bientity_condition": {
             "type": "origins:target_condition",
             "condition": {
                 "type": "origins:entity_type",
                 "entity_type": "minecraft:villager"
             }
-        }
+        },
+        "action_result": "pass",
+        "priority": 0
     },
-    "teamdef": {
-        "type": "origins:action_on_callback",
-        "entity_action_chosen": {
+    "golemanger": {
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
             "type": "origins:execute_command",
-            "command": "team add msmp_origins.undead"
-        },
-        "execute_chosen_when_orb": true,
-        "entity_action_lost": {
-            "type": "origins:execute_command",
-            "command": "team leave @s"
-        },
-        "entity_action_added": {
-            "type": "origins:execute_command",
-            "command": "team join msmp_origins.undead @s"
+            "command": "execute as @e[type=minecraft:iron_golem,distance=..10] run data modify entity @s AngryAt set from entity @p UUID"
         }
     }
 }

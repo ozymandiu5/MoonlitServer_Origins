@@ -1,6 +1,15 @@
 {
     "values": [
         "minecraft:rotten_flesh",
+        "minecraft:beef",
+        "minecraft:porkchop",
+        "minecraft:mutton",
+        "neapolitan:mint_chops",
+        "minecraft:chicken",
+        "minecraft:rabbit",
+        "minecraft:cod",
+        "minecraft:salmon",
+        "quark:crab_leg",
         "#c:raw_meat",
         "#c:organs"
     ]
