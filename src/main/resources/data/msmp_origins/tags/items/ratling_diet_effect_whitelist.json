@@ -65,6 +65,9 @@
         "farmersdelight:shepherds_pie",
         "quarkdelight:crab_pasta",
         "quarkdelight:cooked_whole_crab",
-        "#brewinandchewin:fermented_drinks"
+        "#brewinandchewin:fermented_drinks",
+        "occultism:datura",
+        "occultism:demons_dream_essence",
+        "occultism:otherworld_essence"
     ]
 }

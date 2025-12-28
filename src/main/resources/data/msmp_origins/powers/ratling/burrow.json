@@ -7,7 +7,7 @@
         "actions": [
             {
                 "type": "origins:execute_command",
-                "command": "fill ~ ~-3 ~ ~ ~-4 ~ air"
+                "command": "fill ~ ~-3 ~ ~ ~-4 ~ air destroy"
             },
             {
                 "type": "origins:execute_command",

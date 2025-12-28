@@ -16,15 +16,6 @@
         "scguns:zombified_hornlin",
         "irons_spellbooks:necromancer",
         "irons_spellbooks:summoned_zombie",
-        "irons_spellbooks:summoned_skeleton",
-        "butcher:zombie_cow",
-        "butcher:zombiechicken",
-        "butcher:zombiepig",
-        "butcher:zombiewolf",
-        "butcher:zombiefox",
-        "butcher:zombiepanda",
-        "butcher:zombiecat",
-        "butcher:zombiegoat",
-        "butcher:zombiellama"
+        "irons_spellbooks:summoned_skeleton"
     ]
 }
