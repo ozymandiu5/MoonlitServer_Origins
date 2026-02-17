@@ -1,0 +1,271 @@
+{
+  "values": [
+    {
+      "id": "#forge:stone"
+    },
+    {
+      "id": "#twigs:packed_silt"
+    },
+    {
+      "id": "regions_unexplored:stone_grass_block"
+    },
+    {
+      "id": "regions_unexplored:chalk_grass_block"
+    },
+    {
+      "id": "regions_unexplored:deepslate_grass_block"
+    },
+    {
+      "id": "regions_unexplored:viridescent_nylium"
+    },
+    {
+      "id": "regions_unexplored:deepslate_viridescent_nylium"
+    },
+    {
+      "id": "regions_unexplored:prismoss"
+    },
+    {
+      "id": "regions_unexplored:deepslate_prismoss"
+    },
+    {
+      "id": "regions_unexplored:argillite_grass_block"
+    },
+    {
+      "id": "minecraft:cobblestone"
+    },
+    {
+      "id": "minecraft:mossy_cobblestone"
+    },
+    {
+      "id": "windswept:dry_mossy_cobblestone"
+    },
+    {
+      "id": "minecraft:cobbled_deepslate"
+    },
+    {
+      "id": "natures_spirit:cobbled_travertine"
+    },
+    {
+      "id": "natures_spirit:mossy_cobbled_travertine"
+    },
+    {
+      "id": "vampirism:cobbled_dark_stone"
+    },
+    {
+      "id": "iceandfire:chared_cobblestone"
+    },
+    {
+      "id": "iceandfire:frozen_cobblestone"
+    },
+    {
+      "id": "iceandfire:crackled_cobblestone"
+    },
+    {
+      "id": "minecraft:pointed_dripstone"
+    },
+    {
+      "id": "minecraft:gravel"
+    },
+    {
+      "id": "iceandfire:chared_gravel"
+    },
+    {
+      "id": "iceandfire:frozen_gravel"
+    },
+    {
+      "id": "iceandfire:crackled_gravel"
+    },
+    {
+      "id": "caverns_and_chasms:rocky_dirt"
+    },
+    {
+      "id": "twigs:rocky_dirt"
+    },
+    {
+      "id": "decorative_blocks:rocky_dirt"
+    },
+    {
+      "id": "minecraft:dirt"
+    },
+    {
+      "id": "minecraft:mud"
+    },
+    {
+      "id": "minecraft:packed_mud"
+    },
+    {
+      "id": "minecraft:coarse_dirt"
+    },
+    {
+      "id": "minecraft:rooted_dirt"
+    },
+    {
+      "id": "minecraft:grass_block"
+    },
+    {
+      "id": "minecraft:podzol"
+    },
+    {
+      "id": "minecraft:mycelium"
+    },
+    {
+      "id": "windswept:gelisol"
+    },
+    {
+      "id": "atmospheric:crustose"
+    },
+    {
+      "id": "regions_unexplored:peat_dirt"
+    },
+    {
+      "id": "regions_unexplored:peat_mud"
+    },
+    {
+      "id": "regions_unexplored:peat_coarse_dirt"
+    },
+    {
+      "id": "regions_unexplored:peat_grass_block"
+    },
+    {
+      "id": "regions_unexplored:peat_podzol"
+    },
+    {
+      "id": "regions_unexplored:silt_dirt"
+    },
+    {
+      "id": "regions_unexplored:silt_mud"
+    },
+    {
+      "id": "regions_unexplored:silt_coarse_dirt"
+    },
+    {
+      "id": "regions_unexplored:silt_grass_block"
+    },
+    {
+      "id": "regions_unexplored:silt_podzol"
+    },
+    {
+      "id": "regions_unexplored:alpha_grass_block"
+    },
+    {
+      "id": "vampirism:cursed_earth"
+    },
+    {
+      "id": "vampirism:cursed_grass"
+    },
+    {
+      "id": "iceandfire:chared_dirt"
+    },
+    {
+      "id": "iceandfire:frozen_dirt"
+    },
+    {
+      "id": "iceandfire:crackled_dirt"
+    },
+    {
+      "id": "iceandfire:chared_grass"
+    },
+    {
+      "id": "iceandfire:frozen_grass"
+    },
+    {
+      "id": "iceandfire:crackled_grass"
+    },
+    {
+      "id": "minecraft:moss_block"
+    },
+    {
+      "id": "minecraft:moss_carpet"
+    },
+    {
+      "id": "windswept:dry_moss_block"
+    },
+    {
+      "id": "windswept:dry_moss_carpet"
+    },
+    {
+      "id": "natures_spirit:red_moss_block"
+    },
+    {
+      "id": "natures_spirit:red_moss_carpet"
+    },
+    {
+      "id": "minecraft:netherrack"
+    },
+    {
+      "id": "minecraft:crimson_nylium"
+    },
+    {
+      "id": "minecraft:warped_nylium"
+    },
+    {
+      "id": "regions_unexplored:brimsprout_nylium"
+    },
+    {
+      "id": "regions_unexplored:glistering_nylium"
+    },
+    {
+      "id": "regions_unexplored:mycotoxic_moss"
+    },
+    {
+      "id": "regions_unexplored:cobalt_nylium"
+    },
+    {
+      "id": "minecraft:sand"
+    },
+    {
+      "id": "minecraft:red_sand"
+    },
+    {
+      "id": "atmospheric:arid_sand"
+    },
+    {
+      "id": "atmospheric:red_arid_sand"
+    },
+    {
+      "id": "natures_spirit:pink_sand"
+    },
+    {
+      "id": "minecraft:soul_sand"
+    },
+    {
+      "id": "minecraft:soul_soil"
+    },
+    {
+      "id": "minecraft:clay"
+    },
+    {
+      "id": "twigs:silt"
+    },
+    {
+      "id": "minecraft:snow_block"
+    },
+    {
+      "id": "ecologics:thin_ice"
+    },
+    {
+      "id": "minecraft:ice"
+    },
+    {
+      "id": "minecraft:packed_ice"
+    },
+    {
+      "id": "minecraft:blue_ice"
+    },
+    {
+      "id": "minecraft:magma_block"
+    },
+    {
+      "id": "spelunkery:tangle_roots_block"
+    },
+    {
+      "id": "spelunkery:salt_block"
+    },
+    {
+      "id": "spelunkery:rock_salt"
+    },
+    {
+      "id": "spelunkery:saltpeter_block"
+    }
+  ]
+}
