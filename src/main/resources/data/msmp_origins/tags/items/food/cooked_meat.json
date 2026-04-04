@@ -61,10 +61,6 @@
     "neapolitan:cooked_mint_chops",
     "mynethersdelight:roast_ear",
     "quark:cooked_crab_leg",
-    "tide:cooked_fish_slice",
-    "tidesdelight:grilled_grouper",
-    "tidesdelight:fried_catfish",
-    "tidesdelight:smoked_eel",
-    "tidesdelight:tuna_steak"
+    "tide:cooked_fish_slice"
   ]
 }

@@ -1,4 +1,5 @@
 {
+  "replace": true,
   "values": [
     "#minecraft:skeletons",
     "minecraft:drowned",
