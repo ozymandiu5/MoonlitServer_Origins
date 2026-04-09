@@ -7,13 +7,9 @@
         "msmp_origins:kattzen/lightfooted",
         "msmp_origins:kattzen/carnivore",
         "msmp_origins:kattzen/feeble",
+        "msmp_origins:kattzen/hydrophobia",
         "msmp_origins:kattzen/soundbyte",
-        "origins:scare_creepers",
-        "msmp_origins:motd"
+        "origins:scare_creepers"
     ],
-    "icon": {
-        "item": "msmp_origins:icon",
-        "tag": "{CustomModelData:55}"
-    },
     "impact": 1
 }

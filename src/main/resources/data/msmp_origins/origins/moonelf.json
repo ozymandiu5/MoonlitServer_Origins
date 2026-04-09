@@ -7,13 +7,9 @@
         "msmp_origins:moonelf/crafty",
         "msmp_origins:moonelf/attuned",
         "msmp_origins:moonelf/favorable",
+        "msmp_origins:moonelf/eru",
         "msmp_origins:moonelf/nocturnal",
-        "msmp_origins:moonelf/soundbyte",
-        "msmp_origins:motd"
+        "msmp_origins:moonelf/soundbyte"
     ],
-    "icon": {
-        "item": "msmp_origins:icon",
-        "tag": "{CustomModelData:56}"
-    },
     "impact": 1
 }

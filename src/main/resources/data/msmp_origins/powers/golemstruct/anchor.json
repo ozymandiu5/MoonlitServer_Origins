@@ -1,5 +1,5 @@
 {
-    "name": "Deadweight",
+    "name": "Anchor",
     "description": "You are unable to swim and will sink much faster in water.",
     "type": "origins:multiple",
     "noswim": {

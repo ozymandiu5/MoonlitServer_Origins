@@ -1,0 +1,51 @@
+{
+    "name": "Familiarity",
+    "description": "You gain Resistance 1 when near Villagers, Humans, Rockdwarves, and Moon Elves.",
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+        "type": "origins:area_of_effect",
+        "radius": 8,
+        "bientity_condition": {
+            "type": "origins:target_condition",
+            "condition": {
+                "type": "origins:or",
+                "conditions": [
+                    {
+                        "type": "origins:entity_type",
+                        "entity_type": "minecraft:villager"
+                    },
+                    {
+                        "type": "origins:origin",
+                        "origin": "msmp_origins:human",
+                        "layer": "origins:origin"
+                    },
+                    {
+                        "type": "origins:origin",
+                        "origin": "msmp_origins:rockdwarf",
+                        "layer": "origins:origin"
+                    },
+                    {
+                        "type": "origins:origin",
+                        "origin": "msmp_origins:moonelf",
+                        "layer": "origins:origin"
+                    }
+                ]
+            }
+        },
+        "bientity_action": {
+            "type": "origins:actor_action",
+            "action": {
+                "type": "origins:apply_effect",
+                "effect": {
+                    "effect": "minecraft:resistance",
+                    "duration": 100,
+                    "amplifier": 0,
+                    "is_ambient": true,
+                    "show_particles": false,
+                    "show_icon": true
+                }
+            }
+        }
+    }
+}

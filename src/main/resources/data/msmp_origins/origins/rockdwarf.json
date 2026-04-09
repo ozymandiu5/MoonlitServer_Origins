@@ -9,12 +9,7 @@
         "msmp_origins:rockdwarf/materialistic",
         "msmp_origins:rockdwarf/dwarfism",
         "msmp_origins:rockdwarf/unfavorable",
-        "msmp_origins:rockdwarf/soundbyte",
-        "msmp_origins:motd"
+        "msmp_origins:rockdwarf/soundbyte"
     ],
-    "icon": {
-        "item": "msmp_origins:icon",
-        "tag": "{CustomModelData:58}"
-    },
     "impact": 2
 }

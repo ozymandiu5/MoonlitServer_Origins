@@ -1,25 +1,19 @@
 {
     "name": "Darkness, Imprisioning Me",
-    "description": "You get Slowness I and do 15% less damage when exposed to the sun.",
-    "type": "origins:multiple",
-    "slowness": {
-        "condition": {
-            "type": "origins:exposed_to_sun"
+    "description": "You get Slowness and do 15% less damage when exposed to the sun.\nBeing in the sun for any longer than 5 minutes will set you on fire!",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": "The timer decreases at the same rate, so if you catch fire, you have to stay out of the sun for another five minutes!",
+            "sprite": "origins:textures/gui/badge/info.png"
         },
-        "type": "origins:action_over_time",
-        "interval": 20,
-        "entity_action": {
-            "type": "origins:apply_effect",
-            "effect": {
-                "effect": "minecraft:slowness",
-                "duration": 100,
-                "amplifier": 0,
-                "is_ambient": true,
-                "show_particles": false,
-                "show_icon": true
-            }
+        {
+            "type": "origins:tooltip",
+            "text": "You'll get more slowness for every minute you spend in the sun. (except for the 5th minute)",
+            "sprite": "origins:textures/gui/badge/info.png"
         }
-    },
+    ],
+    "type": "origins:multiple",
     "damage": {
         "condition": {
             "type": "origins:exposed_to_sun"
@@ -32,5 +26,274 @@
         },
         "tick_rate": 20,
         "update_health": true
+    },
+    "def": {
+        "type": "origins:action_on_callback",
+        "execute_chosen_when_orb": true,
+        "entity_action_gained": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "scoreboard objectives add msmp.darkin.sun_timer dummy"
+                },
+                {
+                    "type": "origins:delay",
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "scoreboard players set @s msmp.darkin.sun_timer 0"
+                    },
+                    "ticks": 1
+                }
+            ]
+        }
+    },
+    "tick": {
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:if_else_list",
+            "actions": [
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:exposed_to_sun"
+                            },
+                            {
+                                "type": "origins:scoreboard",
+                                "name": "@s",
+                                "objective": "msmp.darkin.sun_timer",
+                                "comparison": "<=",
+                                "compare_to": 299
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "scoreboard players add @s msmp.darkin.sun_timer 1"
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "inverted": true,
+                                "type": "origins:exposed_to_sun"
+                            },
+                            {
+                                "type": "origins:scoreboard",
+                                "name": "@s",
+                                "objective": "msmp.darkin.sun_timer",
+                                "comparison": ">=",
+                                "compare_to": 1
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "scoreboard players remove @s msmp.darkin.sun_timer 1"
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:exposed_to_sun"
+                            },
+                            {
+                                "type": "origins:scoreboard",
+                                "name": "@s",
+                                "objective": "msmp.darkin.sun_timer",
+                                "comparison": ">=",
+                                "compare_to": 1
+                            },
+                            {
+                                "type": "origins:scoreboard",
+                                "name": "@s",
+                                "objective": "msmp.darkin.sun_timer",
+                                "comparison": "<=",
+                                "compare_to": 60
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:apply_effect",
+                        "effect": {
+                            "effect": "minecraft:slowness",
+                            "duration": 100,
+                            "amplifier": 0,
+                            "is_ambient": true,
+                            "show_particles": false,
+                            "show_icon": true
+                        }
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:exposed_to_sun"
+                            },
+                            {
+                                "type": "origins:scoreboard",
+                                "name": "@s",
+                                "objective": "msmp.darkin.sun_timer",
+                                "comparison": ">=",
+                                "compare_to": 61
+                            },
+                            {
+                                "type": "origins:scoreboard",
+                                "name": "@s",
+                                "objective": "msmp.darkin.sun_timer",
+                                "comparison": "<=",
+                                "compare_to": 120
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:apply_effect",
+                        "effect": {
+                            "effect": "minecraft:slowness",
+                            "duration": 100,
+                            "amplifier": 1,
+                            "is_ambient": true,
+                            "show_particles": false,
+                            "show_icon": true
+                        }
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:exposed_to_sun"
+                            },
+                            {
+                                "type": "origins:scoreboard",
+                                "name": "@s",
+                                "objective": "msmp.darkin.sun_timer",
+                                "comparison": ">=",
+                                "compare_to": 121
+                            },
+                            {
+                                "type": "origins:scoreboard",
+                                "name": "@s",
+                                "objective": "msmp.darkin.sun_timer",
+                                "comparison": "<=",
+                                "compare_to": 180
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:apply_effect",
+                        "effect": {
+                            "effect": "minecraft:slowness",
+                            "duration": 100,
+                            "amplifier": 2,
+                            "is_ambient": true,
+                            "show_particles": false,
+                            "show_icon": true
+                        }
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:exposed_to_sun"
+                            },
+                            {
+                                "type": "origins:scoreboard",
+                                "name": "@s",
+                                "objective": "msmp.darkin.sun_timer",
+                                "comparison": ">=",
+                                "compare_to": 181
+                            },
+                            {
+                                "type": "origins:scoreboard",
+                                "name": "@s",
+                                "objective": "msmp.darkin.sun_timer",
+                                "comparison": "<=",
+                                "compare_to": 240
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:apply_effect",
+                        "effect": {
+                            "effect": "minecraft:slowness",
+                            "duration": 100,
+                            "amplifier": 3,
+                            "is_ambient": true,
+                            "show_particles": false,
+                            "show_icon": true
+                        }
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:exposed_to_sun"
+                            },
+                            {
+                                "type": "origins:scoreboard",
+                                "name": "@s",
+                                "objective": "msmp.darkin.sun_timer",
+                                "comparison": ">=",
+                                "compare_to": 241
+                            },
+                            {
+                                "type": "origins:scoreboard",
+                                "name": "@s",
+                                "objective": "msmp.darkin.sun_timer",
+                                "comparison": "<=",
+                                "compare_to": 299
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:apply_effect",
+                        "effect": {
+                            "effect": "minecraft:slowness",
+                            "duration": 100,
+                            "amplifier": 4,
+                            "is_ambient": true,
+                            "show_particles": false,
+                            "show_icon": true
+                        }
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:exposed_to_sun"
+                            },
+                            {
+                                "type": "origins:scoreboard",
+                                "name": "@s",
+                                "objective": "msmp.darkin.sun_timer",
+                                "comparison": "==",
+                                "compare_to": 300
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:set_on_fire",
+                        "duration": 4
+                    }
+                }
+            ]
+        }
     }
 }

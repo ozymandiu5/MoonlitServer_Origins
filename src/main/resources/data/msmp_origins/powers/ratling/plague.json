@@ -1,0 +1,41 @@
+{
+    "name": "Black Plague",
+    "description": "When you die, you release a lingering cloud of Poison II.",
+    "type": "origins:multiple",
+    "def": {
+        "type": "origins:action_on_callback",
+        "execute_chosen_when_orb": true,
+        "entity_action_gained": {
+            "type": "origins:execute_command",
+            "command": "scoreboard objectives add msmp.ratling.plague deathCount"
+        },
+        "entity_action_added": {
+            "type": "origins:execute_command",
+            "command": "scoreboard players set @s msmp.ratling.plague 0"
+        }
+    },
+    "tick": {
+        "condition": {
+            "type": "origins:scoreboard",
+            "name": "@s",
+            "objective": "msmp.ratling.plague",
+            "comparison": ">=",
+            "compare_to": 1
+        },
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "summon area_effect_cloud ~ ~ ~ {Particle:\"entity_effect\",Radius:4f,RadiusPerTick:-0.01f,Duration:200,Color:4539717,Potion:\"minecraft:strong_poison\"}"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "scoreboard players set @s msmp.ratling.plague 0"
+                }
+            ]
+        }
+    }
+}

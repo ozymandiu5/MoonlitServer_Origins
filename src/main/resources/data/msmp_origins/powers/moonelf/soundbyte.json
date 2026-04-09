@@ -5,9 +5,9 @@
         "type": "origins:target_action",
         "action": {
             "type": "origins:play_sound",
-            "sound": "minecraft:entity.piglin.jealous",
+            "sound": "minecraft:entity.illusioner.ambient",
             "volume": 1,
-            "pitch": 1.25
+            "pitch": 1.35
         }
     },
     "action_result": "success",

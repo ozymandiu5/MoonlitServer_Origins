@@ -10,12 +10,7 @@
         "msmp_origins:darkin/embrace",
         "msmp_origins:darkin/insufferable",
         "msmp_origins:darkin/darkness",
-        "msmp_origins:darkin/soundbyte",
-        "msmp_origins:motd"
+        "msmp_origins:darkin/soundbyte"
     ],
-    "icon": {
-        "item": "msmp_origins:icon",
-        "tag": "{CustomModelData:51}"
-    },
     "impact": 3
 }

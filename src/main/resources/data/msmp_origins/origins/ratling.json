@@ -8,12 +8,8 @@
         "msmp_origins:ratling/scurry",
         "msmp_origins:ratling/diet",
         "msmp_origins:ratling/feeble",
-        "msmp_origins:ratling/soundbyte",
-        "msmp_origins:motd"
+        "msmp_origins:ratling/plague",
+        "msmp_origins:ratling/soundbyte"
     ],
-    "icon": {
-        "item": "msmp_origins:icon",
-        "tag": "{CustomModelData:57}"
-    },
     "impact": 1
 }
