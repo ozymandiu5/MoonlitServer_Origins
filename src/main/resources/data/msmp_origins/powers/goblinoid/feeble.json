@@ -13,32 +13,27 @@
     },
     "size": {
         "type": "origins:action_on_callback",
-        "execute_chosen_when_orb": true,
-        "entity_action_lost": {
+        "entity_action_chosen": {
             "type": "origins:and",
             "actions": [
                 {
                     "type": "origins:execute_command",
-                    "command": "scale set pehkui:height 1"
+                    "command": "scale set pehkui:width 0.75 @s"
                 },
                 {
                     "type": "origins:execute_command",
-                    "command": "scale set pehkui:width 1"
+                    "command": "scale set pehkui:height 0.75 @s"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "scale persist set true @s"
                 }
             ]
         },
-        "entity_action_added": {
-            "type": "origins:and",
-            "actions": [
-                {
-                    "type": "origins:execute_command",
-                    "command": "scale set pehkui:height 0.75"
-                },
-                {
-                    "type": "origins:execute_command",
-                    "command": "scale set pehkui:width 0.75"
-                }
-            ]
+        "execute_chosen_when_orb": true,
+        "entity_action_lost": {
+            "type": "origins:execute_command",
+            "command": "scale reset @s"
         }
     }
 }
