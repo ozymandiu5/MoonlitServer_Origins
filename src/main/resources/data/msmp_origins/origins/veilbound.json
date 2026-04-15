@@ -1,0 +1,14 @@
+{
+    "name": "Veilbound",
+    "description": "An unfortunate individual trapped between the planes of what is real and what doesn’t exist. Fools who eluded the eternal forces of death one too many times, and now have their souls stuck in perpetual limbo. They prefer to stay behind their protective veil of reality, their new form being hideous to all who look upon them. The Veilbound float weightlessly through what once was, haunting the space they can never occupy again.",
+    "powers": [
+        "msmp_origins:veilbound/expurgation",
+        "msmp_origins:veilbound/sender",
+        "msmp_origins:veilbound/veil",
+        "msmp_origins:veilbound/ethereal",
+        "msmp_origins:veilbound/darkness",
+        "msmp_origins:veilbound/insufferable",
+        "msmp_origins:veilbound/soundbyte"
+    ],
+    "impact": 3
+}

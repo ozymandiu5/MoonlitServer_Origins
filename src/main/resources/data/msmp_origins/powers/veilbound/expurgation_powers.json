@@ -1,0 +1,94 @@
+{
+    "name": "Veiled Powers",
+    "description": "tag conditions are buggy. \n- Ozymandius",
+    "type": "origins:multiple",
+    "render": {
+        "type": "origins:prevent_feature_render",
+        "features": [
+            "armor",
+            "held_item",
+            "elytra",
+            "cape",
+            "head",
+            "shoulder_parrot",
+            "stuck_objects",
+            "trident_riptide"
+        ]
+    },
+    "swimming": {
+        "type": "origins:swimming"
+    },
+    "noexhaust": {
+        "type": "origins:modify_exhaustion",
+        "modifier": {
+            "operation": "set_total",
+            "value": 0
+        }
+    },
+    "gravity": {
+        "condition": {
+            "inverted": true,
+            "type": "origins:sneaking"
+        },
+        "type": "origins:modify_falling",
+        "velocity": 0,
+        "take_fall_damage": false
+    },
+    "effects": {
+        "type": "origins:action_on_callback",
+        "execute_chosen_when_orb": true,
+        "entity_action_added": {
+            "type": "origins:apply_effect",
+            "effects": [
+                {
+                    "effect": "minecraft:darkness",
+                    "duration": -1,
+                    "amplifier": 255,
+                    "show_particles": false,
+                    "show_icon": false
+                },
+                {
+                    "effect": "minecraft:weakness",
+                    "duration": -1,
+                    "amplifier": 255,
+                    "show_particles": false,
+                    "show_icon": false
+                },
+                {
+                    "effect": "minecraft:mining_fatigue",
+                    "duration": -1,
+                    "amplifier": 255,
+                    "show_particles": false,
+                    "show_icon": false
+                },
+                {
+                    "effect": "minecraft:invisibility",
+                    "duration": -1,
+                    "amplifier": 255,
+                    "show_particles": false,
+                    "show_icon": false
+                },
+                {
+                    "effect": "minecraft:wither",
+                    "duration": -1,
+                    "amplifier": 0,
+                    "show_particles": false,
+                    "show_icon": false
+                }
+            ]
+        },
+        "entity_action_respawned": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "effect clear @s"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "power revoke @s msmp_origins:veilbound/expurgation_powers theallseeingone"
+                }
+            ]
+        }
+    }
+}

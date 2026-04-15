@@ -1,0 +1,211 @@
+{
+    "hidden": true,
+    "type": "origins:multiple",
+    "soundbyte": {
+        "type": "origins:action_on_being_used",
+        "bientity_action": {
+            "type": "origins:target_action",
+            "action": {
+                "type": "origins:play_sound",
+                "sound": "minecraft:entity.warden.listening_angry",
+                "volume": 1,
+                "pitch": 0.5
+            }
+        },
+        "action_result": "pass",
+        "priority": 0
+    },
+    "hit": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:veilbound/veil_energy_resource",
+            "comparison": ">",
+            "compare_to": 0
+        },
+        "type": "origins:self_action_when_hit",
+        "entity_action": {
+            "type": "origins:chance",
+            "chance": 0.3,
+            "action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:execute_command",
+                        "command": "playsound minecraft:ambient.cave player @s ~ ~ ~ 1 1.25"
+                    },
+                    {
+                        "type": "origins:choice",
+                        "actions": [
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:execute_command",
+                                    "command": "tellraw @s [{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\" whispers to you: weak.\",\"italic\":true,\"color\":\"gray\",\"bold\":false}]"
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:execute_command",
+                                    "command": "tellraw @s [{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\" whispers to you: pathetic.\",\"italic\":true,\"color\":\"gray\",\"bold\":false}]"
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:execute_command",
+                                    "command": "tellraw @s [{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\" whispers to you: there were higher standards for you.\",\"italic\":true,\"color\":\"gray\",\"bold\":false}]"
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:execute_command",
+                                    "command": "tellraw @s [{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\" whispers to you: you were expected to perform better.\",\"italic\":true,\"color\":\"gray\",\"bold\":false}]"
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:execute_command",
+                                    "command": "tellraw @s [{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\" whispers to you: useless.\",\"italic\":true,\"color\":\"gray\",\"bold\":false}]"
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:execute_command",
+                                    "command": "tellraw @s [{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\" whispers to you: incompetent.\",\"italic\":true,\"color\":\"gray\",\"bold\":false}]"
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:execute_command",
+                                    "command": "tellraw @s [{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\" whispers to you: is this what you have become?\",\"italic\":true,\"color\":\"gray\",\"bold\":false}]"
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:execute_command",
+                                    "command": "tellraw @s [{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\" whispers to you: really living up to that old title, huh?\",\"italic\":true,\"color\":\"gray\",\"bold\":false}]"
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:execute_command",
+                                    "command": "tellraw @s [{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\" whispers to you: try harder.\",\"italic\":true,\"color\":\"gray\",\"bold\":false}]"
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:execute_command",
+                                    "command": "tellraw @s [{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\" whispers to you: you are capable of better.\",\"italic\":true,\"color\":\"gray\",\"bold\":false}]"
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:execute_command",
+                                    "command": "tellraw @s [{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\" whispers to you: this is your performance without a tool?\",\"italic\":true,\"color\":\"gray\",\"bold\":false}]"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "cooldown": 1
+    },
+    "kill": {
+        "type": "origins:self_action_on_kill",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "playsound minecraft:ambient.cave player @s ~ ~ ~ 1 1.25"
+                },
+                {
+                    "type": "origins:choice",
+                    "actions": [
+                        {
+                            "weight": 10,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "command": "tellraw @s [{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\" whispers to you: good.\",\"italic\":true,\"color\":\"gray\",\"bold\":false}]"
+                            }
+                        },
+                        {
+                            "weight": 10,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "command": "tellraw @s [{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\" whispers to you: excellent.\",\"italic\":true,\"color\":\"gray\",\"bold\":false}]"
+                            }
+                        },
+                        {
+                            "weight": 10,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "command": "tellraw @s [{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\" whispers to you: you are doing better.\",\"italic\":true,\"color\":\"gray\",\"bold\":false}]"
+                            }
+                        },
+                        {
+                            "weight": 10,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "command": "tellraw @s [{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\" whispers to you: beautiful.\",\"italic\":true,\"color\":\"gray\",\"bold\":false}]"
+                            }
+                        },
+                        {
+                            "weight": 10,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "command": "tellraw @s [{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\" whispers to you: wonderful.\",\"italic\":true,\"color\":\"gray\",\"bold\":false}]"
+                            }
+                        },
+                        {
+                            "weight": 10,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "command": "tellraw @s [{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\" whispers to you: more.\",\"italic\":true,\"color\":\"gray\",\"bold\":false}]"
+                            }
+                        },
+                        {
+                            "weight": 10,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "command": "tellraw @s [{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\" whispers to you: your hunger is never satiated, is it?\",\"italic\":true,\"color\":\"gray\",\"bold\":false}]"
+                            }
+                        },
+                        {
+                            "weight": 10,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "command": "tellraw @s [{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\" whispers to you: is this what brings you joy? what brings you satisfaction?\",\"italic\":true,\"color\":\"gray\",\"bold\":false}]"
+                            }
+                        },
+                        {
+                            "weight": 10,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "command": "tellraw @s [{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\" whispers to you: keep up the performance.\",\"italic\":true,\"color\":\"gray\",\"bold\":false}]"
+                            }
+                        },
+                        {
+                            "weight": 9,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "command": "tellraw @s [{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\" whispers to you: keep us satisfied.\",\"italic\":true,\"color\":\"gray\",\"bold\":false}]"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "cooldown": 1
+    }
+}

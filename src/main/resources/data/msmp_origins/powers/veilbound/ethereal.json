@@ -1,0 +1,12 @@
+{
+    "name": "Ethereal",
+    "description": "Ghosts, Ghouls, Wraiths and Spirits don’t attack you, excluding Dreads.\nAdditionally, you are always slightly transparent.",
+    "type": "origins:multiple",
+    "transparency": {
+        "type": "origins:model_color",
+        "red": 1,
+        "green": 1,
+        "blue": 1,
+        "alpha": 0.75
+    }
+}

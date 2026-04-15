@@ -1,0 +1,124 @@
+{
+    "name": "Veiled Powers",
+    "description": "tag conditions are buggy. \n- Ozymandius",
+    "type": "origins:multiple",
+    "render": {
+        "type": "origins:prevent_feature_render",
+        "features": [
+            "armor",
+            "held_item",
+            "elytra",
+            "cape",
+            "head",
+            "shoulder_parrot",
+            "stuck_objects",
+            "trident_riptide"
+        ]
+    },
+    "swimming": {
+        "type": "origins:swimming"
+    },
+    "phasing": {
+        "type": "origins:phasing",
+        "block_condition": {
+            "inverted": true,
+            "type": "origins:in_tag",
+            "tag": "origins:unphasable"
+        },
+        "render_type": "none",
+        "view_distance": 1000
+    },
+    "noexhaust": {
+        "type": "origins:modify_exhaustion",
+        "modifier": {
+            "operation": "set_total",
+            "value": 0
+        }
+    },
+    "speed": {
+        "type": "origins:modify_swim_speed",
+        "modifier": {
+            "operation": "multiply_total",
+            "value": 2.5
+        }
+    },
+    "gravity": {
+        "condition": {
+            "inverted": true,
+            "type": "origins:sneaking"
+        },
+        "type": "origins:modify_falling",
+        "velocity": 0,
+        "take_fall_damage": false
+    },
+    "entities": {
+        "type": "origins:entity_glow",
+        "use_teams": false,
+        "red": 0,
+        "green": 0.329411765,
+        "blue": 0.329411765
+    },
+    "boost": {
+        "condition": {
+            "type": "origins:swimming"
+        },
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "playsound minecraft:entity.generic.extinguish_fire player @s ~ ~ ~ 100 0.5"
+                },
+                {
+                    "type": "origins:add_velocity",
+                    "z": 2,
+                    "space": "local",
+                    "client": true,
+                    "server": true
+                }
+            ]
+        },
+        "cooldown": 60,
+        "key": {
+            "key": "key.jump"
+        }
+    },
+    "damage_immune": {
+        "type": "origins:modify_damage_taken",
+        "damage_condition": {
+            "inverted": true,
+            "type": "origins:fire"
+        },
+        "modifier": {
+            "operation": "set_total",
+            "value": 0
+        }
+    },
+    "noblocks1": {
+        "type": "origins:prevent_block_use"
+    },
+    "noblocks2": {
+        "type": "origins:prevent_block_selection"
+    },
+    "noentities1": {
+        "type": "origins:prevent_entity_collision"
+    },
+    "noentities2": {
+        "type": "origins:prevent_entity_use"
+    },
+    "noitems": {
+        "type": "origins:prevent_item_use",
+        "item_condition": {
+            "inverted": true,
+            "type": "origins:food"
+        }
+    },
+    "noattack": {
+        "type": "origins:modify_damage_dealt",
+        "modifier": {
+            "operation": "set_total",
+            "value": 0
+        }
+    }
+}

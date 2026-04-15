@@ -11,6 +11,11 @@
             "type": "origins:tooltip",
             "text": "You'll get more slowness for every minute you spend in the sun. (except for the 5th minute)",
             "sprite": "origins:textures/gui/badge/info.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "Fire damage is 3x as more potent!",
+            "sprite": "origins:textures/gui/badge/info.png"
         }
     ],
     "type": "origins:multiple",
@@ -35,13 +40,13 @@
             "actions": [
                 {
                     "type": "origins:execute_command",
-                    "command": "scoreboard objectives add msmp.darkin.sun_timer dummy"
+                    "command": "scoreboard objectives add msmp.veilbound.sun_timer dummy"
                 },
                 {
                     "type": "origins:delay",
                     "action": {
                         "type": "origins:execute_command",
-                        "command": "scoreboard players set @s msmp.darkin.sun_timer 0"
+                        "command": "scoreboard players set @s msmp.veilbound.sun_timer 0"
                     },
                     "ticks": 1
                 }
@@ -64,9 +69,15 @@
                             {
                                 "type": "origins:scoreboard",
                                 "name": "@s",
-                                "objective": "msmp.darkin.sun_timer",
+                                "objective": "msmp.veilbound.sun_timer",
                                 "comparison": "<=",
                                 "compare_to": 299
+                            },
+                            {
+                                "type": "origins:command",
+                                "command": "execute unless entity @s[tag=msmp.veilbound.veil]",
+                                "comparison": ">=",
+                                "compare_to": 1
                             },
                             {
                                 "inverted": true,
@@ -77,7 +88,7 @@
                     },
                     "action": {
                         "type": "origins:execute_command",
-                        "command": "scoreboard players add @s msmp.darkin.sun_timer 1"
+                        "command": "scoreboard players add @s msmp.veilbound.sun_timer 1"
                     }
                 },
                 {
@@ -85,21 +96,32 @@
                         "type": "origins:and",
                         "conditions": [
                             {
-                                "inverted": true,
-                                "type": "origins:exposed_to_sun"
-                            },
-                            {
                                 "type": "origins:scoreboard",
                                 "name": "@s",
-                                "objective": "msmp.darkin.sun_timer",
+                                "objective": "msmp.veilbound.sun_timer",
                                 "comparison": ">=",
                                 "compare_to": 1
+                            },
+                            {
+                                "type": "origins:or",
+                                "conditions": [
+                                    {
+                                        "inverted": true,
+                                        "type": "origins:exposed_to_sun"
+                                    },
+                                    {
+                                        "type": "origins:command",
+                                        "command": "execute if entity @s[tag=msmp.veilbound.veil]",
+                                        "comparison": ">=",
+                                        "compare_to": 1
+                                    }
+                                ]
                             }
                         ]
                     },
                     "action": {
                         "type": "origins:execute_command",
-                        "command": "scoreboard players remove @s msmp.darkin.sun_timer 1"
+                        "command": "scoreboard players remove @s msmp.veilbound.sun_timer 1"
                     }
                 },
                 {
@@ -112,9 +134,15 @@
                             {
                                 "type": "origins:scoreboard",
                                 "name": "@s",
-                                "objective": "msmp.darkin.sun_timer",
+                                "objective": "msmp.veilbound.sun_timer",
                                 "comparison": "==",
                                 "compare_to": 300
+                            },
+                            {
+                                "type": "origins:command",
+                                "command": "execute unless entity @s[tag=msmp.veilbound.veil]",
+                                "comparison": ">=",
+                                "compare_to": 1
                             }
                         ]
                     },
@@ -128,7 +156,18 @@
     },
     "tick_effects": {
         "condition": {
-            "type": "origins:exposed_to_sun"
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:exposed_to_sun"
+                },
+                {
+                    "type": "origins:command",
+                    "command": "execute unless entity @s[tag=msmp.veilbound.veil]",
+                    "comparison": ">=",
+                    "compare_to": 1
+                }
+            ]
         },
         "type": "origins:action_over_time",
         "interval": 1,
@@ -139,7 +178,7 @@
                     "type": "origins:if_else",
                     "condition": {
                         "type": "origins:command",
-                        "command": "execute if score @s msmp.darkin.sun_timer matches 1..60",
+                        "command": "execute if score @s msmp.veilbound.sun_timer matches 1..60",
                         "comparison": ">=",
                         "compare_to": 1
                     },
@@ -159,7 +198,7 @@
                     "type": "origins:if_else",
                     "condition": {
                         "type": "origins:command",
-                        "command": "execute if score @s msmp.darkin.sun_timer matches 61..120",
+                        "command": "execute if score @s msmp.veilbound.sun_timer matches 61..120",
                         "comparison": ">=",
                         "compare_to": 1
                     },
@@ -179,7 +218,7 @@
                     "type": "origins:if_else",
                     "condition": {
                         "type": "origins:command",
-                        "command": "execute if score @s msmp.darkin.sun_timer matches 121..180",
+                        "command": "execute if score @s msmp.veilbound.sun_timer matches 121..180",
                         "comparison": ">=",
                         "compare_to": 1
                     },
@@ -199,7 +238,7 @@
                     "type": "origins:if_else",
                     "condition": {
                         "type": "origins:command",
-                        "command": "execute if score @s msmp.darkin.sun_timer matches 181..240",
+                        "command": "execute if score @s msmp.veilbound.sun_timer matches 181..240",
                         "comparison": ">=",
                         "compare_to": 1
                     },
@@ -219,7 +258,7 @@
                     "type": "origins:if_else",
                     "condition": {
                         "type": "origins:command",
-                        "command": "execute if score @s msmp.darkin.sun_timer matches 240..300",
+                        "command": "execute if score @s msmp.veilbound.sun_timer matches 240..300",
                         "comparison": ">=",
                         "compare_to": 1
                     },
@@ -236,6 +275,16 @@
                     }
                 }
             ]
+        }
+    },
+    "fire": {
+        "type": "origins:modify_damage_taken",
+        "damage_condition": {
+            "type": "origins:fire"
+        },
+        "modifier": {
+            "operation": "multiply_base",
+            "value": 3
         }
     }
 }

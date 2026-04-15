@@ -1,0 +1,12 @@
+{
+    "name": "Weak Suspension",
+    "description": "You take 20% more fall damage.",
+    "type": "origins:modify_damage_taken",
+    "damage_condition": {
+        "type": "origins:from_falling"
+    },
+    "modifier": {
+        "operation": "multiply_total",
+        "value": 0.2
+    }
+}

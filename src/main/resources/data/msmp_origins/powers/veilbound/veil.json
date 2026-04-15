@@ -1,0 +1,1185 @@
+{
+    "name": "Beyond the Veil",
+    "description": "Your soul is bound to the space beyond the veil, and you derive your energy from it. You cannot be in the realm of the living for long.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": "You can return to the veil to refocus by phasing through Sculk.",
+            "sprite": "origins:textures/gui/badge/info.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "Your primary ability cannot be used when veiled.",
+            "sprite": "origins:textures/gui/badge/info.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "Fire damage will follow you beyond the veil!",
+            "sprite": "origins:textures/gui/badge/info.png"
+        }
+    ],
+    "type": "origins:multiple",
+    "energy_resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 21,
+        "start_value": 21
+    },
+    "effects": {
+        "condition": {
+            "type": "origins:command",
+            "command": "execute if entity @s[tag=msmp.veilbound.veil]",
+            "comparison": ">=",
+            "compare_to": 1
+        },
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:apply_effect",
+            "effects": [
+                {
+                    "effect": "minecraft:darkness",
+                    "duration": 40,
+                    "amplifier": 4,
+                    "show_particles": false,
+                    "show_icon": false
+                },
+                {
+                    "effect": "minecraft:speed",
+                    "duration": 2,
+                    "amplifier": 7,
+                    "show_particles": false,
+                    "show_icon": false
+                },
+                {
+                    "effect": "minecraft:invisibility",
+                    "duration": 2,
+                    "amplifier": 4,
+                    "show_particles": false,
+                    "show_icon": false
+                },
+                {
+                    "effect": "minecraft:jump_boost",
+                    "duration": 2,
+                    "amplifier": 1,
+                    "show_particles": false,
+                    "show_icon": false
+                },
+                {
+                    "effect": "minecraft:weakness",
+                    "duration": 2,
+                    "amplifier": 255,
+                    "show_particles": false,
+                    "show_icon": false
+                },
+                {
+                    "effect": "minecraft:mining_fatigue",
+                    "duration": 2,
+                    "amplifier": 4,
+                    "show_particles": false,
+                    "show_icon": false
+                }
+            ]
+        }
+    },
+    "energy_display": {
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:command",
+                "command": "execute if entity @s[tag=bisccel.harbinger.blinking]",
+                "comparison": ">=",
+                "compare_to": 1
+            },
+            "if_action": {
+                "type": "origins:if_else_list",
+                "actions": [
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_energy_resource",
+                            "comparison": "==",
+                            "compare_to": 21
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "title @s actionbar [{\"text\":\"《\",\"color\":\"#00AAAA\"},{\"text\":\"🌑🌑🌑🌑🌑\",\"color\":\"#005454\"},{\"text\":\"〈\",\"bold\":true},{\"text\":\"-\",\"bold\":true,\"color\":\"black\"},{\"text\":\"〉\",\"bold\":true},{\"text\":\"🌑🌑🌑🌑🌑\",\"color\":\"#005454\"},{\"text\":\"》\"}]"
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_energy_resource",
+                            "comparison": "==",
+                            "compare_to": 20
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "title @s actionbar [{\"text\":\"《\",\"color\":\"#00AAAA\"},{\"text\":\"🌑🌑🌑🌑🌒\",\"color\":\"#005454\"},{\"text\":\"〈\",\"bold\":true},{\"text\":\"-\",\"bold\":true,\"color\":\"black\"},{\"text\":\"〉\",\"bold\":true},{\"text\":\"🌘🌑🌑🌑🌑\",\"color\":\"#005454\"},{\"text\":\"》\"}]"
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_energy_resource",
+                            "comparison": "==",
+                            "compare_to": 19
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "title @s actionbar [{\"text\":\"《\",\"color\":\"#00AAAA\"},{\"text\":\"🌑🌑🌑🌑🌓\",\"color\":\"#005454\"},{\"text\":\"〈\",\"bold\":true},{\"text\":\"-\",\"bold\":true,\"color\":\"black\"},{\"text\":\"〉\",\"bold\":true},{\"text\":\"🌗🌑🌑🌑🌑\",\"color\":\"#005454\"},{\"text\":\"》\"}]"
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_energy_resource",
+                            "comparison": "==",
+                            "compare_to": 18
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "title @s actionbar [{\"text\":\"《\",\"color\":\"#00AAAA\"},{\"text\":\"🌑🌑🌑🌑🌔\",\"color\":\"#005454\"},{\"text\":\"〈\",\"bold\":true},{\"text\":\"-\",\"bold\":true,\"color\":\"black\"},{\"text\":\"〉\",\"bold\":true},{\"text\":\"🌖🌑🌑🌑🌑\",\"color\":\"#005454\"},{\"text\":\"》\"}]"
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_energy_resource",
+                            "comparison": "==",
+                            "compare_to": 17
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "title @s actionbar [{\"text\":\"《\",\"color\":\"#00AAAA\"},{\"text\":\"🌑🌑🌑🌑🌕\",\"color\":\"#005454\"},{\"text\":\"〈\",\"bold\":true},{\"text\":\"-\",\"bold\":true,\"color\":\"black\"},{\"text\":\"〉\",\"bold\":true},{\"text\":\"🌕🌑🌑🌑🌑\",\"color\":\"#005454\"},{\"text\":\"》\"}]"
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_energy_resource",
+                            "comparison": "==",
+                            "compare_to": 16
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "title @s actionbar [{\"text\":\"《\",\"color\":\"#00AAAA\"},{\"text\":\"🌑🌑🌑🌒🌕\",\"color\":\"#005454\"},{\"text\":\"〈\",\"bold\":true},{\"text\":\"-\",\"bold\":true,\"color\":\"black\"},{\"text\":\"〉\",\"bold\":true},{\"text\":\"🌕🌘🌑🌑🌑\",\"color\":\"#005454\"},{\"text\":\"》\"}]"
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_energy_resource",
+                            "comparison": "==",
+                            "compare_to": 15
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "title @s actionbar [{\"text\":\"《\",\"color\":\"#00AAAA\"},{\"text\":\"🌑🌑🌑🌓🌕\",\"color\":\"#005454\"},{\"text\":\"〈\",\"bold\":true},{\"text\":\"-\",\"bold\":true,\"color\":\"black\"},{\"text\":\"〉\",\"bold\":true},{\"text\":\"🌕🌗🌑🌑🌑\",\"color\":\"#005454\"},{\"text\":\"》\"}]"
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_energy_resource",
+                            "comparison": "==",
+                            "compare_to": 14
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "title @s actionbar [{\"text\":\"《\",\"color\":\"#00AAAA\"},{\"text\":\"🌑🌑🌑🌔🌕\",\"color\":\"#005454\"},{\"text\":\"〈\",\"bold\":true},{\"text\":\"-\",\"bold\":true,\"color\":\"black\"},{\"text\":\"〉\",\"bold\":true},{\"text\":\"🌕🌖🌑🌑🌑\",\"color\":\"#005454\"},{\"text\":\"》\"}]"
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_energy_resource",
+                            "comparison": "==",
+                            "compare_to": 13
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "title @s actionbar [{\"text\":\"《\",\"color\":\"#00AAAA\"},{\"text\":\"🌑🌑🌑🌕🌕\",\"color\":\"#005454\"},{\"text\":\"〈\",\"bold\":true},{\"text\":\"-\",\"bold\":true,\"color\":\"black\"},{\"text\":\"〉\",\"bold\":true},{\"text\":\"🌕🌕🌑🌑🌑\",\"color\":\"#005454\"},{\"text\":\"》\"}]"
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_energy_resource",
+                            "comparison": "==",
+                            "compare_to": 12
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "title @s actionbar [{\"text\":\"《\",\"color\":\"#00AAAA\"},{\"text\":\"🌑🌑🌒🌕🌕\",\"color\":\"#005454\"},{\"text\":\"〈\",\"bold\":true},{\"text\":\"-\",\"bold\":true,\"color\":\"black\"},{\"text\":\"〉\",\"bold\":true},{\"text\":\"🌕🌕🌘🌑🌑\",\"color\":\"#005454\"},{\"text\":\"》\"}]"
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_energy_resource",
+                            "comparison": "==",
+                            "compare_to": 11
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "title @s actionbar [{\"text\":\"《\",\"color\":\"#00AAAA\"},{\"text\":\"🌑🌑🌓🌕🌕\",\"color\":\"#005454\"},{\"text\":\"〈\",\"bold\":true},{\"text\":\"-\",\"bold\":true,\"color\":\"black\"},{\"text\":\"〉\",\"bold\":true},{\"text\":\"🌕🌕🌗🌑🌑\",\"color\":\"#005454\"},{\"text\":\"》\"}]"
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_energy_resource",
+                            "comparison": "==",
+                            "compare_to": 10
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "title @s actionbar [{\"text\":\"《\",\"color\":\"#00AAAA\"},{\"text\":\"🌑🌑🌔🌕🌕\",\"color\":\"#005454\"},{\"text\":\"〈\",\"bold\":true},{\"text\":\"-\",\"bold\":true,\"color\":\"black\"},{\"text\":\"〉\",\"bold\":true},{\"text\":\"🌕🌕🌖🌑🌑\",\"color\":\"#005454\"},{\"text\":\"》\"}]"
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_energy_resource",
+                            "comparison": "==",
+                            "compare_to": 9
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "title @s actionbar [{\"text\":\"《\",\"color\":\"#00AAAA\"},{\"text\":\"🌑🌑🌕🌕🌕\",\"color\":\"#005454\"},{\"text\":\"〈\",\"bold\":true},{\"text\":\"-\",\"bold\":true,\"color\":\"black\"},{\"text\":\"〉\",\"bold\":true},{\"text\":\"🌕🌕🌕🌑🌑\",\"color\":\"#005454\"},{\"text\":\"》\"}]"
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_energy_resource",
+                            "comparison": "==",
+                            "compare_to": 8
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "title @s actionbar [{\"text\":\"《\",\"color\":\"#00AAAA\"},{\"text\":\"🌑🌒🌕🌕🌕\",\"color\":\"#005454\"},{\"text\":\"〈\",\"bold\":true},{\"text\":\"-\",\"bold\":true,\"color\":\"black\"},{\"text\":\"〉\",\"bold\":true},{\"text\":\"🌕🌕🌕🌘🌑\",\"color\":\"#005454\"},{\"text\":\"》\"}]"
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_energy_resource",
+                            "comparison": "==",
+                            "compare_to": 7
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "title @s actionbar [{\"text\":\"《\",\"color\":\"#00AAAA\"},{\"text\":\"🌑🌓🌕🌕🌕\",\"color\":\"#005454\"},{\"text\":\"〈\",\"bold\":true},{\"text\":\"-\",\"bold\":true,\"color\":\"black\"},{\"text\":\"〉\",\"bold\":true},{\"text\":\"🌕🌕🌕🌗🌑\",\"color\":\"#005454\"},{\"text\":\"》\"}]"
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_energy_resource",
+                            "comparison": "==",
+                            "compare_to": 6
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "title @s actionbar [{\"text\":\"《\",\"color\":\"#00AAAA\"},{\"text\":\"🌑🌔🌕🌕🌕\",\"color\":\"#005454\"},{\"text\":\"〈\",\"bold\":true},{\"text\":\"-\",\"bold\":true,\"color\":\"black\"},{\"text\":\"〉\",\"bold\":true},{\"text\":\"🌕🌕🌕🌖🌑\",\"color\":\"#005454\"},{\"text\":\"》\"}]"
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_energy_resource",
+                            "comparison": "==",
+                            "compare_to": 5
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "title @s actionbar [{\"text\":\"《\",\"color\":\"#00AAAA\"},{\"text\":\"🌑🌕🌕🌕🌕\",\"color\":\"#005454\"},{\"text\":\"〈\",\"bold\":true},{\"text\":\"-\",\"bold\":true,\"color\":\"black\"},{\"text\":\"〉\",\"bold\":true},{\"text\":\"🌕🌕🌕🌕🌑\",\"color\":\"#005454\"},{\"text\":\"》\"}]"
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_energy_resource",
+                            "comparison": "==",
+                            "compare_to": 4
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "title @s actionbar [{\"text\":\"《\",\"color\":\"#00AAAA\"},{\"text\":\"🌒🌕🌕🌕🌕\",\"color\":\"#005454\"},{\"text\":\"〈\",\"bold\":true},{\"text\":\"-\",\"bold\":true,\"color\":\"black\"},{\"text\":\"〉\",\"bold\":true},{\"text\":\"🌕🌕🌕🌕🌘\",\"color\":\"#005454\"},{\"text\":\"》\"}]"
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_energy_resource",
+                            "comparison": "==",
+                            "compare_to": 3
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "title @s actionbar [{\"text\":\"《\",\"color\":\"#00AAAA\"},{\"text\":\"🌓🌕🌕🌕🌕\",\"color\":\"#005454\"},{\"text\":\"〈\",\"bold\":true},{\"text\":\"-\",\"bold\":true,\"color\":\"black\"},{\"text\":\"〉\",\"bold\":true},{\"text\":\"🌕🌕🌕🌕🌗\",\"color\":\"#005454\"},{\"text\":\"》\"}]"
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_energy_resource",
+                            "comparison": "==",
+                            "compare_to": 2
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "title @s actionbar [{\"text\":\"《\",\"color\":\"#00AAAA\"},{\"text\":\"🌔🌕🌕🌕🌕\",\"color\":\"#005454\"},{\"text\":\"〈\",\"bold\":true},{\"text\":\"-\",\"bold\":true,\"color\":\"black\"},{\"text\":\"〉\",\"bold\":true},{\"text\":\"🌕🌕🌕🌕🌖\",\"color\":\"#005454\"},{\"text\":\"》\"}]"
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_energy_resource",
+                            "comparison": "==",
+                            "compare_to": 1
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "title @s actionbar [{\"text\":\"《\",\"color\":\"#00AAAA\"},{\"text\":\"🌕🌕🌕🌕🌕\",\"color\":\"#005454\"},{\"text\":\"〈\",\"bold\":true},{\"text\":\"-\",\"bold\":true,\"color\":\"black\"},{\"text\":\"〉\",\"bold\":true},{\"text\":\"🌕🌕🌕🌕🌕\",\"color\":\"#005454\"},{\"text\":\"》\"}]"
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_energy_resource",
+                            "comparison": "==",
+                            "compare_to": 0
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "title @s actionbar [{\"text\":\"《\",\"color\":\"#00AAAA\"},{\"text\":\"🌕🌔🌓🌒🌑\",\"color\":\"#005454\",\"obfuscated\":true},{\"text\":\"〈\",\"bold\":true},{\"text\":\"-\",\"bold\":true,\"color\":\"dark_red\"},{\"text\":\"〉\",\"bold\":true},{\"text\":\"🌑🌘🌗🌖🌕\",\"color\":\"#005454\",\"obfuscated\":true},{\"text\":\"》\"}]"
+                        }
+                    }
+                ]
+            },
+            "else_action": {
+                "type": "origins:if_else_list",
+                "actions": [
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_energy_resource",
+                            "comparison": "==",
+                            "compare_to": 21
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "title @s actionbar [{\"text\":\"《\",\"color\":\"#00AAAA\"},{\"text\":\"🌑🌑🌑🌑🌑\",\"color\":\"#005454\"},{\"text\":\"〈\",\"bold\":true},{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\"〉\",\"bold\":true},{\"text\":\"🌑🌑🌑🌑🌑\",\"color\":\"#005454\"},{\"text\":\"》\"}]"
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_energy_resource",
+                            "comparison": "==",
+                            "compare_to": 20
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "title @s actionbar [{\"text\":\"《\",\"color\":\"#00AAAA\"},{\"text\":\"🌑🌑🌑🌑🌒\",\"color\":\"#005454\"},{\"text\":\"〈\",\"bold\":true},{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\"〉\",\"bold\":true},{\"text\":\"🌘🌑🌑🌑🌑\",\"color\":\"#005454\"},{\"text\":\"》\"}]"
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_energy_resource",
+                            "comparison": "==",
+                            "compare_to": 19
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "title @s actionbar [{\"text\":\"《\",\"color\":\"#00AAAA\"},{\"text\":\"🌑🌑🌑🌑🌓\",\"color\":\"#005454\"},{\"text\":\"〈\",\"bold\":true},{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\"〉\",\"bold\":true},{\"text\":\"🌗🌑🌑🌑🌑\",\"color\":\"#005454\"},{\"text\":\"》\"}]"
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_energy_resource",
+                            "comparison": "==",
+                            "compare_to": 18
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "title @s actionbar [{\"text\":\"《\",\"color\":\"#00AAAA\"},{\"text\":\"🌑🌑🌑🌑🌔\",\"color\":\"#005454\"},{\"text\":\"〈\",\"bold\":true},{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\"〉\",\"bold\":true},{\"text\":\"🌖🌑🌑🌑🌑\",\"color\":\"#005454\"},{\"text\":\"》\"}]"
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_energy_resource",
+                            "comparison": "==",
+                            "compare_to": 17
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "title @s actionbar [{\"text\":\"《\",\"color\":\"#00AAAA\"},{\"text\":\"🌑🌑🌑🌑🌕\",\"color\":\"#005454\"},{\"text\":\"〈\",\"bold\":true},{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\"〉\",\"bold\":true},{\"text\":\"🌕🌑🌑🌑🌑\",\"color\":\"#005454\"},{\"text\":\"》\"}]"
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_energy_resource",
+                            "comparison": "==",
+                            "compare_to": 16
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "title @s actionbar [{\"text\":\"《\",\"color\":\"#00AAAA\"},{\"text\":\"🌑🌑🌑🌒🌕\",\"color\":\"#005454\"},{\"text\":\"〈\",\"bold\":true},{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\"〉\",\"bold\":true},{\"text\":\"🌕🌘🌑🌑🌑\",\"color\":\"#005454\"},{\"text\":\"》\"}]"
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_energy_resource",
+                            "comparison": "==",
+                            "compare_to": 15
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "title @s actionbar [{\"text\":\"《\",\"color\":\"#00AAAA\"},{\"text\":\"🌑🌑🌑🌓🌕\",\"color\":\"#005454\"},{\"text\":\"〈\",\"bold\":true},{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\"〉\",\"bold\":true},{\"text\":\"🌕🌗🌑🌑🌑\",\"color\":\"#005454\"},{\"text\":\"》\"}]"
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_energy_resource",
+                            "comparison": "==",
+                            "compare_to": 14
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "title @s actionbar [{\"text\":\"《\",\"color\":\"#00AAAA\"},{\"text\":\"🌑🌑🌑🌔🌕\",\"color\":\"#005454\"},{\"text\":\"〈\",\"bold\":true},{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\"〉\",\"bold\":true},{\"text\":\"🌕🌖🌑🌑🌑\",\"color\":\"#005454\"},{\"text\":\"》\"}]"
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_energy_resource",
+                            "comparison": "==",
+                            "compare_to": 13
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "title @s actionbar [{\"text\":\"《\",\"color\":\"#00AAAA\"},{\"text\":\"🌑🌑🌑🌕🌕\",\"color\":\"#005454\"},{\"text\":\"〈\",\"bold\":true},{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\"〉\",\"bold\":true},{\"text\":\"🌕🌕🌑🌑🌑\",\"color\":\"#005454\"},{\"text\":\"》\"}]"
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_energy_resource",
+                            "comparison": "==",
+                            "compare_to": 12
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "title @s actionbar [{\"text\":\"《\",\"color\":\"#00AAAA\"},{\"text\":\"🌑🌑🌒🌕🌕\",\"color\":\"#005454\"},{\"text\":\"〈\",\"bold\":true},{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\"〉\",\"bold\":true},{\"text\":\"🌕🌕🌘🌑🌑\",\"color\":\"#005454\"},{\"text\":\"》\"}]"
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_energy_resource",
+                            "comparison": "==",
+                            "compare_to": 11
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "title @s actionbar [{\"text\":\"《\",\"color\":\"#00AAAA\"},{\"text\":\"🌑🌑🌓🌕🌕\",\"color\":\"#005454\"},{\"text\":\"〈\",\"bold\":true},{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\"〉\",\"bold\":true},{\"text\":\"🌕🌕🌗🌑🌑\",\"color\":\"#005454\"},{\"text\":\"》\"}]"
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_energy_resource",
+                            "comparison": "==",
+                            "compare_to": 10
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "title @s actionbar [{\"text\":\"《\",\"color\":\"#00AAAA\"},{\"text\":\"🌑🌑🌔🌕🌕\",\"color\":\"#005454\"},{\"text\":\"〈\",\"bold\":true},{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\"〉\",\"bold\":true},{\"text\":\"🌕🌕🌖🌑🌑\",\"color\":\"#005454\"},{\"text\":\"》\"}]"
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_energy_resource",
+                            "comparison": "==",
+                            "compare_to": 9
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "title @s actionbar [{\"text\":\"《\",\"color\":\"#00AAAA\"},{\"text\":\"🌑🌑🌕🌕🌕\",\"color\":\"#005454\"},{\"text\":\"〈\",\"bold\":true},{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\"〉\",\"bold\":true},{\"text\":\"🌕🌕🌕🌑🌑\",\"color\":\"#005454\"},{\"text\":\"》\"}]"
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_energy_resource",
+                            "comparison": "==",
+                            "compare_to": 8
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "title @s actionbar [{\"text\":\"《\",\"color\":\"#00AAAA\"},{\"text\":\"🌑🌒🌕🌕🌕\",\"color\":\"#005454\"},{\"text\":\"〈\",\"bold\":true},{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\"〉\",\"bold\":true},{\"text\":\"🌕🌕🌕🌘🌑\",\"color\":\"#005454\"},{\"text\":\"》\"}]"
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_energy_resource",
+                            "comparison": "==",
+                            "compare_to": 7
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "title @s actionbar [{\"text\":\"《\",\"color\":\"#00AAAA\"},{\"text\":\"🌑🌓🌕🌕🌕\",\"color\":\"#005454\"},{\"text\":\"〈\",\"bold\":true},{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\"〉\",\"bold\":true},{\"text\":\"🌕🌕🌕🌗🌑\",\"color\":\"#005454\"},{\"text\":\"》\"}]"
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_energy_resource",
+                            "comparison": "==",
+                            "compare_to": 6
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "title @s actionbar [{\"text\":\"《\",\"color\":\"#00AAAA\"},{\"text\":\"🌑🌔🌕🌕🌕\",\"color\":\"#005454\"},{\"text\":\"〈\",\"bold\":true},{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\"〉\",\"bold\":true},{\"text\":\"🌕🌕🌕🌖🌑\",\"color\":\"#005454\"},{\"text\":\"》\"}]"
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_energy_resource",
+                            "comparison": "==",
+                            "compare_to": 5
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "title @s actionbar [{\"text\":\"《\",\"color\":\"#00AAAA\"},{\"text\":\"🌑🌕🌕🌕🌕\",\"color\":\"#005454\"},{\"text\":\"〈\",\"bold\":true},{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\"〉\",\"bold\":true},{\"text\":\"🌕🌕🌕🌕🌑\",\"color\":\"#005454\"},{\"text\":\"》\"}]"
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_energy_resource",
+                            "comparison": "==",
+                            "compare_to": 4
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "title @s actionbar [{\"text\":\"《\",\"color\":\"#00AAAA\"},{\"text\":\"🌒🌕🌕🌕🌕\",\"color\":\"#005454\"},{\"text\":\"〈\",\"bold\":true},{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\"〉\",\"bold\":true},{\"text\":\"🌕🌕🌕🌕🌘\",\"color\":\"#005454\"},{\"text\":\"》\"}]"
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_energy_resource",
+                            "comparison": "==",
+                            "compare_to": 3
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "title @s actionbar [{\"text\":\"《\",\"color\":\"#00AAAA\"},{\"text\":\"🌓🌕🌕🌕🌕\",\"color\":\"#005454\"},{\"text\":\"〈\",\"bold\":true},{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\"〉\",\"bold\":true},{\"text\":\"🌕🌕🌕🌕🌗\",\"color\":\"#005454\"},{\"text\":\"》\"}]"
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_energy_resource",
+                            "comparison": "==",
+                            "compare_to": 2
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "title @s actionbar [{\"text\":\"《\",\"color\":\"#00AAAA\"},{\"text\":\"🌔🌕🌕🌕🌕\",\"color\":\"#005454\"},{\"text\":\"〈\",\"bold\":true},{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\"〉\",\"bold\":true},{\"text\":\"🌕🌕🌕🌕🌖\",\"color\":\"#005454\"},{\"text\":\"》\"}]"
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_energy_resource",
+                            "comparison": "==",
+                            "compare_to": 1
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "title @s actionbar [{\"text\":\"《\",\"color\":\"#00AAAA\"},{\"text\":\"🌕🌕🌕🌕🌕\",\"color\":\"#005454\"},{\"text\":\"〈\",\"bold\":true},{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\"〉\",\"bold\":true},{\"text\":\"🌕🌕🌕🌕🌕\",\"color\":\"#005454\"},{\"text\":\"》\"}]"
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_energy_resource",
+                            "comparison": "==",
+                            "compare_to": 0
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "title @s actionbar [{\"text\":\"《\",\"color\":\"#00AAAA\"},{\"text\":\"🌕🌔🌓🌒🌑\",\"color\":\"#005454\",\"obfuscated\":true},{\"text\":\"〈\",\"bold\":true},{\"text\":\"👁\",\"bold\":true,\"color\":\"dark_red\"},{\"text\":\"〉\",\"bold\":true},{\"text\":\"🌑🌘🌗🌖🌕\",\"color\":\"#005454\",\"obfuscated\":true},{\"text\":\"》\"}]"
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "ability": {
+        "condition": {
+            "type": "origins:command",
+            "command": "execute if block ~ ~ ~ #msmp_origins:sculk if block ~ ~1 ~ #msmp_origins:sculk",
+            "comparison": ">=",
+            "compare_to": 1
+        },
+        "type": "origins:action_over_time",
+        "interval": 5,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:add_velocity",
+                    "y": 1,
+                    "space": "world",
+                    "client": true,
+                    "server": true
+                },
+                {
+                    "type": "origins:spawn_particles",
+                    "particle": {
+                        "type": "minecraft:item",
+                        "params": "sculk"
+                    },
+                    "count": 50,
+                    "speed": 0.2,
+                    "spread": {
+                        "x": 0.25,
+                        "y": 0,
+                        "z": 0.25
+                    },
+                    "offset_y": 1.5
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:command",
+                        "command": "execute if entity @s[tag=msmp.veilbound.veil]",
+                        "comparison": ">=",
+                        "compare_to": 1
+                    },
+                    "if_action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:execute_command",
+                                "command": "tag @s remove msmp.veilbound.veil"
+                            },
+                            {
+                                "type": "origins:revoke_power",
+                                "power": "msmp_origins:veilbound/veiled_powers",
+                                "source": "theallseeingone"
+                            },
+                            {
+                                "type": "origins:play_sound",
+                                "sound": "minecraft:entity.warden.emerge",
+                                "volume": 1,
+                                "pitch": 1
+                            }
+                        ]
+                    },
+                    "else_action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:execute_command",
+                                "command": "tag @s add msmp.veilbound.veil"
+                            },
+                            {
+                                "type": "origins:grant_power",
+                                "power": "msmp_origins:veilbound/veiled_powers",
+                                "source": "theallseeingone"
+                            },
+                            {
+                                "type": "origins:play_sound",
+                                "sound": "minecraft:entity.warden.dig",
+                                "volume": 1,
+                                "pitch": 1
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "playsound minecraft:ambient.cave player @s ~ ~ ~ 1 1.25"
+                            },
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_energy_resource",
+                                "change": 1,
+                                "operation": "add"
+                            },
+                            {
+                                "type": "origins:choice",
+                                "actions": [
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "tellraw @s [{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\" whispers to you: greetings.\",\"italic\":true,\"color\":\"gray\",\"bold\":false}]"
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "tellraw @s [{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\" whispers to you: fancy seeing you here.\",\"italic\":true,\"color\":\"gray\",\"bold\":false}]"
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "tellraw @s [{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\" whispers to you: rise and shine.\",\"italic\":true,\"color\":\"gray\",\"bold\":false}]"
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "tellraw @s [{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\" whispers to you: hey there. it has been a while.\",\"italic\":true,\"color\":\"gray\",\"bold\":false}]"
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "tellraw @s [{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\" whispers to you: nice to see your face again.\",\"italic\":true,\"color\":\"gray\",\"bold\":false}]"
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "tellraw @s [{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\" whispers to you: coming back for more?\",\"italic\":true,\"color\":\"gray\",\"bold\":false}]"
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "tellraw @s [{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\" whispers to you: you just can not get enough, can you?\",\"italic\":true,\"color\":\"gray\",\"bold\":false}]"
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "tellraw @s [{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\" whispers to you: welcome back. you were missed.\",\"italic\":true,\"color\":\"gray\",\"bold\":false}]"
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "tellraw @s [{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\" whispers to you: do not think that what you owe will subside any time soon.\",\"italic\":true,\"color\":\"gray\",\"bold\":false}]"
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "tellraw @s [{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\" whispers to you: back to work.\",\"italic\":true,\"color\":\"gray\",\"bold\":false}]"
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "tellraw @s [{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\" whispers to you: welcome home.\",\"italic\":true,\"color\":\"gray\",\"bold\":false}]"
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "tellraw @s [{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\" whispers to you: hi again.\",\"italic\":true,\"color\":\"gray\",\"bold\":false}]"
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "tellraw @s [{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\" whispers to you: hey.\",\"italic\":true,\"color\":\"gray\",\"bold\":false}]"
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "tellraw @s [{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\" whispers to you: your debt is due.\",\"italic\":true,\"color\":\"gray\",\"bold\":false}]"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    },
+    "no_energy_sound": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_energy_resource",
+            "comparison": "==",
+            "compare_to": 0
+        },
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:execute_command",
+            "command": "playsound minecraft:block.sculk_catalyst.bloom player @s ~ ~ ~ 10 0.65"
+        }
+    },
+    "no_energy_heartbeat": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_energy_resource",
+            "comparison": "==",
+            "compare_to": 0
+        },
+        "type": "origins:action_over_time",
+        "interval": 7,
+        "entity_action": {
+            "type": "origins:execute_command",
+            "command": "playsound minecraft:entity.warden.heartbeat player @s ~ ~ ~ 10 0.75"
+        }
+    },
+    "no_energy_effects": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_energy_resource",
+            "comparison": "==",
+            "compare_to": 0
+        },
+        "type": "origins:action_over_time",
+        "interval": 40,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:damage",
+                    "amount": 1,
+                    "damage_type": "minecraft:generic"
+                },
+                {
+                    "type": "origins:apply_effect",
+                    "effects": [
+                        {
+                            "effect": "minecraft:slowness",
+                            "duration": 50,
+                            "amplifier": 2,
+                            "is_ambient": true,
+                            "show_particles": false,
+                            "show_icon": true
+                        },
+                        {
+                            "effect": "minecraft:mining_fatigue",
+                            "duration": 50,
+                            "amplifier": 1,
+                            "is_ambient": true,
+                            "show_particles": false,
+                            "show_icon": true
+                        },
+                        {
+                            "effect": "minecraft:weakness",
+                            "duration": 50,
+                            "amplifier": 0,
+                            "is_ambient": true,
+                            "show_particles": false,
+                            "show_icon": true
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "playsound minecraft:ambient.cave player @s ~ ~ ~ 1 1.25"
+                },
+                {
+                    "type": "origins:choice",
+                    "actions": [
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "command": "tellraw @s [{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\" whispers to you: weak.\",\"italic\":true,\"color\":\"gray\",\"bold\":false}]"
+                            }
+                        },
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "command": "tellraw @s [{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\" whispers to you: pathetic.\",\"italic\":true,\"color\":\"gray\",\"bold\":false}]"
+                            }
+                        },
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "command": "tellraw @s [{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\" whispers to you: there were higher standards for you.\",\"italic\":true,\"color\":\"gray\",\"bold\":false}]"
+                            }
+                        },
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "command": "tellraw @s [{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\" whispers to you: you were expected to perform better.\",\"italic\":true,\"color\":\"gray\",\"bold\":false}]"
+                            }
+                        },
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "command": "tellraw @s [{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\" whispers to you: useless.\",\"italic\":true,\"color\":\"gray\",\"bold\":false}]"
+                            }
+                        },
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "command": "tellraw @s [{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\" whispers to you: incompetent.\",\"italic\":true,\"color\":\"gray\",\"bold\":false}]"
+                            }
+                        },
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "command": "tellraw @s [{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\" whispers to you: is this what you have become?\",\"italic\":true,\"color\":\"gray\",\"bold\":false}]"
+                            }
+                        },
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "command": "tellraw @s [{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\" whispers to you: really living up to that old title, huh?\",\"italic\":true,\"color\":\"gray\",\"bold\":false}]"
+                            }
+                        },
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "command": "tellraw @s [{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\" whispers to you: try harder.\",\"italic\":true,\"color\":\"gray\",\"bold\":false}]"
+                            }
+                        },
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "command": "tellraw @s [{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\" whispers to you: you are capable of better.\",\"italic\":true,\"color\":\"gray\",\"bold\":false}]"
+                            }
+                        },
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "command": "tellraw @s [{\"text\":\"👁\",\"bold\":true,\"color\":\"black\"},{\"text\":\" whispers to you: this is your performance without a tool?\",\"italic\":true,\"color\":\"gray\",\"bold\":false}]"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "energy_change": {
+        "condition": {
+            "inverted": true,
+            "type": "origins:gamemode",
+            "gamemode": "creative"
+        },
+        "type": "origins:action_over_time",
+        "interval": 100,
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:command",
+                "command": "execute if entity @s[tag=bisccel.harbinger.veil]",
+                "comparison": ">=",
+                "compare_to": 1
+            },
+            "if_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_energy_resource",
+                        "change": 1,
+                        "operation": "add"
+                    },
+                    {
+                        "type": "origins:if_else",
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_energy_resource",
+                            "comparison": "<",
+                            "compare_to": 21
+                        },
+                        "if_action": {
+                            "type": "origins:execute_command",
+                            "command": "playsound minecraft:entity.warden.heartbeat player @s ~ ~ ~ 1 1"
+                        }
+                    }
+                ]
+            },
+            "else_action": {
+                "type": "origins:chance",
+                "chance": 0.15,
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:change_resource",
+                            "resource": "*:*_energy_resource",
+                            "change": -1,
+                            "operation": "add"
+                        },
+                        {
+                            "type": "origins:if_else",
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "*:*_energy_resource",
+                                "comparison": ">",
+                                "compare_to": 0
+                            },
+                            "if_action": {
+                                "type": "origins:execute_command",
+                                "command": "playsound minecraft:entity.warden.heartbeat player @s ~ ~ ~ 1 0.5"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "blinking": {
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:chance",
+            "chance": 0.15,
+            "action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:execute_command",
+                        "command": "tag @s add bisccel.harbinger.blinking"
+                    },
+                    {
+                        "type": "origins:execute_command",
+                        "command": "playsound minecraft:block.sculk.break player @s ~ ~ ~ 0.15 0.5"
+                    }
+                ]
+            }
+        }
+    },
+    "stop_blinking": {
+        "condition": {
+            "type": "origins:command",
+            "command": "execute if entity @s[tag=bisccel.harbinger.blinking]",
+            "comparison": ">=",
+            "compare_to": 1
+        },
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:chance",
+            "chance": 0.1,
+            "action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:execute_command",
+                        "command": "tag @s remove bisccel.harbinger.blinking"
+                    },
+                    {
+                        "type": "origins:execute_command",
+                        "command": "playsound minecraft:block.sculk.place player @s ~ ~ ~ 0.15 0.5"
+                    }
+                ]
+            }
+        }
+    },
+    "nosensor": {
+        "type": "origins:prevent_game_event",
+        "events": [
+            "minecraft:step",
+            "minecraft:swim",
+            "minecraft:hit_ground",
+            "minecraft:elytra_free_fall",
+            "minecraft:block_change",
+            "minecraft:ring_bell",
+            "minecraft:splash",
+            "minecraft:drinking_finish",
+            "minecraft:projectile_shoot",
+            "minecraft:mob_interact",
+            "minecraft:eat",
+            "minecraft:entity_damaged",
+            "minecraft:equip",
+            "minecraft:shear",
+            "minecraft:block_close",
+            "minecraft:block_unswitch",
+            "minecraft:block_unpress",
+            "minecraft:block_detach",
+            "minecraft:dispense_fail",
+            "minecraft:block_open",
+            "minecraft:block_switch",
+            "minecraft:block_press",
+            "minecraft:block_attach",
+            "minecraft:block_place",
+            "minecraft:entity_place",
+            "minecraft:fluid_place",
+            "minecraft:block_destroy",
+            "minecraft:entity_killed",
+            "minecraft:fluid_pickup",
+            "minecraft:fishing_rod_reel_in",
+            "minecraft:container_close",
+            "minecraft:piston_contract",
+            "minecraft:shulker_close",
+            "minecraft:fishing_rod_cast",
+            "minecraft:container_open",
+            "minecraft:explode",
+            "minecraft:piston_extend",
+            "minecraft:shulker_open"
+        ]
+    },
+    "sculkswim": {
+        "type": "origins:phasing",
+        "block_condition": {
+            "type": "origins:in_tag",
+            "tag": "msmp_origins:sculk"
+        },
+        "render_type": "none",
+        "view_distance": 10
+    },
+    "sculkspeed": {
+        "condition": {
+            "type": "origins:in_block",
+            "block_condition": {
+                "type": "origins:in_tag",
+                "tag": "msmp_origins:sculk"
+            }
+        },
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.movement_speed",
+            "operation": "multiply_total",
+            "value": 0.4
+        },
+        "tick_rate": 20,
+        "update_health": true
+    }
+}

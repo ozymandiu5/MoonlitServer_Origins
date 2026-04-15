@@ -1,0 +1,221 @@
+{
+    "name": "Expurgation",
+    "description": "Send someone to be imprisoned and atrophied beyond the veil.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": "Only works when your opponent is below 5 hearts and no more than 8 blocks away.",
+            "sprite": "origins:textures/gui/badge/info.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "Will not work on bosses!",
+            "sprite": "origins:textures/gui/badge/info.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "No items or XP is dropped when the mob is killed beyond the veil.",
+            "sprite": "origins:textures/gui/badge/info.png"
+        }
+    ],
+    "type": "origins:multiple",
+    "vfx_tick": {
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute at @e[tag=expurgationEffects] run particle minecraft:sonic_boom ~ ~ ~ 2 3 2 0 3"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute at @e[tag=expurgationEffects] run particle minecraft:soul ~ ~ ~ 0 3 0 0.1 20"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute at @e[tag=expurgationEffects] run particle minecraft:sculk_soul ~ ~ ~ 0 3 0 0.1 20"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute at @e[tag=expurgationEffects] run particle minecraft:soul_fire_flame ~ ~ ~ 0 3 0 0.2 20"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute at @e[tag=expurgationEffects] run function srp_origins:tasosigil"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute as @e[tag=expurgationEffects] run scoreboard players add @s expurgationrotate 1"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute as @e[tag=expurgationEffects] store result entity @s Rotation[0] float 0.5 run scoreboard players get @s expurgationrotate"
+                }
+            ]
+        }
+    },
+    "ability": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:command",
+                    "command": "execute unless entity @s[tag=msmp.veilbound.veil]",
+                    "comparison": ">=",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:raycast",
+                    "distance": 8,
+                    "block": false,
+                    "entity": true,
+                    "shape_type": "outline",
+                    "fluid_handling": "any",
+                    "hit_bientity_condition": {
+                        "type": "origins:target_condition",
+                        "condition": {
+                            "type": "origins:health",
+                            "comparison": "<=",
+                            "compare_to": 10
+                        }
+                    }
+                }
+            ]
+        },
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:raycast",
+            "distance": 8,
+            "block": false,
+            "entity": true,
+            "shape_type": "outline",
+            "fluid_handling": "any",
+            "bientity_condition": {
+                "type": "origins:target_condition",
+                "condition": {
+                    "type": "origins:health",
+                    "comparison": "<=",
+                    "compare_to": 10
+                }
+            },
+            "bientity_action": {
+                "type": "origins:target_action",
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:execute_command",
+                            "command": "particle minecraft:portal ~ ~ ~ 0 1 0 3 200"
+                        },
+                        {
+                            "type": "origins:apply_effect",
+                            "effect": {
+                                "effect": "slowness",
+                                "duration": 60,
+                                "amplifier": 255,
+                                "show_particles": false,
+                                "show_icon": false
+                            }
+                        },
+                        {
+                            "type": "origins:delay",
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "particle minecraft:enchant ~ ~ ~ 0 1 0 3 400"
+                            },
+                            "ticks": 4
+                        },
+                        {
+                            "type": "origins:delay",
+                            "action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:execute_command",
+                                        "command": "playsound minecraft:block.ender_chest.close player @a[distance=..15] ~ ~ ~ 10 0.5"
+                                    },
+                                    {
+                                        "type": "origins:execute_command",
+                                        "command": "playsound minecraft:entity.ender_dragon.death player @a[distance=..20] ~ ~ ~ 10 0.8"
+                                    },
+                                    {
+                                        "type": "origins:execute_command",
+                                        "command": "summon minecraft:armor_stand ~ ~0.3 ~ {NoGravity:1b,Invisible:1b,Tags:[\"expurgationEffects\"]}"
+                                    },
+                                    {
+                                        "type": "origins:execute_command",
+                                        "command": "particle minecraft:explosion ~ ~1 ~ 0 0 0 3 0"
+                                    }
+                                ]
+                            },
+                            "ticks": 12
+                        },
+                        {
+                            "type": "origins:delay",
+                            "action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:execute_command",
+                                        "command": "particle minecraft:dust 0 0 0 1 ~ ~1 ~ 1 1 1 0 5000"
+                                    },
+                                    {
+                                        "type": "origins:execute_command",
+                                        "command": "particle minecraft:end_rod ~ ~1.5 ~ 0 0 0 0.5 100"
+                                    },
+                                    {
+                                        "type": "origins:execute_command",
+                                        "command": "particle minecraft:sonic_boom ~ ~2 ~ 0 0 0 3 0"
+                                    },
+                                    {
+                                        "type": "origins:execute_command",
+                                        "command": "playsound minecraft:block.respawn_anchor.deplete player @a[distance=..15] ~ ~ ~ 10 0.5"
+                                    },
+                                    {
+                                        "type": "origins:execute_command",
+                                        "command": "playsound minecraft:item.trident.thunder player @a[distance=..15] ~ ~ ~ 10 0.5"
+                                    },
+                                    {
+                                        "type": "origins:execute_command",
+                                        "command": "scoreboard players set @e[tag=expurgationEffects,limit=1,sort=nearest] expurgationrotate 0"
+                                    },
+                                    {
+                                        "type": "origins:grant_power",
+                                        "power": "msmp_origins:veilbound/expurgation_powers",
+                                        "source": "theallseeingone"
+                                    },
+                                    {
+                                        "type": "origins:add_velocity",
+                                        "y": 1,
+                                        "z": -3,
+                                        "space": "local",
+                                        "client": true,
+                                        "server": true
+                                    }
+                                ]
+                            },
+                            "ticks": 17
+                        },
+                        {
+                            "type": "origins:delay",
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "kill @e[tag=expurgationEffects,limit=1,sort=nearest]"
+                            },
+                            "ticks": 317
+                        }
+                    ]
+                }
+            }
+        },
+        "cooldown": 2400,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "a",
+            "bar_index": 1
+        },
+        "key": "primary"
+    }
+}

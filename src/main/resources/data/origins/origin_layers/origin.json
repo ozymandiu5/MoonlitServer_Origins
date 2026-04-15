@@ -9,7 +9,8 @@
         "msmp_origins:darkin",
         "msmp_origins:ratling",
         "msmp_origins:rockdwarf",
-        "msmp_origins:moonelf"
+        "msmp_origins:moonelf",
+		"msmp_origins:veilboud"
     ],
     "enabled": true,
     "replace": true,
