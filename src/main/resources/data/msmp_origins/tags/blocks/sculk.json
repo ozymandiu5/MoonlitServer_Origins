@@ -5,6 +5,8 @@
         "minecraft:sculk_catalyst",
         "minecraft:sculk_shrieker",
         "minecraft:sculk_sensor",
-        "minecraft:calibrated_sculk_sensor"
+        "minecraft:calibrated_sculk_sensor",
+        "alexsmobs:sculk_boomer",
+        "caverns_and_chasms:echo_block"
     ]
 }
