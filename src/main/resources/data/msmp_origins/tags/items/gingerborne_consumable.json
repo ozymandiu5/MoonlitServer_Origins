@@ -1,5 +1,6 @@
 {
-    "values": [
-        "minecraft:bread"
-    ]
+  "values": [
+    "#msmp_origins:food/sweet",
+    "#forge:bread"
+  ]
 }
