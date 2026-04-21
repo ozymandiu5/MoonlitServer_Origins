@@ -1,0 +1,12 @@
+{
+    "name": "Unstoppable Running",
+    "description": "You deal 15% more damage when sprinting.",
+    "condition": {
+        "type": "origins:sprinting"
+    },
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+        "operation": "multiply_total",
+        "value": 0.15
+    }
+}

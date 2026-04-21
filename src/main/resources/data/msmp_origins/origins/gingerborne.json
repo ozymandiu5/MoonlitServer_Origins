@@ -1,0 +1,14 @@
+{
+    "name": "Gingerborne",
+    "description": "A strange species of sentient cookies. Said to be baked in the kitchens of ancient leagues of witches, with the intent of consumption. It’s unknown why these beings brewed the Gingerborne with sentience, or how they fell from their original realm, but it’s speculated as simply a cruel, entertaining act. Nevertheless, their bravery has allowed them to escape and run from their cruel creators and coexist with the rest of the wider world.",
+    "powers": [
+        "msmp_origins:gingerborne/dash",
+        "msmp_origins:gingerborne/rush",
+        "msmp_origins:gingerborne/running",
+        "msmp_origins:gingerborne/spirit",
+        "msmp_origins:gingerborne/doughskin",
+        "msmp_origins:gingerborne/soggy",
+        "msmp_origins:gingerborne/soundbyte"
+    ],
+    "impact": 1
+}

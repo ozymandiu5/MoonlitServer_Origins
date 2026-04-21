@@ -1,0 +1,76 @@
+{
+    "name": "Sugar Rush",
+    "description": "Upon using this ability when holding sugar, you gain Regeneration and Speed II for 15 seconds.",
+    "condition": {
+        "type": "origins:inventory",
+        "process_mode": "items",
+        "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+                "item": "minecraft:sugar"
+            }
+        },
+        "slots": [],
+        "slot": "weapon.mainhand",
+        "comparison": "!=",
+        "compare_to": 0
+    },
+    "type": "origins:active_self",
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:apply_effect",
+                "effects": [
+                    {
+                        "effect": "minecraft:regeneration",
+                        "duration": 300,
+                        "amplifier": 1,
+                        "is_ambient": true,
+                        "show_particles": false,
+                        "show_icon": true
+                    },
+                    {
+                        "effect": "minecraft:speed",
+                        "duration": 300,
+                        "amplifier": 1,
+                        "is_ambient": true,
+                        "show_particles": false,
+                        "show_icon": true
+                    }
+                ]
+            },
+            {
+                "type": "origins:play_sound",
+                "sound": "minecraft:entity.generic.eat",
+                "volume": 1,
+                "pitch": 0.65
+            },
+            {
+                "type": "origins:play_sound",
+                "sound": "minecraft:block.respawn_anchor.set_spawn",
+                "volume": 1,
+                "pitch": 1.75
+            },
+            {
+                "type": "origins:modify_inventory",
+                "inventory_type": "inventory",
+                "item_action": {
+                    "type": "origins:consume",
+                    "amount": 1
+                },
+                "slots": [],
+                "slot": "weapon.mainhand",
+                "process_mode": "items",
+                "limit": 0
+            }
+        ]
+    },
+    "cooldown": 600,
+    "hud_render": {
+        "should_render": true,
+        "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+        "bar_index": 0
+    },
+    "key": "secondary"
+}

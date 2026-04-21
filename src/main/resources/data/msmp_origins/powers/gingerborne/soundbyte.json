@@ -1,0 +1,414 @@
+{
+    "hidden": true,
+    "type": "origins:action_on_being_used",
+    "bientity_action": {
+        "type": "origins:target_action",
+        "action": {
+            "type": "origins:if_else_list",
+            "actions": [
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "msmp_origins:gingerborne/doughskin_size_resource",
+                        "comparison": "==",
+                        "compare_to": 0
+                    },
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:play_sound",
+                                "sound": "minecraft:entity.strider.eat",
+                                "volume": 1,
+                                "pitch": 2
+                            },
+                            {
+                                "type": "origins:play_sound",
+                                "sound": "minecraft:block.honey_block.slide",
+                                "volume": 1,
+                                "pitch": 2
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "msmp_origins:gingerborne/doughskin_size_resource",
+                        "comparison": "==",
+                        "compare_to": 1
+                    },
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:play_sound",
+                                "sound": "minecraft:entity.strider.eat",
+                                "volume": 1,
+                                "pitch": 1.9
+                            },
+                            {
+                                "type": "origins:play_sound",
+                                "sound": "minecraft:block.honey_block.slide",
+                                "volume": 1,
+                                "pitch": 1.9
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "msmp_origins:gingerborne/doughskin_size_resource",
+                        "comparison": "==",
+                        "compare_to": 2
+                    },
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:play_sound",
+                                "sound": "minecraft:entity.strider.eat",
+                                "volume": 1,
+                                "pitch": 1.8
+                            },
+                            {
+                                "type": "origins:play_sound",
+                                "sound": "minecraft:block.honey_block.slide",
+                                "volume": 1,
+                                "pitch": 1.8
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "msmp_origins:gingerborne/doughskin_size_resource",
+                        "comparison": "==",
+                        "compare_to": 3
+                    },
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:play_sound",
+                                "sound": "minecraft:entity.strider.eat",
+                                "volume": 1,
+                                "pitch": 1.7
+                            },
+                            {
+                                "type": "origins:play_sound",
+                                "sound": "minecraft:block.honey_block.slide",
+                                "volume": 1,
+                                "pitch": 1.7
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "msmp_origins:gingerborne/doughskin_size_resource",
+                        "comparison": "==",
+                        "compare_to": 4
+                    },
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:play_sound",
+                                "sound": "minecraft:entity.strider.eat",
+                                "volume": 1,
+                                "pitch": 1.6
+                            },
+                            {
+                                "type": "origins:play_sound",
+                                "sound": "minecraft:block.honey_block.slide",
+                                "volume": 1,
+                                "pitch": 1.6
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "msmp_origins:gingerborne/doughskin_size_resource",
+                        "comparison": "==",
+                        "compare_to": 5
+                    },
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:play_sound",
+                                "sound": "minecraft:entity.strider.eat",
+                                "volume": 1,
+                                "pitch": 1.5
+                            },
+                            {
+                                "type": "origins:play_sound",
+                                "sound": "minecraft:block.honey_block.slide",
+                                "volume": 1,
+                                "pitch": 1.5
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "msmp_origins:gingerborne/doughskin_size_resource",
+                        "comparison": "==",
+                        "compare_to": 6
+                    },
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:play_sound",
+                                "sound": "minecraft:entity.strider.eat",
+                                "volume": 1,
+                                "pitch": 1.4
+                            },
+                            {
+                                "type": "origins:play_sound",
+                                "sound": "minecraft:block.honey_block.slide",
+                                "volume": 1,
+                                "pitch": 1.4
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "msmp_origins:gingerborne/doughskin_size_resource",
+                        "comparison": "==",
+                        "compare_to": 7
+                    },
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:play_sound",
+                                "sound": "minecraft:entity.strider.eat",
+                                "volume": 1,
+                                "pitch": 1.3
+                            },
+                            {
+                                "type": "origins:play_sound",
+                                "sound": "minecraft:block.honey_block.slide",
+                                "volume": 1,
+                                "pitch": 1.3
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "msmp_origins:gingerborne/doughskin_size_resource",
+                        "comparison": "==",
+                        "compare_to": 8
+                    },
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:play_sound",
+                                "sound": "minecraft:entity.strider.eat",
+                                "volume": 1,
+                                "pitch": 1.2
+                            },
+                            {
+                                "type": "origins:play_sound",
+                                "sound": "minecraft:block.honey_block.slide",
+                                "volume": 1,
+                                "pitch": 1.2
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "msmp_origins:gingerborne/doughskin_size_resource",
+                        "comparison": "==",
+                        "compare_to": 9
+                    },
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:play_sound",
+                                "sound": "minecraft:entity.strider.eat",
+                                "volume": 1,
+                                "pitch": 1.1
+                            },
+                            {
+                                "type": "origins:play_sound",
+                                "sound": "minecraft:block.honey_block.slide",
+                                "volume": 1,
+                                "pitch": 1.1
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "msmp_origins:gingerborne/doughskin_size_resource",
+                        "comparison": "==",
+                        "compare_to": 10
+                    },
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:play_sound",
+                                "sound": "minecraft:entity.strider.eat",
+                                "volume": 1,
+                                "pitch": 1
+                            },
+                            {
+                                "type": "origins:play_sound",
+                                "sound": "minecraft:block.honey_block.slide",
+                                "volume": 1,
+                                "pitch": 1
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "msmp_origins:gingerborne/doughskin_size_resource",
+                        "comparison": "==",
+                        "compare_to": 11
+                    },
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:play_sound",
+                                "sound": "minecraft:entity.strider.eat",
+                                "volume": 1,
+                                "pitch": 0.9
+                            },
+                            {
+                                "type": "origins:play_sound",
+                                "sound": "minecraft:block.honey_block.slide",
+                                "volume": 1,
+                                "pitch": 0.9
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "msmp_origins:gingerborne/doughskin_size_resource",
+                        "comparison": "==",
+                        "compare_to": 12
+                    },
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:play_sound",
+                                "sound": "minecraft:entity.strider.eat",
+                                "volume": 1,
+                                "pitch": 0.8
+                            },
+                            {
+                                "type": "origins:play_sound",
+                                "sound": "minecraft:block.honey_block.slide",
+                                "volume": 1,
+                                "pitch": 0.8
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "msmp_origins:gingerborne/doughskin_size_resource",
+                        "comparison": "==",
+                        "compare_to": 13
+                    },
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:play_sound",
+                                "sound": "minecraft:entity.strider.eat",
+                                "volume": 1,
+                                "pitch": 0.7
+                            },
+                            {
+                                "type": "origins:play_sound",
+                                "sound": "minecraft:block.honey_block.slide",
+                                "volume": 1,
+                                "pitch": 0.7
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "msmp_origins:gingerborne/doughskin_size_resource",
+                        "comparison": "==",
+                        "compare_to": 14
+                    },
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:play_sound",
+                                "sound": "minecraft:entity.strider.eat",
+                                "volume": 1,
+                                "pitch": 0.6
+                            },
+                            {
+                                "type": "origins:play_sound",
+                                "sound": "minecraft:block.honey_block.slide",
+                                "volume": 1,
+                                "pitch": 0.6
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "msmp_origins:gingerborne/doughskin_size_resource",
+                        "comparison": "==",
+                        "compare_to": 15
+                    },
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:play_sound",
+                                "sound": "minecraft:entity.strider.eat",
+                                "volume": 1,
+                                "pitch": 0.5
+                            },
+                            {
+                                "type": "origins:play_sound",
+                                "sound": "minecraft:block.honey_block.slide",
+                                "volume": 1,
+                                "pitch": 0.5
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    },
+    "action_result": "pass",
+    "priority": 0
+}
