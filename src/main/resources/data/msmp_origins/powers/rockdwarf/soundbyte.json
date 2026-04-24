@@ -4,10 +4,37 @@
     "bientity_action": {
         "type": "origins:target_action",
         "action": {
-            "type": "origins:play_sound",
-            "sound": "minecraft:entity.evoker.ambient",
-            "volume": 1,
-            "pitch": 0.75
+            "type": "origins:chance",
+            "chance": 0.6,
+            "action": {
+                "type": "origins:choice",
+                "actions": [
+                    {
+                        "weight": 1,
+                        "element": {
+                            "type": "origins:play_sound",
+                            "sound": "minecraft:entity.cat.purreow",
+                            "volume": 1,
+                            "pitch": 1
+                        }
+                    },
+                    {
+                        "weight": 1,
+                        "element": {
+                            "type": "origins:play_sound",
+                            "sound": "minecraft:entity.cat.meow",
+                            "volume": 1,
+                            "pitch": 1
+                        }
+                    }
+                ]
+            },
+            "fail_action": {
+                "type": "origins:play_sound",
+                "sound": "minecraft:entity.cat.purr",
+                "volume": 1,
+                "pitch": 1
+            }
         }
     },
     "action_result": "pass",

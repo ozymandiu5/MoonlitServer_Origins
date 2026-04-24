@@ -89,7 +89,7 @@
             "type": "origins:if_else",
             "condition": {
                 "type": "origins:command",
-                "command": "execute if entity @s[tag=bisccel.harbinger.blinking]",
+                "command": "execute if entity @s[tag=msmp.veilbound.blinking]",
                 "comparison": ">=",
                 "compare_to": 1
             },
@@ -1007,7 +1007,7 @@
             "type": "origins:if_else",
             "condition": {
                 "type": "origins:command",
-                "command": "execute if entity @s[tag=bisccel.harbinger.veil]",
+                "command": "execute if entity @s[tag=msmp.veilbound.veil]",
                 "comparison": ">=",
                 "compare_to": 1
             },
@@ -1076,7 +1076,7 @@
                 "actions": [
                     {
                         "type": "origins:execute_command",
-                        "command": "tag @s add bisccel.harbinger.blinking"
+                        "command": "tag @s add msmp.veilbound.blinking"
                     },
                     {
                         "type": "origins:execute_command",
@@ -1089,7 +1089,7 @@
     "stop_blinking": {
         "condition": {
             "type": "origins:command",
-            "command": "execute if entity @s[tag=bisccel.harbinger.blinking]",
+            "command": "execute if entity @s[tag=msmp.veilbound.blinking]",
             "comparison": ">=",
             "compare_to": 1
         },
@@ -1103,7 +1103,7 @@
                 "actions": [
                     {
                         "type": "origins:execute_command",
-                        "command": "tag @s remove bisccel.harbinger.blinking"
+                        "command": "tag @s remove msmp.veilbound.blinking"
                     },
                     {
                         "type": "origins:execute_command",
