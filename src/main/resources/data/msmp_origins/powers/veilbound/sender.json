@@ -3,7 +3,7 @@
     "description": "Creates a patch of sculk below you.",
     "condition": {
         "type": "origins:command",
-        "command": "execute unless block ~ ~-1 ~ air unless block ~ ~-2 ~ air unless block ~1 ~-1 ~ air unless block ~-1 ~-1 ~ air unless block ~ ~-1 ~1 air unless block ~ ~-1 ~-1 air unless block ~ ~-1 ~ #origins:unphasable unless block ~ ~-2 ~ #origins:unphasable unless block ~1 ~-1 ~ #origins:unphasable unless block ~-1 ~-1 ~ #origins:unphasable unless block ~ ~-1 ~1 #origins:unphasable unless block ~ ~-1 ~-1 #origins:unphasable",
+        "command": "execute if block ~ ~-1 ~ #minecraft:sculk_replaceable if block ~1 ~-2 ~ #minecraft:sculk_replaceable if block ~-1 ~-2 ~ #minecraft:sculk_replaceable if block ~ ~-2 ~1 #minecraft:sculk_replaceable if block ~ ~-2 ~-1 #minecraft:sculk_replaceable if block ~1 ~-2 ~1 #minecraft:sculk_replaceable if block ~1 ~-2 ~-1 #minecraft:sculk_replaceable if block ~-1 ~-2 ~1 #minecraft:sculk_replaceable if block ~-1 ~-2 ~-1 #minecraft:sculk_replaceable",
         "comparison": ">=",
         "compare_to": 1
     },
@@ -13,7 +13,7 @@
         "actions": [
             {
                 "type": "origins:execute_command",
-                "command": "setblock ~ ~-2 ~ minecraft:sculk"
+                "command": "fill ~1 ~-2 ~1 ~-1 ~-2 ~-1 minecraft:sculk"
             },
             {
                 "type": "origins:execute_command",
@@ -21,24 +21,28 @@
             },
             {
                 "type": "origins:execute_command",
-                "command": "setblock ~1 ~-1 ~ minecraft:sculk"
+                "command": "summon minecraft:husk ~1 ~ ~ {Tags:[\"msmp.veilbound.secondary\"],Silent:1b,\"pehkui:scale_data_types\":{\"pehkui:base\":{initial:1.26217745E-29f,scale:1.26217745E-29f,target:1.26217745E-29f}},DeathLootTable:\"minecraft:empty\"}"
             },
             {
                 "type": "origins:execute_command",
-                "command": "setblock ~-1 ~-1 ~ minecraft:sculk"
+                "command": "summon minecraft:husk ~-1 ~ ~ {Tags:[\"msmp.veilbound.secondary\"],Silent:1b,\"pehkui:scale_data_types\":{\"pehkui:base\":{initial:1.26217745E-29f,scale:1.26217745E-29f,target:1.26217745E-29f}},DeathLootTable:\"minecraft:empty\"}"
             },
             {
                 "type": "origins:execute_command",
-                "command": "setblock ~ ~-1 ~-1 minecraft:sculk"
+                "command": "summon minecraft:husk ~ ~ ~1 {Tags:[\"msmp.veilbound.secondary\"],Silent:1b,\"pehkui:scale_data_types\":{\"pehkui:base\":{initial:1.26217745E-29f,scale:1.26217745E-29f,target:1.26217745E-29f}},DeathLootTable:\"minecraft:empty\"}"
             },
             {
                 "type": "origins:execute_command",
-                "command": "setblock ~ ~-1 ~1 minecraft:sculk"
+                "command": "summon minecraft:husk ~ ~ ~-1 {Tags:[\"msmp.veilbound.secondary\"],Silent:1b,\"pehkui:scale_data_types\":{\"pehkui:base\":{initial:1.26217745E-29f,scale:1.26217745E-29f,target:1.26217745E-29f}},DeathLootTable:\"minecraft:empty\"}"
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "kill @e[tag=msmp.veilbound.secondary,limit=4,sort=nearest]"
             },
             {
                 "type": "origins:play_sound",
                 "sound": "minecraft:entity.warden.attack_impact",
-                "volume": 1,
+                "volume": 3,
                 "pitch": 0.5
             },
             {

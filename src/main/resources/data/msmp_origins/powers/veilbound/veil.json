@@ -635,10 +635,22 @@
     },
     "ability": {
         "condition": {
-            "type": "origins:command",
-            "command": "execute if block ~ ~ ~ #msmp_origins:sculk if block ~ ~1 ~ #msmp_origins:sculk",
-            "comparison": ">=",
-            "compare_to": 1
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:command",
+                    "command": "execute if block ~ ~ ~ #msmp_origins:sculk if block ~ ~1 ~ #msmp_origins:sculk",
+                    "comparison": ">=",
+                    "compare_to": 1
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:resource",
+                    "resource": "*:*_switch_cooldown",
+                    "comparison": ">=",
+                    "compare_to": 1
+                }
+            ]
         },
         "type": "origins:action_over_time",
         "interval": 5,
@@ -666,6 +678,21 @@
                         "z": 0.25
                     },
                     "offset_y": 1.5
+                },
+                {
+                    "type": "origins:trigger_cooldown",
+                    "power": "*:*_switch_cooldown"
+                },
+                {
+                    "type": "origins:apply_effect",
+                    "effect": {
+                        "effect": "minecraft:resistance",
+                        "duration": 200,
+                        "amplifier": 0,
+                        "is_ambient": true,
+                        "show_particles": false,
+                        "show_icon": true
+                    }
                 },
                 {
                     "type": "origins:if_else",
@@ -1167,11 +1194,27 @@
     },
     "sculkspeed": {
         "condition": {
-            "type": "origins:in_block",
-            "block_condition": {
-                "type": "origins:in_tag",
-                "tag": "msmp_origins:sculk"
-            }
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:in_block",
+                    "block_condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:in_tag",
+                                "tag": "msmp_origins:sculk"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "origins:command",
+                    "command": "execute if block ~ ~-1 ~ #msmp_origins:sculk",
+                    "comparison": ">=",
+                    "compare_to": 1
+                }
+            ]
         },
         "type": "origins:conditioned_attribute",
         "modifier": {
@@ -1181,5 +1224,9 @@
         },
         "tick_rate": 20,
         "update_health": true
+    },
+    "switch_cooldown": {
+        "type": "origins:cooldown",
+        "cooldown": 200
     }
 }

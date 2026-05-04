@@ -1,6 +1,6 @@
 {
-    "name": "Siphon",
-    "description": "Siphon out two hearts of the entity you're looking at. (Maximum of 20 blocks away)",
+    "name": "Pickpocket",
+    "description": "Force a player to drop a random item from their hotbar.",
     "type": "origins:active_self",
     "entity_action": {
         "type": "origins:raycast",
@@ -10,69 +10,165 @@
         "shape_type": "outline",
         "fluid_handling": "any",
         "bientity_action": {
-            "type": "origins:and",
-            "actions": [
-                {
-                    "type": "origins:actor_action",
-                    "action": {
-                        "type": "origins:and",
+            "type": "origins:target_action",
+            "action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:choice",
                         "actions": [
                             {
-                                "type": "origins:play_sound",
-                                "sound": "minecraft:entity.illusioner.ambient",
-                                "volume": 1,
-                                "pitch": 1.2
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:drop_inventory",
+                                    "inventory_type": "inventory",
+                                    "item_condition": {
+                                        "inverted": true,
+                                        "type": "origins:empty"
+                                    },
+                                    "slots": [],
+                                    "slot": "hotbar.0",
+                                    "throw_randomly": true,
+                                    "retain_ownership": false
+                                }
                             },
                             {
-                                "type": "origins:heal",
-                                "amount": 4
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:drop_inventory",
+                                    "inventory_type": "inventory",
+                                    "item_condition": {
+                                        "inverted": true,
+                                        "type": "origins:empty"
+                                    },
+                                    "slots": [],
+                                    "slot": "hotbar.1",
+                                    "throw_randomly": true,
+                                    "retain_ownership": false
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:drop_inventory",
+                                    "inventory_type": "inventory",
+                                    "item_condition": {
+                                        "inverted": true,
+                                        "type": "origins:empty"
+                                    },
+                                    "slots": [],
+                                    "slot": "hotbar.2",
+                                    "throw_randomly": true,
+                                    "retain_ownership": false
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:drop_inventory",
+                                    "inventory_type": "inventory",
+                                    "item_condition": {
+                                        "inverted": true,
+                                        "type": "origins:empty"
+                                    },
+                                    "slots": [],
+                                    "slot": "hotbar.3",
+                                    "throw_randomly": true,
+                                    "retain_ownership": false
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:drop_inventory",
+                                    "inventory_type": "inventory",
+                                    "item_condition": {
+                                        "inverted": true,
+                                        "type": "origins:empty"
+                                    },
+                                    "slots": [],
+                                    "slot": "hotbar.4",
+                                    "throw_randomly": true,
+                                    "retain_ownership": false
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:drop_inventory",
+                                    "inventory_type": "inventory",
+                                    "item_condition": {
+                                        "inverted": true,
+                                        "type": "origins:empty"
+                                    },
+                                    "slots": [],
+                                    "slot": "hotbar.5",
+                                    "throw_randomly": true,
+                                    "retain_ownership": false
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:drop_inventory",
+                                    "inventory_type": "inventory",
+                                    "item_condition": {
+                                        "inverted": true,
+                                        "type": "origins:empty"
+                                    },
+                                    "slots": [],
+                                    "slot": "hotbar.6",
+                                    "throw_randomly": true,
+                                    "retain_ownership": false
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:drop_inventory",
+                                    "inventory_type": "inventory",
+                                    "item_condition": {
+                                        "inverted": true,
+                                        "type": "origins:empty"
+                                    },
+                                    "slots": [],
+                                    "slot": "hotbar.7",
+                                    "throw_randomly": true,
+                                    "retain_ownership": false
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:drop_inventory",
+                                    "inventory_type": "inventory",
+                                    "item_condition": {
+                                        "inverted": true,
+                                        "type": "origins:empty"
+                                    },
+                                    "slots": [],
+                                    "slot": "hotbar.8",
+                                    "throw_randomly": true,
+                                    "retain_ownership": false
+                                }
                             }
                         ]
+                    },
+                    {
+                        "type": "origins:play_sound",
+                        "sound": "minecraft:item.armor.equip_leather",
+                        "volume": 1,
+                        "pitch": 0.75
                     }
-                },
-                {
-                    "type": "origins:target_action",
-                    "action": {
-                        "type": "origins:and",
-                        "actions": [
-                            {
-                                "type": "origins:damage",
-                                "amount": 4,
-                                "damage_type": "msmp_origins:siphon"
-                            },
-                            {
-                                "type": "origins:play_sound",
-                                "sound": "minecraft:entity.player.attack.crit",
-                                "volume": 1,
-                                "pitch": 0.75
-                            },
-                            {
-                                "type": "origins:play_sound",
-                                "sound": "minecraft:block.honey_block.break",
-                                "volume": 1,
-                                "pitch": 0.5
-                            },
-                            {
-                                "type": "origins:spawn_particles",
-                                "particle": {
-                                    "type": "minecraft:block",
-                                    "params": "nether_wart_block"
-                                },
-                                "count": 20,
-                                "speed": 1,
-                                "offset_y": 0.5
-                            }
-                        ]
-                    }
-                }
-            ]
+                ]
+            }
         }
     },
-    "cooldown": 1200,
+    "cooldown": 600,
     "hud_render": {
         "should_render": true,
-        "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
-        "bar_index": 5
+        "sprite_location": "a",
+        "bar_index": 1
     },
     "key": "secondary"
 }
