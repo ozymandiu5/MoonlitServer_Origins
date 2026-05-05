@@ -1,50 +1,191 @@
 {
-    "name": "Burrow",
-    "description": "Burrow 3 blocks into the ground.",
-    "type": "origins:active_self",
-    "entity_action": {
-        "type": "origins:and",
-        "actions": [
-            {
-                "type": "origins:execute_command",
-                "command": "fill ~ ~-3 ~ ~ ~-4 ~ air destroy"
-            },
-            {
-                "type": "origins:execute_command",
-                "command": "tp @s ~ ~-4 ~"
-            },
-            {
-                "type": "origins:execute_command",
-                "command": "setblock ~ ~4 ~ dirt"
-            },
-            {
-                "type": "origins:play_sound",
-                "sound": "minecraft:block.grass.break",
-                "volume": 1,
-                "pitch": 0.5
-            },
-            {
-                "type": "origins:spawn_particles",
-                "particle": {
-                    "type": "minecraft:block",
-                    "params": "dirt"
+    "name": "Tunnelrat",
+    "description": "When looking at certain blocks and holding this keybind, tunnel through the earth!",
+    "badges": [
+        {
+            "type": "origins:keybind",
+            "text": "Acitve ability, use with %s",
+            "sprite": "origins:textures/gui/badge/active.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "You can only dig through a finite amount of blocks. Every blocks consumes 1 energy.",
+            "sprite": "origins:textures/gui/badge/info.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "Energy will slowly increase by 1 every half second.",
+            "sprite": "origins:textures/gui/badge/info.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "If your energy reaches 0, you will have to wait for it to fully recharge before being able to dig again!",
+            "sprite": "origins:textures/gui/badge/info.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "Every block consumed also has a 40% chance to consume 1 hunger point.",
+            "sprite": "origins:textures/gui/badge/info.png"
+        }
+    ],
+    "type": "origins:multiple",
+    "energy": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 50,
+        "start_value": 50,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
+            "bar_index": 16
+        },
+        "min_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:play_sound",
+                    "sound": "minecraft:entity.generic.burn",
+                    "volume": 1,
+                    "pitch": 0.75
                 },
-                "count": 1000,
-                "speed": 0,
-                "spread": {
-                    "x": 0.5,
-                    "y": 0,
-                    "z": 0.5
+                {
+                    "type": "origins:execute_command",
+                    "command": "tag @s add msmp_origins.ratling.no_dig"
+                }
+            ]
+        },
+        "max_action": {
+            "type": "origins:execute_command",
+            "command": "tag @s remove msmp_origins.ratling.no_dig"
+        }
+    },
+    "burrow": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_energy",
+                    "comparison": ">=",
+                    "compare_to": 1
                 },
-                "offset_y": -0.5
-            }
-        ]
+                {
+                    "type": "origins:raycast",
+                    "distance": 1,
+                    "block": true,
+                    "entity": false,
+                    "shape_type": "outline",
+                    "fluid_handling": "any",
+                    "block_condition": {
+                        "type": "origins:in_tag",
+                        "tag": "msmp_origins:ratling_burrowable"
+                    }
+                },
+                {
+                    "type": "origins:command",
+                    "command": "execute unless entity @s[tag=msmp_origins.ratling.no_dig]",
+                    "comparison": ">=",
+                    "compare_to": 1
+                }
+            ]
+        },
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_burrowing",
+                    "change": 3,
+                    "operation": "set"
+                },
+                {
+                    "type": "origins:raycast",
+                    "distance": 1,
+                    "block": true,
+                    "entity": false,
+                    "shape_type": "outline",
+                    "fluid_handling": "any",
+                    "block_action": {
+                        "type": "origins:execute_command",
+                        "command": "setblock ~ ~ ~ air destroy"
+                    }
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_energy",
+                    "change": -1,
+                    "operation": "add"
+                },
+                {
+                    "type": "origins:chance",
+                    "chance": 0.4,
+                    "action": {
+                        "type": "origins:feed",
+                        "food": -1
+                    }
+                }
+            ]
+        },
+        "cooldown": 0,
+        "key": {
+            "key": "key.origins.primary_active",
+            "continuous": true
+        }
     },
-    "cooldown": 2400,
-    "hud_render": {
-        "should_render": true,
-        "sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
-        "bar_index": 16
+    "burrowing": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 3
     },
-    "key": "primary"
+    "stop_burrowing": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_burrowing",
+            "comparison": ">=",
+            "compare_to": 1
+        },
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_burrowing",
+            "change": -1,
+            "operation": "add"
+        }
+    },
+    "crawling": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:on_block"
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_burrowing",
+                    "comparison": ">=",
+                    "compare_to": 1
+                }
+            ]
+        },
+        "type": "origins:swimming"
+    },
+    "recharge": {
+        "condition": {
+            "inverted": true,
+            "type": "origins:resource",
+            "resource": "*:*_burrowing",
+            "comparison": ">=",
+            "compare_to": 1
+        },
+        "type": "origins:action_over_time",
+        "interval": 10,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_energy",
+            "change": 1,
+            "operation": "add"
+        }
+    }
 }

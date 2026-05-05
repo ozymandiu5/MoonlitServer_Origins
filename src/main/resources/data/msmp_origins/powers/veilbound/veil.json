@@ -1209,10 +1209,16 @@
                     }
                 },
                 {
-                    "type": "origins:command",
-                    "command": "execute if block ~ ~-1 ~ #msmp_origins:sculk",
-                    "comparison": ">=",
-                    "compare_to": 1
+                    "type": "origins:on_block",
+                    "block_condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:in_tag",
+                                "tag": "msmp_origins:sculk"
+                            }
+                        ]
+                    }
                 }
             ]
         },
