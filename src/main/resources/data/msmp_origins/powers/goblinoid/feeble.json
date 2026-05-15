@@ -1,6 +1,6 @@
 {
     "name": "Feeble",
-    "description": "You have two fewer hearts and are 1.5 meters tall.",
+    "description": "You have two fewer hearts and are 1.6 meters tall.",
     "type": "origins:multiple",
     "heart": {
         "type": "origins:attribute",
@@ -18,11 +18,11 @@
             "actions": [
                 {
                     "type": "origins:execute_command",
-                    "command": "scale set pehkui:width 0.75 @s"
+                    "command": "scale set pehkui:width 0.8 @s"
                 },
                 {
                     "type": "origins:execute_command",
-                    "command": "scale set pehkui:height 0.75 @s"
+                    "command": "scale set pehkui:height 0.8 @s"
                 },
                 {
                     "type": "origins:execute_command",
