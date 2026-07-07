@@ -1,0 +1,13 @@
+{
+    "name": "Halcyon",
+    "description": "A highly pompous species. The Halcyon are a winged race of avians with a tribalistic culture. Their deeply pigmented plumes and feathers mark their highborne status. They are masters of the air with the ability to sprint with short bursts of uncanny speed on the ground. Most clutches of Halcyon live within the edges of deep woods upon canopies of large trees. They pride individualistic ambition and achievement, and each tribe ferociously competes for dominance in the forests and skies above.",
+    "powers": [
+        "msmp_origins:halcyon/wings",
+        "msmp_origins:halcyon/angry_bird",
+        "msmp_origins:halcyon/hawkeye",
+        "msmp_origins:halcyon/dodge",
+        "msmp_origins:halcyon/bones",
+        "msmp_origins:halcyon/soundbyte"
+    ],
+    "impact": 1
+}

@@ -1,0 +1,62 @@
+{
+    "name": "Daedalus Wept, Cursed His Art",
+    "description": "You are always equipped with an elytra, and can boost with your main keybind.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": "The boost can only be performed when flying.",
+            "sprite": "origins:textures/gui/badge/info.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "You are unable to use fireworks.",
+            "sprite": "origins:textures/gui/badge/info.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "You cannot go above Y=120!",
+            "sprite": "origins:textures/gui/badge/info.png"
+        }
+    ],
+    "type": "origins:multiple",
+    "wings": {
+        "condition": {
+            "type": "origins:command",
+            "command": "data get entity @s Pos[1]",
+            "comparison": "<",
+            "compare_to": 120
+        },
+        "type": "origins:elytra_flight",
+        "render_elytra": true,
+        "texture_location": "minecraft:textures/entity/elytra.png"
+    },
+    "boost": {
+        "condition": {
+            "type": "origins:fall_flying"
+        },
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:add_velocity",
+            "z": 1,
+            "space": "local",
+            "client": true,
+            "server": true
+        },
+        "cooldown": 60,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/resource_bar.png",
+            "bar_index": 4
+        },
+        "key": "primary"
+    },
+    "no_firework": {
+        "type": "origins:prevent_item_use",
+        "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+                "item": "minecraft:firework_rocket"
+            }
+        }
+    }
+}

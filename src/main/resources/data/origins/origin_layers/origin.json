@@ -10,7 +10,8 @@
         "msmp_origins:rockdwarf",
         "msmp_origins:moonelf",
         "msmp_origins:veilbound",
-        "msmp_origins:gingerborne"
+        "msmp_origins:gingerborne",
+        "msmp_origins:halcyon"
     ],
     "enabled": true,
     "replace": true,

@@ -1,0 +1,12 @@
+{
+    "name": "Dodge & Weave",
+    "description": "Damage from projectiles is reduced by 20%.",
+    "type": "origins:modify_damage_taken",
+    "damage_condition": {
+        "type": "origins:projectile"
+    },
+    "modifier": {
+        "operation": "multiply_total",
+        "value": -0.2
+    }
+}
