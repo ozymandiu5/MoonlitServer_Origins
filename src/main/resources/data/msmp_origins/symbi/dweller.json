@@ -1,0 +1,17 @@
+{
+    "name": "Cave Dweller",
+    "description": "You gain night vision when underground.",
+    "type": "origins:action_over_time",
+    "interval": 100,
+    "entity_action": {
+        "type": "origins:apply_effect",
+        "effect": {
+            "effect": "minecraft:night_vision",
+            "duration": 300,
+            "amplifier": 0,
+            "is_ambient": true,
+            "show_particles": false,
+            "show_icon": true
+        }
+    }
+}

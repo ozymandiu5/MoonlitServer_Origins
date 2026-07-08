@@ -1,0 +1,16 @@
+{
+    "name": "Symbi",
+    "description": "An eerily hivemind-like species that has roots embedded into the soil and rock. It is unknown how these mushrooms gained their intelligence, but many theories speculate a greater mind was formed long ago when enough Symbis formed a mass of hyphae large enough to support what could be considered thoughts. The most external members of the Symbi are their Spores, who lead simple lifestyles of farming for food, releasing spores to grow new Symbis and decomposing decaying deceased organisms. Very rarely, you may find them enjoying the warm glow of the sun.",
+    "powers": [
+        "msmp_origins:symbi/fungus",
+        "msmp_origins:symbi/spores",
+        "msmp_origins:symbi/mushroom",
+        "msmp_origins:symbi/dweller",
+        "msmp_origins:symbi/nutrients",
+        "msmp_origins:symbi/home",
+        "msmp_origins:symbi/mold",
+        "msmp_origins:symbi/heatstroke",
+        "msmp_origins:symbi/soundbyte"
+    ],
+    "impact": 2
+}

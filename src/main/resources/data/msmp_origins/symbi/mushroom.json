@@ -1,0 +1,28 @@
+{
+    "name": "🎵Mushroom, Mushroom🎵",
+    "description": "Being underground restores hunger and prevents hunger & saturation drain.",
+    "type": "origins:multiple",
+    "feed": {
+        "condition": {
+            "inverted": true,
+            "type": "origins:exposed_to_sky"
+        },
+        "type": "origins:action_over_time",
+        "interval": 600,
+        "entity_action": {
+            "type": "origins:feed",
+            "food": 1
+        }
+    },
+    "drain": {
+        "condition": {
+            "inverted": true,
+            "type": "origins:exposed_to_sky"
+        },
+        "type": "origins:modify_exhaustion",
+        "modifier": {
+            "operation": "set_total",
+            "value": 0
+        }
+    }
+}

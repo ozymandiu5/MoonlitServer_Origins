@@ -1,0 +1,13 @@
+{
+    "name": "Sweet Nutrients",
+    "description": "You are able to eat anything, not receiving any negative effects from the things you eat.",
+    "type": "origins:modify_food",
+    "item_condition": {
+        "inverted": true,
+        "type": "origins:ingredient",
+        "ingredient": {
+            "tag": "msmp_origins:ratling_diet_effect_whitelist"
+        }
+    },
+    "prevent_effects": true
+}
