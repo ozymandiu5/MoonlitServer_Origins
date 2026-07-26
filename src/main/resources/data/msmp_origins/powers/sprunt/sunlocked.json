@@ -1,0 +1,80 @@
+{
+    "name": "Sunlocked",
+    "description": "When under Y=0, in the Nether, or in the End, you gain Slowness and Mining Fatigue.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": "Mining fatigue only applies in the overworld.",
+            "sprite": "origins:textures/gui/badge/info.png"
+        }
+    ],
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:if_else",
+                "condition": {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:command",
+                            "command": "data get entity @s Pos[1]",
+                            "comparison": "<=",
+                            "compare_to": 0
+                        },
+                        {
+                            "type": "origins:dimension",
+                            "dimension": "minecraft:the_nether"
+                        },
+                        {
+                            "type": "origins:dimension",
+                            "dimension": "minecraft:the_end"
+                        }
+                    ]
+                },
+                "if_action": {
+                    "type": "origins:apply_effect",
+                    "effect": {
+                        "effect": "minecraft:slowness",
+                        "duration": 30,
+                        "amplifier": 1,
+                        "is_ambient": true,
+                        "show_particles": false,
+                        "show_icon": true
+                    }
+                }
+            },
+            {
+                "type": "origins:if_else",
+                "condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:command",
+                            "command": "data get entity @s Pos[1]",
+                            "comparison": "<=",
+                            "compare_to": 0
+                        },
+                        {
+                            "type": "origins:dimension",
+                            "dimension": "minecraft:overworld"
+                        }
+                    ]
+                },
+                "if_action": {
+                    "type": "origins:apply_effect",
+                    "effect": {
+                        "effect": "minecraft:mining_fatigue",
+                        "duration": 30,
+                        "amplifier": 1,
+                        "is_ambient": true,
+                        "show_particles": false,
+                        "show_icon": true
+                    }
+                }
+            }
+        ]
+    }
+}

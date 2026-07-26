@@ -1,0 +1,19 @@
+{
+    "name": "Itsi-Ikki",
+    "description": "A communal set of insectoid species living in large co-habited nested colonies deep within regions populated by large amounts of flora and fauna, with each Itsiks specially bred for different societal purposes. The Itsi-Ikki call themselves as such in a common language understood by all insects sapient or not. Their word,“Itsik” meaning an individual as part of the whole, became the root word of “Insect” in the common tongue of most other races in the world. These Itsi-Ikki colonies pride agriculture and the consumption of food above all else.",
+    "powers": [
+        "msmp_origins:itsi-ikki/stickbug",
+        "msmp_origins:itsi-ikki/exoskeleton",
+        "msmp_origins:itsi-ikki/sticky",
+        "msmp_origins:itsi-ikki/lightfooted",
+        "msmp_origins:itsi-ikki/pollination",
+        "msmp_origins:itsi-ikki/red40",
+        "msmp_origins:itsi-ikki/hive",
+        "msmp_origins:itsi-ikki/bug",
+        "msmp_origins:itsi-ikki/toothpick",
+        "msmp_origins:itsi-ikki/lungs",
+        "msmp_origins:itsi-ikki/spray",
+        "msmp_origins:itsi-ikki/soundbyte"
+    ],
+    "impact": 2
+}

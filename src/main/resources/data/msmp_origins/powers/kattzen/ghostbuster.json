@@ -1,0 +1,22 @@
+{
+    "name": "Ghostbuster",
+    "description": "You are able to see Veilbounds when they are veiled.",
+    "type": "origins:entity_glow",
+    "entity_condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "type": "origins:living"
+            },
+            {
+                "type": "origins:power",
+                "power": "msmp_origins:veilbound/veiled_powers",
+                "source": "theallseeingone"
+            }
+        ]
+    },
+    "use_teams": true,
+    "red": 0,
+    "green": 0.329411765,
+    "blue": 0.329411765
+}

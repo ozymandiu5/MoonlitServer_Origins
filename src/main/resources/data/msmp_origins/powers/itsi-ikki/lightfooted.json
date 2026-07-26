@@ -1,0 +1,12 @@
+{
+    "name": "Lightfooted",
+    "description": "You take no fall damage.",
+    "type": "origins:modify_damage_taken",
+    "damage_condition": {
+        "type": "origins:from_falling"
+    },
+    "modifier": {
+        "operation": "set_total",
+        "value": 0
+    }
+}

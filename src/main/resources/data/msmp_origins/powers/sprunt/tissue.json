@@ -1,0 +1,29 @@
+{
+    "name": "Tissue Death",
+    "description": "You take 2x fire, freezing, drowning, and withering damage.",
+    "type": "origins:modify_damage_taken",
+    "damage_condition": {
+        "type": "origins:or",
+        "conditions": [
+            {
+                "type": "origins:fire"
+            },
+            {
+                "type": "origins:name",
+                "name": "minecraft:freeze"
+            },
+            {
+                "type": "origins:name",
+                "name": "minecraft:drown"
+            },
+            {
+                "type": "origins:name",
+                "name": "minecraft:wither"
+            }
+        ]
+    },
+    "modifier": {
+        "operation": "multiply_total",
+        "value": 1
+    }
+}

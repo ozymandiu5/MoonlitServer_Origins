@@ -1,0 +1,16 @@
+{
+    "name": "Sprunt",
+    "description": "Once created by druidic magic, Sprunts are caretakers of nature and live in harmony with their environment. These living plants cultivate fields of beauty and nutrition. They mostly form smaller societies known as Gardens, and are allied with the forces of life and the Sun. These Gardens sometimes produce new Sprunts out of the plants they cultivate, taking shape as the plant they were intended to grow as. Without the sustenance of the light, they wither away into semi-lifeless husks, waiting to be rejuvenated. They were not designed nor taught the ways of violence, and suffer much more physical trauma due to their chloroplast structure.",
+    "powers": [
+        "msmp_origins:sprunt/peashooter",
+        "msmp_origins:sprunt/seeds",
+        "msmp_origins:sprunt/synthesis",
+        "msmp_origins:sprunt/jazz",
+        "msmp_origins:sprunt/sprout",
+        "msmp_origins:sprunt/zombies",
+        "msmp_origins:sprunt/tissue",
+        "msmp_origins:sprunt/sunlocked",
+        "msmp_origins:sprunt/soundbyte"
+    ],
+    "impact": 2
+}

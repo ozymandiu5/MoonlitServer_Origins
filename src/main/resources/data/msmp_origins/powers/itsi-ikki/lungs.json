@@ -1,0 +1,25 @@
+{
+    "name": "No Lungs?",
+    "description": "Drowning & Fire deal 20% more damage.",
+    "type": "origins:modify_damage_taken",
+    "damage_condition": {
+        "type": "origins:or",
+        "conditions": [
+            {
+                "type": "origins:fire"
+            },
+            {
+                "type": "origins:name",
+                "name": "drown"
+            },
+            {
+                "type": "origins:name",
+                "name": "drown.player"
+            }
+        ]
+    },
+    "modifier": {
+        "operation": "multiply_total",
+        "value": 0.5
+    }
+}

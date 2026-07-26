@@ -1,0 +1,500 @@
+{
+    "name": "Exoskeleton",
+    "description": "Start with an additional 10 armor.\nTaking damage over time reduces the armor.\nMolt to be at your most vulnerable as your armor regenerates.",
+    "type": "origins:multiple",
+    "durability": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 10,
+        "start_value": 10,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+            "bar_index": 0
+        },
+        "min_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:resource",
+                "resource": "*:*_armor",
+                "comparison": ">=",
+                "compare_to": 1
+            },
+            "if_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_armor",
+                        "change": -1,
+                        "operation": "add"
+                    },
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_durability",
+                        "change": 10,
+                        "operation": "set"
+                    },
+                    {
+                        "type": "origins:play_sound",
+                        "sound": "minecraft:block.respawn_anchor.deplete",
+                        "volume": 1,
+                        "pitch": 1
+                    }
+                ]
+            },
+            "else_action": {
+                "type": "origins:play_sound",
+                "sound": "minecraft:block.beacon.deactivate",
+                "volume": 1,
+                "pitch": 0.75
+            }
+        }
+    },
+    "armor": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 5,
+        "start_value": 5
+    },
+    "armor_points_5": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_armor",
+                    "comparison": "==",
+                    "compare_to": 5
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:command",
+                    "command": "execute if entity @s[tag=msmp_origins.itsi-ikki.molting]",
+                    "comparison": "==",
+                    "compare_to": 1
+                }
+            ]
+        },
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.armor",
+            "operation": "addition",
+            "value": 10
+        },
+        "tick_rate": 1,
+        "update_health": true
+    },
+    "armor_points_4": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_armor",
+                    "comparison": "==",
+                    "compare_to": 4
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:command",
+                    "command": "execute if entity @s[tag=msmp_origins.itsi-ikki.molting]",
+                    "comparison": "==",
+                    "compare_to": 1
+                }
+            ]
+        },
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.armor",
+            "operation": "addition",
+            "value": 8
+        },
+        "tick_rate": 1,
+        "update_health": true
+    },
+    "armor_points_3": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_armor",
+                    "comparison": "==",
+                    "compare_to": 3
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:command",
+                    "command": "execute if entity @s[tag=msmp_origins.itsi-ikki.molting]",
+                    "comparison": "==",
+                    "compare_to": 1
+                }
+            ]
+        },
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.armor",
+            "operation": "addition",
+            "value": 6
+        },
+        "tick_rate": 1,
+        "update_health": true
+    },
+    "armor_points_2": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_armor",
+                    "comparison": "==",
+                    "compare_to": 2
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:command",
+                    "command": "execute if entity @s[tag=msmp_origins.itsi-ikki.molting]",
+                    "comparison": "==",
+                    "compare_to": 1
+                }
+            ]
+        },
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.armor",
+            "operation": "addition",
+            "value": 4
+        },
+        "tick_rate": 1,
+        "update_health": true
+    },
+    "armor_points_1": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_armor",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:command",
+                    "command": "execute if entity @s[tag=msmp_origins.itsi-ikki.molting]",
+                    "comparison": "==",
+                    "compare_to": 1
+                }
+            ]
+        },
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.armor",
+            "operation": "addition",
+            "value": 2
+        },
+        "tick_rate": 1,
+        "update_health": true
+    },
+    "armor_damage_5": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_armor",
+                    "comparison": "==",
+                    "compare_to": 4
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:command",
+                    "command": "execute if entity @s[tag=msmp_origins.itsi-ikki.molting]",
+                    "comparison": "==",
+                    "compare_to": 1
+                }
+            ]
+        },
+        "type": "origins:modify_damage_taken",
+        "modifier": {
+            "operation": "multiply_total",
+            "value": 0.1
+        }
+    },
+    "armor_damage_4": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_armor",
+                    "comparison": "==",
+                    "compare_to": 3
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:command",
+                    "command": "execute if entity @s[tag=msmp_origins.itsi-ikki.molting]",
+                    "comparison": "==",
+                    "compare_to": 1
+                }
+            ]
+        },
+        "type": "origins:modify_damage_taken",
+        "modifier": {
+            "operation": "multiply_total",
+            "value": 0.2
+        }
+    },
+    "armor_damage_3": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_armor",
+                    "comparison": "==",
+                    "compare_to": 2
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:command",
+                    "command": "execute if entity @s[tag=msmp_origins.itsi-ikki.molting]",
+                    "comparison": "==",
+                    "compare_to": 1
+                }
+            ]
+        },
+        "type": "origins:modify_damage_taken",
+        "modifier": {
+            "operation": "multiply_total",
+            "value": 0.3
+        }
+    },
+    "armor_damage_2": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_armor",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:command",
+                    "command": "execute if entity @s[tag=msmp_origins.itsi-ikki.molting]",
+                    "comparison": "==",
+                    "compare_to": 1
+                }
+            ]
+        },
+        "type": "origins:modify_damage_taken",
+        "modifier": {
+            "operation": "multiply_total",
+            "value": 0.4
+        }
+    },
+    "armor_damage_1": {
+        "condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_armor",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:command",
+                    "command": "execute if entity @s[tag=msmp_origins.itsi-ikki.molting]",
+                    "comparison": "==",
+                    "compare_to": 1
+                }
+            ]
+        },
+        "type": "origins:modify_damage_taken",
+        "modifier": {
+            "operation": "multiply_total",
+            "value": 0.5
+        }
+    },
+    "remove_durability": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_armor",
+                    "comparison": ">",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_durability",
+                    "comparison": ">",
+                    "compare_to": 0
+                }
+            ]
+        },
+        "type": "origins:action_when_damage_taken",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:play_sound",
+                    "sound": "minecraft:entity.item.break",
+                    "volume": 1,
+                    "pitch": 1.25
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_durability",
+                    "change": -1,
+                    "operation": "add"
+                }
+            ]
+        },
+        "cooldown": 20
+    },
+    "molt": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "tag @s add msmp_origins.itsi-ikki.molting"
+                },
+                {
+                    "type": "origins:play_sound",
+                    "sound": "minecraft:entity.zombie_villager.cure",
+                    "volume": 1,
+                    "pitch": 1
+                }
+            ]
+        },
+        "cooldown": 100,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "a",
+            "bar_index": 1
+        },
+        "key": "secondary"
+    },
+    "molting": {
+        "condition": {
+            "type": "origins:command",
+            "command": "execute if entity @s[tag=msmp_origins.itsi-ikki.molting]",
+            "comparison": ">=",
+            "compare_to": 1
+        },
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_armor",
+                        "comparison": "==",
+                        "compare_to": 5
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_durability",
+                        "comparison": "==",
+                        "compare_to": 10
+                    }
+                ]
+            },
+            "if_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:execute_command",
+                        "command": "tag @s remove msmp_origins.itsi-ikki.molting"
+                    },
+                    {
+                        "type": "origins:play_sound",
+                        "sound": "minecraft:entity.zombie_villager.converted",
+                        "volume": 1,
+                        "pitch": 1
+                    }
+                ]
+            },
+            "else_action": {
+                "type": "origins:if_else",
+                "condition": {
+                    "type": "origins:resource",
+                    "resource": "*:*_durability",
+                    "comparison": "==",
+                    "compare_to": 10
+                },
+                "if_action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:change_resource",
+                            "resource": "*:*_armor",
+                            "change": 1,
+                            "operation": "add"
+                        },
+                        {
+                            "type": "origins:change_resource",
+                            "resource": "*:*_durability",
+                            "change": 1,
+                            "operation": "set"
+                        },
+                        {
+                            "type": "origins:play_sound",
+                            "sound": "minecraft:block.respawn_anchor.set_spawn",
+                            "volume": 1,
+                            "pitch": 1.25
+                        }
+                    ]
+                },
+                "else_action": {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_durability",
+                    "change": 1,
+                    "operation": "add"
+                }
+            }
+        }
+    },
+    "molting_shaking": {
+        "condition": {
+            "type": "origins:command",
+            "command": "execute if entity @s[tag=msmp_origins.itsi-ikki.molting]",
+            "comparison": ">=",
+            "compare_to": 1
+        },
+        "type": "origins:shaking"
+    },
+    "molting_slowness": {
+        "condition": {
+            "type": "origins:command",
+            "command": "execute if entity @s[tag=msmp_origins.itsi-ikki.molting]",
+            "comparison": ">=",
+            "compare_to": 1
+        },
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:apply_effect",
+            "effect": {
+                "effect": "minecraft:slowness",
+                "duration": 30,
+                "amplifier": 1,
+                "is_ambient": true,
+                "show_particles": false,
+                "show_icon": true
+            }
+        }
+    }
+}

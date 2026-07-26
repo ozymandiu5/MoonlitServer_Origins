@@ -1,0 +1,26 @@
+{
+    "name": "Synthesis of Light",
+    "description": "Being in the sun restores hunger and prevents hunger & saturation drain.",
+    "type": "origins:multiple",
+    "feed": {
+        "condition": {
+            "type": "origins:exposed_to_sun"
+        },
+        "type": "origins:action_over_time",
+        "interval": 600,
+        "entity_action": {
+            "type": "origins:feed",
+            "food": 1
+        }
+    },
+    "drain": {
+        "condition": {
+            "type": "origins:exposed_to_sun"
+        },
+        "type": "origins:modify_exhaustion",
+        "modifier": {
+            "operation": "set_total",
+            "value": 0
+        }
+    }
+}

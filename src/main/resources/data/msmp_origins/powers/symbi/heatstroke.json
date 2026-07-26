@@ -1,0 +1,34 @@
+{
+    "name": "Heatstroke",
+    "description": "You take 2x fire damage, and gain Slowness II in the Nether.",
+    "type": "origins:multiple",
+    "damage": {
+        "type": "origins:modify_damage_taken",
+        "damage_condition": {
+            "type": "origins:fire"
+        },
+        "modifier": {
+            "operation": "multiply_total",
+            "value": 1
+        }
+    },
+    "nether": {
+        "condition": {
+            "type": "origins:dimension",
+            "dimension": "minecraft:the_nether"
+        },
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:apply_effect",
+            "effect": {
+                "effect": "minecraft:slowness",
+                "duration": 30,
+                "amplifier": 1,
+                "is_ambient": true,
+                "show_particles": false,
+                "show_icon": true
+            }
+        }
+    }
+}

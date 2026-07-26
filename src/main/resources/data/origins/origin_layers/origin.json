@@ -12,7 +12,9 @@
         "msmp_origins:veilbound",
         "msmp_origins:gingerborne",
         "msmp_origins:halcyon",
-        "msmp_origins:symbi"
+        "msmp_origins:symbi",
+        "msmp_origins:sprunt",
+        "msmp_origins:itsi-ikki"
     ],
     "enabled": true,
     "replace": true,

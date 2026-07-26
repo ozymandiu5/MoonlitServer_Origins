@@ -1,0 +1,161 @@
+{
+    "name": "Stickbug",
+    "description": "When holding a block, you “become” that block!",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": "Using this ability when sneaking centers you.",
+            "sprite": "origins:textures/gui/badge/info.png"
+        }
+    ],
+    "type": "origins:multiple",
+    "stickbug": {
+        "condition": {
+            "inverted": true,
+            "type": "origins:sneaking"
+        },
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:spawn_particles",
+                    "particle": "minecraft:poof",
+                    "count": 50,
+                    "speed": 0.25
+                },
+                {
+                    "type": "origins:play_sound",
+                    "sound": "minecraft:entity.illusioner.prepare_mirror",
+                    "volume": 1,
+                    "pitch": 1
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:command",
+                        "command": "execute if entity @s[tag=msmp_origins.itsi-ikki.stickbug]",
+                        "comparison": ">=",
+                        "compare_to": 1
+                    },
+                    "if_action": {
+                        "type": "origins:if_else",
+                        "condition": {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "mainhand",
+                            "item_condition": {
+                                "type": "origins:empty"
+                            }
+                        },
+                        "if_action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:execute_command",
+                                    "command": "kill @e[type=minecraft:block_display,limit=1,sort=nearest]"
+                                },
+                                {
+                                    "type": "origins:execute_command",
+                                    "command": "tag @s remove msmp_origins.itsi-ikki.stickbug"
+                                }
+                            ]
+                        },
+                        "else_action": {
+                            "type": "origins:execute_command",
+                            "command": "data modify entity @e[type=minecraft:block_display,tag=msmp_origins.itsi-ikki.stickbug,limit=1,sort=nearest] block_state.Name set from entity @s SelectedItem.id"
+                        }
+                    },
+                    "else_action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:execute_command",
+                                "command": "summon block_display ~ ~ ~ {Tags:[\"msmp_origins.itsi-ikki.stickbug\"],transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[-0.5f,0f,-0.5f],scale:[1f,1f,1f]},block_state:{Name:\"minecraft:barrier\"}}"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "data modify entity @e[type=minecraft:block_display,tag=msmp_origins.itsi-ikki.stickbug,limit=1,sort=nearest] block_state.Name set from entity @s SelectedItem.id"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "tag @s add msmp_origins.itsi-ikki.stickbug"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "cooldown": 100,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "a",
+            "bar_index": 1
+        },
+        "key": "primary"
+    },
+    "center": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:sneaking"
+                },
+                {
+                    "type": "origins:command",
+                    "command": "execute if entity @s[tag=msmp_origins.itsi-ikki.stickbug]",
+                    "comparison": ">=",
+                    "compare_to": 1
+                }
+            ]
+        },
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "summon shulker ~ ~ ~ {Silent:1b,NoAI:1b,AttachFace:0b,Tags:[\"msmp_origins.itsi-ikki.stickbug_tphere\"],ActiveEffects:[{Id:14,Amplifier:0b,Duration:-1,ShowParticles:0b}]}"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute at @e[tag=msmp_origins.itsi-ikki.stickbug_tphere,limit=1,sort=nearest] run tp @s ~ ~ ~"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "tp @e[tag=msmp_origins.itsi-ikki.stickbug_tphere,limit=1,sort=nearest] ~ ~-400 ~"
+                }
+            ]
+        },
+        "cooldown": 1,
+        "key": "primary"
+    },
+    "tick": {
+        "condition": {
+            "type": "origins:command",
+            "command": "execute if entity @s[tag=msmp_origins.itsi-ikki.stickbug]",
+            "comparison": ">=",
+            "compare_to": 1
+        },
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:apply_effect",
+                    "effect": {
+                        "effect": "minecraft:invisibility",
+                        "duration": 2,
+                        "amplifier": 0,
+                        "show_particles": false,
+                        "show_icon": false
+                    }
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "tp @e[type=minecraft:block_display,tag=msmp_origins.itsi-ikki.stickbug,limit=1,sort=nearest] ~ ~ ~"
+                }
+            ]
+        }
+    }
+}

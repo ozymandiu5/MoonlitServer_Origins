@@ -1,0 +1,38 @@
+{
+    "name": "Pollination",
+    "description": "Right clicking Sprunts or drinking honey bottles will heal 2 hearts.",
+    "type": "origins:multiple",
+    "sprunt": {
+        "type": "origins:action_on_entity_use",
+        "bientity_action": {
+            "type": "origins:actor_action",
+            "action": {
+                "type": "origins:heal",
+                "amount": 4
+            }
+        },
+        "bientity_condition": {
+            "type": "origins:target_condition",
+            "condition": {
+                "type": "origins:origin",
+                "origin": "msmp_origins:sprunt",
+                "layer": "origins:origin"
+            }
+        },
+        "action_result": "pass",
+        "priority": 0
+    },
+    "honey": {
+        "type": "origins:modify_food",
+        "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+                "item": "minecraft:honey_bottle"
+            }
+        },
+        "entity_action": {
+            "type": "origins:heal",
+            "amount": 4
+        }
+    }
+}

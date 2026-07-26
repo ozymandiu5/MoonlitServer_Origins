@@ -1,0 +1,32 @@
+{
+    "name": "Red-40",
+    "description": "When attacked, your opponent is inflicted with Poison II for 5 seconds and Hunger I for 10 seconds",
+    "type": "origins:attacker_action_when_hit",
+    "entity_action": {
+        "type": "origins:apply_effect",
+        "effects": [
+            {
+                "effect": "minecraft:poison",
+                "duration": 100,
+                "amplifier": 1,
+                "is_ambient": true,
+                "show_particles": false,
+                "show_icon": true
+            },
+            {
+                "effect": "minecraft:hunger",
+                "duration": 200,
+                "amplifier": 0,
+                "is_ambient": true,
+                "show_particles": false,
+                "show_icon": true
+            }
+        ]
+    },
+    "cooldown": 200,
+    "hud_render": {
+        "should_render": true,
+        "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
+        "bar_index": 23
+    }
+}

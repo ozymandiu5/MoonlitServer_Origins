@@ -1,0 +1,30 @@
+{
+    "name": "Sprunts vs. Zombies",
+    "description": "You deal 15% more damage to undead, but they also deal 15% more damage to you.",
+    "type": "origins:multiple",
+    "offense": {
+        "type": "origins:modify_damage_dealt",
+        "target_condition": {
+            "type": "origins:entity_group",
+            "group": "undead"
+        },
+        "modifier": {
+            "operation": "multiply_total",
+            "value": 0.15
+        }
+    },
+    "defense": {
+        "type": "origins:modify_damage_taken",
+        "bientity_condition": {
+            "type": "origins:actor_condition",
+            "condition": {
+                "type": "origins:entity_group",
+                "group": "undead"
+            }
+        },
+        "modifier": {
+            "operation": "multiply_total",
+            "value": 0.15
+        }
+    }
+}

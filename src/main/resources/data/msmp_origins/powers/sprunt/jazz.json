@@ -1,0 +1,143 @@
+{
+    "name": "Yes, I Do Like Jazz",
+    "description": "Bee-ing around Bees, Itsi-Ikkis or drinking honey gives you Resistance and Regeneration. \nRight Clicking an Itsi-Ikki with an empty bottle gives you a honey bottle!",
+    "type": "origins:multiple",
+    "passive": {
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:area_of_effect",
+            "radius": 8,
+            "bientity_condition": {
+                "type": "origins:target_condition",
+                "condition": {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:entity_type",
+                            "entity_type": "minecraft:bee"
+                        },
+                        {
+                            "type": "origins:origin",
+                            "origin": "msmp_origins:itsi-ikki",
+                            "layer": "origins:origin"
+                        }
+                    ]
+                }
+            },
+            "bientity_action": {
+                "type": "origins:actor_action",
+                "action": {
+                    "type": "origins:apply_effect",
+                    "effects": [
+                        {
+                            "effect": "minecraft:resistance",
+                            "duration": 30,
+                            "amplifier": 0,
+                            "is_ambient": true,
+                            "show_particles": false,
+                            "show_icon": true
+                        },
+                        {
+                            "effect": "minecraft:regeneration",
+                            "duration": 30,
+                            "amplifier": 0,
+                            "is_ambient": true,
+                            "show_particles": false,
+                            "show_icon": true
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "honey": {
+        "type": "origins:modify_food",
+        "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+                "item": "minecraft:honey_bottle"
+            }
+        },
+        "entity_action": {
+            "type": "origins:apply_effect",
+            "effects": [
+                {
+                    "effect": "minecraft:resistance",
+                    "duration": 600,
+                    "amplifier": 0,
+                    "is_ambient": true,
+                    "show_particles": false,
+                    "show_icon": true
+                },
+                {
+                    "effect": "minecraft:regeneration",
+                    "duration": 600,
+                    "amplifier": 0,
+                    "is_ambient": true,
+                    "show_particles": false,
+                    "show_icon": true
+                }
+            ]
+        }
+    },
+    "bottle": {
+        "type": "origins:action_on_entity_use",
+        "bientity_action": {
+            "type": "origins:actor_action",
+            "action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:equipped_item_action",
+                        "equipment_slot": "mainhand",
+                        "action": {
+                            "type": "origins:consume",
+                            "amount": 1
+                        }
+                    },
+                    {
+                        "type": "origins:give",
+                        "stack": {
+                            "item": "minecraft:honey_bottle",
+                            "amount": 1
+                        }
+                    }
+                ]
+            }
+        },
+        "bientity_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:target_condition",
+                            "condition": {
+                                "type": "origins:origin",
+                                "origin": "msmp_origins:itsi-ikki",
+                                "layer": "origins:origin"
+                            }
+                        },
+                        {
+                            "type": "origins:actor_condition",
+                            "condition": {
+                                "type": "origins:equipped_item",
+                                "equipment_slot": "mainhand",
+                                "item_condition": {
+                                    "type": "origins:ingredient",
+                                    "ingredient": {
+                                        "item": "minecraft:glass_bottle"
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "action_result": "pass",
+        "priority": 0
+    }
+}

@@ -90,7 +90,7 @@
     "resource": {
         "type": "origins:resource",
         "min": 0,
-        "max": 200,
+        "max": 300,
         "start_value": 100,
         "hud_render": {
             "should_render": true,
@@ -118,13 +118,13 @@
                 {
                     "type": "origins:play_sound",
                     "sound": "minecraft:entity.bat.takeoff",
-                    "volume": 1,
+                    "volume": 0.25,
                     "pitch": 1.25
                 },
                 {
                     "type": "origins:play_sound",
                     "sound": "minecraft:entity.player.levelup",
-                    "volume": 1,
+                    "volume": 0.25,
                     "pitch": 1.25
                 },
                 {

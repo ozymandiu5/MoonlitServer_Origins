@@ -67,11 +67,6 @@
                                 "objective": "msmp.darkin.sun_timer",
                                 "comparison": "<=",
                                 "compare_to": 299
-                            },
-                            {
-                                "inverted": true,
-                                "type": "origins:gamemode",
-                                "gamemode": "creative"
                             }
                         ]
                     },

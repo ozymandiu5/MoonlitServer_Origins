@@ -1,0 +1,71 @@
+{
+    "name": "Home Sweet Home",
+    "description": "Touching mushroom blocks give Speed II, but Slowness II otherwise. \nAdditionally, being in mushroom biomes gives Regeneration II.",
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:if_else",
+                "condition": {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:command",
+                            "command": "execute if block ~ ~-1 ~ #msmp_origins:symbi_fungi",
+                            "comparison": ">=",
+                            "compare_to": 1
+                        },
+                        {
+                            "type": "origins:command",
+                            "command": "execute if block ~ ~-2 ~ #msmp_origins:symbi_fungi",
+                            "comparison": ">=",
+                            "compare_to": 1
+                        }
+                    ]
+                },
+                "if_action": {
+                    "type": "origins:apply_effect",
+                    "effect": {
+                        "effect": "minecraft:speed",
+                        "duration": 30,
+                        "amplifier": 1,
+                        "is_ambient": true,
+                        "show_particles": false,
+                        "show_icon": true
+                    }
+                },
+                "else_action": {
+                    "type": "origins:apply_effect",
+                    "effect": {
+                        "effect": "minecraft:slowness",
+                        "duration": 30,
+                        "amplifier": 1,
+                        "is_ambient": true,
+                        "show_particles": false,
+                        "show_icon": true
+                    }
+                }
+            },
+            {
+                "type": "origins:if_else",
+                "condition": {
+                    "type": "origins:biome",
+                    "biome": "minecraft:mushroom_fields"
+                },
+                "if_action": {
+                    "type": "origins:apply_effect",
+                    "effect": {
+                        "effect": "minecraft:speed",
+                        "duration": 30,
+                        "amplifier": 1,
+                        "is_ambient": true,
+                        "show_particles": false,
+                        "show_icon": true
+                    }
+                }
+            }
+        ]
+    }
+}

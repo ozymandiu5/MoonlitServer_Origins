@@ -1,0 +1,174 @@
+{
+    "name": "Fungus Among Us",
+    "description": "Grow a patch of mycelium and mushrooms around you!",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": "Only works with grass blocks.",
+            "sprite": "origins:textures/gui/badge/info.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "Nearby cows will become mooshroom cows!",
+            "sprite": "origins:textures/gui/badge/info.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "35% chance to spawn brown mushrooms instead.",
+            "sprite": "origins:textures/gui/badge/info.png"
+        }
+    ],
+    "type": "origins:active_self",
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:block_action_at",
+                "block_action": {
+                    "type": "origins:area_of_effect",
+                    "radius": 5,
+                    "shape": "sphere",
+                    "block_condition": {
+                        "type": "origins:block",
+                        "block": "minecraft:grass_block"
+                    },
+                    "block_action": {
+                        "type": "origins:set_block",
+                        "block": "minecraft:mycelium"
+                    }
+                }
+            },
+            {
+                "type": "origins:chance",
+                "chance": 60,
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:execute_command",
+                            "command": "place feature minecraft:patch_red_mushroom"
+                        },
+                        {
+                            "type": "origins:area_of_effect",
+                            "radius": 5,
+                            "bientity_condition": {
+                                "type": "origins:target_condition",
+                                "condition": {
+                                    "type": "origins:entity_type",
+                                    "entity_type": "minecraft:cow"
+                                }
+                            },
+                            "bientity_action": {
+                                "type": "origins:target_action",
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:spawn_entity",
+                                            "entity_type": "minecraft:mooshroom"
+                                        },
+                                        {
+                                            "type": "origins:play_sound",
+                                            "sound": "minecraft:entity.mooshroom.convert",
+                                            "volume": 1,
+                                            "pitch": 1
+                                        },
+                                        {
+                                            "type": "origins:spawn_particles",
+                                            "particle": "minecraft:poof",
+                                            "count": 40,
+                                            "speed": 0.2
+                                        },
+                                        {
+                                            "type": "origins:execute_command",
+                                            "command": "tp @s ~ ~-1000 ~"
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "fail_action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:execute_command",
+                            "command": "place feature minecraft:patch_brown_mushroom"
+                        },
+                        {
+                            "type": "origins:area_of_effect",
+                            "radius": 5,
+                            "bientity_condition": {
+                                "type": "origins:target_condition",
+                                "condition": {
+                                    "type": "origins:entity_type",
+                                    "entity_type": "minecraft:cow"
+                                }
+                            },
+                            "bientity_action": {
+                                "type": "origins:target_action",
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:spawn_entity",
+                                            "entity_type": "minecraft:mooshroom",
+                                            "tag": "{Type:\"brown\"}"
+                                        },
+                                        {
+                                            "type": "origins:play_sound",
+                                            "sound": "minecraft:entity.mooshroom.convert",
+                                            "volume": 1,
+                                            "pitch": 1
+                                        },
+                                        {
+                                            "type": "origins:spawn_particles",
+                                            "particle": "minecraft:poof",
+                                            "count": 40,
+                                            "speed": 0.2
+                                        },
+                                        {
+                                            "type": "origins:execute_command",
+                                            "command": "tp @s ~ ~-1000 ~"
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "origins:spawn_particles",
+                "particle": "minecraft:crimson_spore",
+                "count": 1000,
+                "speed": 0,
+                "spread": {
+                    "x": 3,
+                    "y": 0,
+                    "z": 3
+                }
+            },
+            {
+                "type": "origins:play_sound",
+                "sound": "minecraft:block.grass.place",
+                "volume": 0.5,
+                "pitch": 0.5
+            },
+            {
+                "type": "origins:play_sound",
+                "sound": "minecraft:entity.zombie_villager.cure",
+                "volume": 1,
+                "pitch": 1.75
+            }
+        ]
+    },
+    "cooldown": 400,
+    "hud_render": {
+        "should_render": true,
+        "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
+        "bar_index": 8
+    },
+    "key": "primary"
+}
