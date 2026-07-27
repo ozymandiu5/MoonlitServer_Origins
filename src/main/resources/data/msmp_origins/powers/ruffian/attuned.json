@@ -1,0 +1,79 @@
+{
+    "name": "Lunarly Attuned",
+    "description": "You gain or lose health based on the moon cycle. (ie -2 hearts on a new moon, +2 hearts on a full moon)",
+    "type": "origins:multiple",
+    "full_moon": {
+        "condition": {
+            "type": "origins:predicate",
+            "predicate": "msmp_origins:moonphase/is_full_moon"
+        },
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.max_health",
+            "operation": "addition",
+            "value": 4
+        },
+        "tick_rate": 20,
+        "update_health": true
+    },
+    "new_moon": {
+        "condition": {
+            "type": "origins:predicate",
+            "predicate": "msmp_origins:moonphase/is_new_moon"
+        },
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.max_health",
+            "operation": "addition",
+            "value": -4
+        },
+        "tick_rate": 20,
+        "update_health": true
+    },
+    "gibbous": {
+        "condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:predicate",
+                    "predicate": "msmp_origins:moonphase/is_waning_gibbous"
+                },
+                {
+                    "type": "origins:predicate",
+                    "predicate": "msmp_origins:moonphase/is_waxing_gibbous"
+                }
+            ]
+        },
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.max_health",
+            "operation": "addition",
+            "value": 2
+        },
+        "tick_rate": 20,
+        "update_health": true
+    },
+    "crescent": {
+        "condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:predicate",
+                    "predicate": "msmp_origins:moonphase/is_waning_crescent"
+                },
+                {
+                    "type": "origins:predicate",
+                    "predicate": "msmp_origins:moonphase/is_waxing_crescent"
+                }
+            ]
+        },
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.max_health",
+            "operation": "addition",
+            "value": -2
+        },
+        "tick_rate": 20,
+        "update_health": true
+    }
+}

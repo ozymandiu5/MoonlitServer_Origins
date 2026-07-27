@@ -1,0 +1,47 @@
+{
+    "name": "Pack-a-Punch",
+    "description": "Tamed wolves within 30 blocks will gain Strength and Resistance II.",
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+        "type": "origins:area_of_effect",
+        "radius": 30,
+        "bientity_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:owner"
+                },
+                {
+                    "type": "origins:target_condition",
+                    "condition": {
+                        "type": "origins:entity_type",
+                        "entity_type": "minecraft:wolf"
+                    }
+                }
+            ]
+        },
+        "bientity_action": {
+            "type": "origins:target_action",
+            "action": {
+                "type": "origins:apply_effect",
+                "effects": [
+                    {
+                        "effect": "minecraft:strength",
+                        "duration": 30,
+                        "amplifier": 1,
+                        "show_particles": true,
+                        "show_icon": false
+                    },
+                    {
+                        "effect": "minecraft:resistance",
+                        "duration": 30,
+                        "amplifier": 1,
+                        "show_particles": true,
+                        "show_icon": false
+                    }
+                ]
+            }
+        }
+    }
+}

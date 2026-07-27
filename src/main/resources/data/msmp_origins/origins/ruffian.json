@@ -1,0 +1,15 @@
+{
+    "name": "Ruffian",
+    "description": "Ruffians descended from a long line of a much stockier wild bipedal canine species from the cold north. They form paternal societies led by chieftains known as Doges which allocate food and resources to each family of Ruffians known as a pack. These people are known for their warm hospitality to those they consider friends, and would lay down their lives to defend their most treasured allies. They are blessed by the mark of Melune and are staunch devotees to the Lunar Deity, who led them from the frigid wastes of the ice lands down to the most luscious plains and forests.",
+    "powers": [
+        "msmp_origins:ruffian/canines",
+        "msmp_origins:ruffian/good_dog",
+        "msmp_origins:ruffian/punch",
+        "msmp_origins:ruffian/ghostbuster",
+        "msmp_origins:ruffian/friend",
+        "msmp_origins:ruffian/attuned",
+        "msmp_origins:ruffian/carnivore",
+        "msmp_origins:ruffian/soundbyte"
+    ],
+    "impact": 2
+}

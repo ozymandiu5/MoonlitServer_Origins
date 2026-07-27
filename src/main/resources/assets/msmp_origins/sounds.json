@@ -1,0 +1,31 @@
+{
+    "ability.faekind.mischief": {
+        "sounds": [
+            "msmp_origins:ability/faekind/bird",
+            "msmp_origins:ability/faekind/boom",
+            "msmp_origins:ability/faekind/discord",
+            "msmp_origins:ability/faekind/error",
+            "msmp_origins:ability/faekind/fart",
+            "msmp_origins:ability/faekind/huh",
+            "msmp_origins:ability/faekind/knock",
+            "msmp_origins:ability/faekind/pipe",
+            "msmp_origins:ability/faekind/wicked",
+            "msmp_origins:ability/faekind/windows"
+        ]
+    },
+    "soundbyte.halcyon.angrybird": {
+        "sounds": [
+            "msmp_origins:ability/faekind/bird"
+        ]
+    },
+    "soundbyte.halcyon.eagle": {
+        "sounds": [
+            "msmp_origins:soundbyte/halcyon/eagle"
+        ]
+    },
+    "ability.ruffian.bite": {
+        "sounds": [
+            "msmp_origins:ability/ruffian/bite"
+        ]
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "name": "Man's \"Best\" Friend",
+    "description": "All skeletons are scared of you and will not attack.",
+    "type": "apugli:mobs_ignore",
+    "mob_condition": {
+        "type": "origins:in_tag",
+        "tag": "minecraft:skeletons"
+    }
+}

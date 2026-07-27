@@ -14,7 +14,8 @@
         "msmp_origins:halcyon",
         "msmp_origins:symbi",
         "msmp_origins:sprunt",
-        "msmp_origins:itsi-ikki"
+        "msmp_origins:itsi-ikki",
+        "msmp_origins:ruffian"
     ],
     "enabled": true,
     "replace": true,

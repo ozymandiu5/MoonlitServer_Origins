@@ -1,0 +1,24 @@
+{
+    "name": "Carnivore",
+    "description": "Your predatory instincts only allow you to eat meat.",
+    "type": "origins:modify_food",
+    "item_condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "inverted": true,
+                "type": "origins:ingredient",
+                "ingredient": {
+                    "tag": "msmp_origins:kattzen_consumable"
+                }
+            },
+            {
+                "type": "origins:food"
+            }
+        ]
+    },
+    "food_modifier": {
+        "operation": "multiply_total",
+        "value": -0.3
+    }
+}
